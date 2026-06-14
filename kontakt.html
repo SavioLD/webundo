@@ -26,7 +26,7 @@
       <a href="kontakt.html" class="is-active" aria-current="page">Kontakt</a>
     </nav>
     <div class="topbar__actions">
-      <a href="rechner.html" class="btn btn--primary btn--sm">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="kontakt.html" class="btn btn--primary btn--sm">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -37,7 +37,7 @@
     <a href="optimierung.html">Optimierung</a>
     <a href="unternehmen.html">Unternehmen</a>
     <a href="kontakt.html">Kontakt</a>
-    <a href="rechner.html" class="btn btn--primary btn--block">Anfrage starten</a>
+    <a href="kontakt.html" class="btn btn--primary btn--block">Anfrage starten</a>
   </div>
 </header>
 
@@ -59,28 +59,47 @@
       <iframe class="kmap" src="https://www.google.com/maps?q=Bahnhofstra%C3%9Fe+9,+78647+Trossingen&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort WEBUNDO UG, Trossingen"></iframe>
     </div>
     <div class="formcard">
+      <div class="formcard__head">
+        <h3>Anfrage in unter einer Minute</h3>
+        <p>Kurz ausfüllen – wir melden uns innerhalb von 24 Stunden persönlich. Unverbindlich.</p>
+      </div>
       <form id="kontaktForm" class="kontakt__form" novalidate>
         <div class="field">
+          <span class="flabel">Worum geht es? <span class="opt">(optional)</span></span>
+          <div class="topicchips" id="kfTopics">
+            <button type="button" class="topicchip" data-topic="Versorgung">Versorgung</button>
+            <button type="button" class="topicchip" data-topic="Beschaffung">Beschaffung</button>
+            <button type="button" class="topicchip" data-topic="Optimierung">Optimierung</button>
+            <button type="button" class="topicchip" data-topic="Allgemeine Anfrage">Allgemein</button>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label for="kf_name">Name <span class="opt">(optional)</span></label><input class="input" id="kf_name" autocomplete="name" /></div>
+          <div class="field"><label for="kf_phone">Telefon <span class="opt">(optional)</span></label><input class="input" id="kf_phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <div class="field">
+          <label for="kf_email">E-Mail <span class="req">*</span></label>
+          <input class="input" id="kf_email" type="email" autocomplete="email" placeholder="name@firma.de" />
+          <div class="err-msg" data-for="kf_email">Bitte gültige E-Mail-Adresse angeben.</div>
+        </div>
+        <div class="field">
           <label for="kf_message">Ihre Nachricht <span class="req">*</span></label>
-          <textarea class="input textarea" id="kf_message" rows="5" placeholder="Wie können wir Ihnen helfen?"></textarea>
-          <div class="err-msg" data-for="kf_message">Bitte geben Sie eine Nachricht ein.</div>
+          <textarea class="input textarea" id="kf_message" rows="3" placeholder="Was brauchen Sie? Ein, zwei Sätze genügen."></textarea>
+          <div class="err-msg" data-for="kf_message">Bitte kurz beschreiben, worum es geht.</div>
         </div>
         <div class="field">
-          <label for="kf_firma">Ihr Unternehmen</label>
-          <input class="input" id="kf_firma" autocomplete="organization" />
-        </div>
-        <div class="field">
-          <label for="kf_email">Ihre E-Mail-Adresse <span class="req">*</span></label>
-          <input class="input" id="kf_email" type="email" autocomplete="email" />
-          <div class="err-msg" data-for="kf_email">Bitte geben Sie eine gültige E-Mail-Adresse an.</div>
-        </div>
-        <div class="field">
-          <label class="check"><input type="checkbox" id="kf_privacy" /><span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" target="_blank" style="color:var(--blue)">Datenschutzerklärung</a> zu. <span class="req">*</span></span></label>
+          <label class="check"><input type="checkbox" id="kf_privacy" /><span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" style="color:var(--blue)">Datenschutzerklärung</a> zu. <span class="req">*</span></span></label>
           <div class="err-msg" data-for="kf_privacy">Bitte bestätigen Sie die Datenschutzerklärung.</div>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg btn--block">Nachricht senden <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button type="submit" class="btn btn--primary btn--lg btn--block">Anfrage absenden <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="ftrust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unverbindlich</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Antwort in 24 h</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Keine Weitergabe</span>
+        </div>
         <div class="kfdone" id="kfDone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vielen Dank! Ihre E-Mail wird geöffnet – wir melden uns zeitnah bei Ihnen.</div>
       </form>
+      <p class="formcard__alt">Lieber zuerst Zahlen sehen? <a href="rechner.html">Einsparpotenzial berechnen →</a></p>
     </div>
   </div>
 </div></section>

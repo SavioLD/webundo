@@ -921,6 +921,43 @@ html.anim .reveal--right{transform:translateX(36px)}
 html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 
 /* ============================================================
+   WEBUNDO — Conversion-Kontaktformular + Mobil-Optimierung
+============================================================ */
+.formcard__head{margin-bottom:20px}
+.formcard__head h3{font-size:1.32rem;margin-bottom:5px}
+.formcard__head p{color:var(--slate);font-size:.95rem}
+.field .flabel{display:block;font-weight:600;font-size:.9rem;margin-bottom:9px}
+.field .opt{font-weight:500;color:var(--muted);font-size:.82rem}
+.topicchips{display:flex;flex-wrap:wrap;gap:9px}
+.topicchip{border:1.5px solid var(--line);background:#fff;color:var(--slate);font-weight:600;font-size:.9rem;padding:.62em 1.05em;border-radius:999px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.topicchip:hover{border-color:#c5d2e0}
+.topicchip.is-on{border-color:var(--blue);background:var(--blue-50);color:var(--blue-700)}
+.ftrust{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin-top:14px}
+.ftrust span{display:inline-flex;align-items:center;gap:.45em;font-size:.84rem;font-weight:600;color:var(--slate)}
+.ftrust svg{width:15px;height:15px;color:var(--leaf);flex:0 0 auto}
+.formcard__alt{text-align:center;margin-top:18px;font-size:.92rem;color:var(--slate)}
+.formcard__alt a{color:var(--blue);font-weight:700}
+
+/* ---------- Mobil-Feinschliff (volle Touch-Tauglichkeit) ---------- */
+@media (max-width:600px){
+  /* iOS-Auto-Zoom auf Formularfelder verhindern (>=16px) */
+  .input,.select,.textarea{font-size:16px}
+  .shell{padding-inline:18px}
+  .btn{padding:.9em 1.25em}
+  .btn--lg{padding:.95em 1.4em;font-size:1rem}
+  .sec__title{font-size:1.5rem}
+  .phero{min-height:320px}
+  .phero h1{font-size:1.9rem}
+  .hhero h1{font-size:2rem}
+  .topicchip,.bchip,.btn{min-height:44px}
+  .kontakt__info address>div{align-items:center}
+}
+@media (max-width:380px){
+  .grid-2{grid-template-columns:1fr}
+  .hbadge{display:none}
+}
+
+/* ============================================================
    Kurt Mager Solutions — Beschaffungs-/Kostenrechner
    Adaptiert nach Vorlage · Ländle Digital
 ============================================================ */
@@ -1142,7 +1179,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="topbar__actions">
-      <a href="#rechner" class="btn btn--primary btn--sm">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#kontakt" class="btn btn--primary btn--sm">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -1153,7 +1190,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
     <a href="#optimierung">Optimierung</a>
     <a href="#unternehmen">Unternehmen</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="#rechner" class="btn btn--primary btn--block">Anfrage starten</a>
+    <a href="#kontakt" class="btn btn--primary btn--block">Anfrage starten</a>
   </div>
 </header>
 
@@ -1717,28 +1754,47 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       <iframe class="kmap" src="https://www.google.com/maps?q=Bahnhofstra%C3%9Fe+9,+78647+Trossingen&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Standort WEBUNDO UG, Trossingen"></iframe>
     </div>
     <div class="formcard">
+      <div class="formcard__head">
+        <h3>Anfrage in unter einer Minute</h3>
+        <p>Kurz ausfüllen – wir melden uns innerhalb von 24 Stunden persönlich. Unverbindlich.</p>
+      </div>
       <form id="kontaktForm" class="kontakt__form" novalidate>
         <div class="field">
+          <span class="flabel">Worum geht es? <span class="opt">(optional)</span></span>
+          <div class="topicchips" id="kfTopics">
+            <button type="button" class="topicchip" data-topic="Versorgung">Versorgung</button>
+            <button type="button" class="topicchip" data-topic="Beschaffung">Beschaffung</button>
+            <button type="button" class="topicchip" data-topic="Optimierung">Optimierung</button>
+            <button type="button" class="topicchip" data-topic="Allgemeine Anfrage">Allgemein</button>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="field"><label for="kf_name">Name <span class="opt">(optional)</span></label><input class="input" id="kf_name" autocomplete="name" /></div>
+          <div class="field"><label for="kf_phone">Telefon <span class="opt">(optional)</span></label><input class="input" id="kf_phone" type="tel" autocomplete="tel" /></div>
+        </div>
+        <div class="field">
+          <label for="kf_email">E-Mail <span class="req">*</span></label>
+          <input class="input" id="kf_email" type="email" autocomplete="email" placeholder="name@firma.de" />
+          <div class="err-msg" data-for="kf_email">Bitte gültige E-Mail-Adresse angeben.</div>
+        </div>
+        <div class="field">
           <label for="kf_message">Ihre Nachricht <span class="req">*</span></label>
-          <textarea class="input textarea" id="kf_message" rows="5" placeholder="Wie können wir Ihnen helfen?"></textarea>
-          <div class="err-msg" data-for="kf_message">Bitte geben Sie eine Nachricht ein.</div>
-        </div>
-        <div class="field">
-          <label for="kf_firma">Ihr Unternehmen</label>
-          <input class="input" id="kf_firma" autocomplete="organization" />
-        </div>
-        <div class="field">
-          <label for="kf_email">Ihre E-Mail-Adresse <span class="req">*</span></label>
-          <input class="input" id="kf_email" type="email" autocomplete="email" />
-          <div class="err-msg" data-for="kf_email">Bitte geben Sie eine gültige E-Mail-Adresse an.</div>
+          <textarea class="input textarea" id="kf_message" rows="3" placeholder="Was brauchen Sie? Ein, zwei Sätze genügen."></textarea>
+          <div class="err-msg" data-for="kf_message">Bitte kurz beschreiben, worum es geht.</div>
         </div>
         <div class="field">
           <label class="check"><input type="checkbox" id="kf_privacy" /><span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="#datenschutz" style="color:var(--blue)">Datenschutzerklärung</a> zu. <span class="req">*</span></span></label>
           <div class="err-msg" data-for="kf_privacy">Bitte bestätigen Sie die Datenschutzerklärung.</div>
         </div>
-        <button type="submit" class="btn btn--primary btn--lg btn--block">Nachricht senden <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button type="submit" class="btn btn--primary btn--lg btn--block">Anfrage absenden <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="ftrust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Unverbindlich</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Antwort in 24 h</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Keine Weitergabe</span>
+        </div>
         <div class="kfdone" id="kfDone" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vielen Dank! Ihre E-Mail wird geöffnet – wir melden uns zeitnah bei Ihnen.</div>
       </form>
+      <p class="formcard__alt">Lieber zuerst Zahlen sehen? <a href="#rechner">Einsparpotenzial berechnen →</a></p>
     </div>
   </div>
 </div></section>
@@ -2110,9 +2166,16 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
   if (kf) {
     const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     const showErr = (id, on) => { const m = $(`.err-msg[data-for="${id}"]`); if (m) m.classList.toggle("show", on); const el = $("#" + id); if (el) el.classList.toggle("err", on); };
+    // Themen-Chips (Einfachauswahl)
+    let topic = "";
+    $$("#kfTopics .topicchip").forEach((c) => c.addEventListener("click", () => {
+      const on = c.classList.contains("is-on");
+      $$("#kfTopics .topicchip").forEach((x) => x.classList.remove("is-on"));
+      if (!on) { c.classList.add("is-on"); topic = c.getAttribute("data-topic") || ""; } else { topic = ""; }
+    }));
     kf.addEventListener("submit", (ev) => {
       ev.preventDefault();
-      const msg = $("#kf_message"), firma = $("#kf_firma"), mail = $("#kf_email"), priv = $("#kf_privacy");
+      const msg = $("#kf_message"), name = $("#kf_name"), phone = $("#kf_phone"), mail = $("#kf_email"), priv = $("#kf_privacy");
       let ok = true;
       if (!mail.value || !emailOk(mail.value)) { showErr("kf_email", true); ok = false; } else showErr("kf_email", false);
       if (!msg.value.trim()) { showErr("kf_message", true); ok = false; } else showErr("kf_message", false);
@@ -2122,17 +2185,21 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       const body = [
         "Neue Kontaktanfrage über webundo.de",
         "",
-        "Unternehmen: " + (firma.value || "—"),
+        "Thema: " + (topic || "—"),
+        "Name: " + ((name && name.value.trim()) || "—"),
         "E-Mail: " + mail.value,
+        "Telefon: " + ((phone && phone.value.trim()) || "—"),
         "",
         "Nachricht:",
         msg.value,
       ].join("\n");
-      const href = "mailto:info@webundo.de?subject=" + encodeURIComponent("Kontaktanfrage" + (firma.value ? " – " + firma.value : "")) + "&body=" + encodeURIComponent(body);
+      const subject = "Anfrage" + (topic ? " – " + topic : "") + (name && name.value.trim() ? " (" + name.value.trim() + ")" : "");
+      const href = "mailto:info@webundo.de?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       window.location.href = href;
       const done = $("#kfDone");
       if (done) { done.hidden = false; done.scrollIntoView({ behavior: "smooth", block: "center" }); }
       kf.reset();
+      $$("#kfTopics .topicchip").forEach((x) => x.classList.remove("is-on")); topic = "";
     });
     $$("#kontaktForm .input").forEach((i) => i.addEventListener("input", () => { i.classList.remove("err"); const m = $(`.err-msg[data-for="${i.id}"]`); if (m) m.classList.remove("show"); }));
   }

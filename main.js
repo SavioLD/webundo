@@ -30,9 +30,16 @@
   if (kf) {
     const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     const showErr = (id, on) => { const m = $(`.err-msg[data-for="${id}"]`); if (m) m.classList.toggle("show", on); const el = $("#" + id); if (el) el.classList.toggle("err", on); };
+    // Themen-Chips (Einfachauswahl)
+    let topic = "";
+    $$("#kfTopics .topicchip").forEach((c) => c.addEventListener("click", () => {
+      const on = c.classList.contains("is-on");
+      $$("#kfTopics .topicchip").forEach((x) => x.classList.remove("is-on"));
+      if (!on) { c.classList.add("is-on"); topic = c.getAttribute("data-topic") || ""; } else { topic = ""; }
+    }));
     kf.addEventListener("submit", (ev) => {
       ev.preventDefault();
-      const msg = $("#kf_message"), firma = $("#kf_firma"), mail = $("#kf_email"), priv = $("#kf_privacy");
+      const msg = $("#kf_message"), name = $("#kf_name"), phone = $("#kf_phone"), mail = $("#kf_email"), priv = $("#kf_privacy");
       let ok = true;
       if (!mail.value || !emailOk(mail.value)) { showErr("kf_email", true); ok = false; } else showErr("kf_email", false);
       if (!msg.value.trim()) { showErr("kf_message", true); ok = false; } else showErr("kf_message", false);
@@ -42,17 +49,21 @@
       const body = [
         "Neue Kontaktanfrage über webundo.de",
         "",
-        "Unternehmen: " + (firma.value || "—"),
+        "Thema: " + (topic || "—"),
+        "Name: " + ((name && name.value.trim()) || "—"),
         "E-Mail: " + mail.value,
+        "Telefon: " + ((phone && phone.value.trim()) || "—"),
         "",
         "Nachricht:",
         msg.value,
       ].join("\n");
-      const href = "mailto:info@webundo.de?subject=" + encodeURIComponent("Kontaktanfrage" + (firma.value ? " – " + firma.value : "")) + "&body=" + encodeURIComponent(body);
+      const subject = "Anfrage" + (topic ? " – " + topic : "") + (name && name.value.trim() ? " (" + name.value.trim() + ")" : "");
+      const href = "mailto:info@webundo.de?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
       window.location.href = href;
       const done = $("#kfDone");
       if (done) { done.hidden = false; done.scrollIntoView({ behavior: "smooth", block: "center" }); }
       kf.reset();
+      $$("#kfTopics .topicchip").forEach((x) => x.classList.remove("is-on")); topic = "";
     });
     $$("#kontaktForm .input").forEach((i) => i.addEventListener("input", () => { i.classList.remove("err"); const m = $(`.err-msg[data-for="${i.id}"]`); if (m) m.classList.remove("show"); }));
   }

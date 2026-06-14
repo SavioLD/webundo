@@ -909,3 +909,40 @@ html.anim .reveal--right{transform:translateX(36px)}
 
 /* Marquee-Logos von Reveal ausnehmen (laufen permanent) */
 html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
+
+/* ============================================================
+   WEBUNDO — Conversion-Kontaktformular + Mobil-Optimierung
+============================================================ */
+.formcard__head{margin-bottom:20px}
+.formcard__head h3{font-size:1.32rem;margin-bottom:5px}
+.formcard__head p{color:var(--slate);font-size:.95rem}
+.field .flabel{display:block;font-weight:600;font-size:.9rem;margin-bottom:9px}
+.field .opt{font-weight:500;color:var(--muted);font-size:.82rem}
+.topicchips{display:flex;flex-wrap:wrap;gap:9px}
+.topicchip{border:1.5px solid var(--line);background:#fff;color:var(--slate);font-weight:600;font-size:.9rem;padding:.62em 1.05em;border-radius:999px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.topicchip:hover{border-color:#c5d2e0}
+.topicchip.is-on{border-color:var(--blue);background:var(--blue-50);color:var(--blue-700)}
+.ftrust{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;margin-top:14px}
+.ftrust span{display:inline-flex;align-items:center;gap:.45em;font-size:.84rem;font-weight:600;color:var(--slate)}
+.ftrust svg{width:15px;height:15px;color:var(--leaf);flex:0 0 auto}
+.formcard__alt{text-align:center;margin-top:18px;font-size:.92rem;color:var(--slate)}
+.formcard__alt a{color:var(--blue);font-weight:700}
+
+/* ---------- Mobil-Feinschliff (volle Touch-Tauglichkeit) ---------- */
+@media (max-width:600px){
+  /* iOS-Auto-Zoom auf Formularfelder verhindern (>=16px) */
+  .input,.select,.textarea{font-size:16px}
+  .shell{padding-inline:18px}
+  .btn{padding:.9em 1.25em}
+  .btn--lg{padding:.95em 1.4em;font-size:1rem}
+  .sec__title{font-size:1.5rem}
+  .phero{min-height:320px}
+  .phero h1{font-size:1.9rem}
+  .hhero h1{font-size:2rem}
+  .topicchip,.bchip,.btn{min-height:44px}
+  .kontakt__info address>div{align-items:center}
+}
+@media (max-width:380px){
+  .grid-2{grid-template-columns:1fr}
+  .hbadge{display:none}
+}
