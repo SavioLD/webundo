@@ -1,0 +1,188 @@
+/* ============================================================
+   Kurt Mager Solutions — Beschaffungs-/Kostenrechner
+   Adaptiert nach Vorlage · Ländle Digital
+============================================================ */
+
+/* hero */
+.calc-hero{position:relative;overflow:hidden;background:var(--soft);padding:60px 0 36px}
+.calc-hero__bg{position:absolute;inset:0;opacity:.7;background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);background-size:42px 42px;-webkit-mask-image:radial-gradient(95% 80% at 50% 0%,#000,transparent 80%);mask-image:radial-gradient(95% 80% at 50% 0%,#000,transparent 80%)}
+.calc-hero .shell{position:relative}
+.calc-hero h1{font-size:clamp(2rem,4.6vw,3.15rem);max-width:20ch;margin:14px 0 18px}
+.calc-hero h1 u{text-decoration:none;background:linear-gradient(transparent 60%, rgba(19,102,200,.30) 0);padding:0 .04em}
+.calc-hero .lead{font-size:1.1rem;color:var(--slate);max-width:64ch}
+.calc-hero .lead strong{color:var(--ink)}
+.tchips{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 4px}
+.tchip{display:inline-flex;align-items:center;gap:.5em;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.55em 1em;font-size:.87rem;font-weight:500;color:var(--ink);box-shadow:var(--sh-sm)}
+.tchip svg{width:16px;height:16px;color:var(--green);flex:0 0 auto}
+
+/* live preview card */
+.livecard{margin-top:30px;background:var(--navy);border-radius:var(--r-lg);padding:26px 28px;box-shadow:var(--sh-lg);display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center}
+.livecard__eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8fc2f7;font-weight:600;display:inline-flex;align-items:center;gap:.5em}
+.livecard__eyebrow .pulse{width:7px;height:7px}
+.livecard__eu{display:flex;align-items:baseline;gap:.12em;margin:12px 0 8px;flex-wrap:wrap}
+.livecard__eu .cur{color:#8fc2f7;font-size:1.7rem;font-weight:800}
+.livecard__eu .num{color:#fff;font-size:clamp(2.4rem,6vw,3rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+.livecard__eu .per{color:#9fb2c9;font-size:1rem;margin-left:.25em}
+.livecard__note{color:#9fb2c9;font-size:.88rem;max-width:48ch}
+.livecard__note strong{color:#d2e6fb}
+.livecard__cta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.livecard__cta .small{color:#8aa0b8;font-size:.78rem;max-width:20ch;text-align:right}
+
+/* inputs */
+.calc{padding:48px 0 20px;background:#fff}
+.calc__intro{max-width:780px}
+.calc__intro h2{font-size:1.5rem;margin-bottom:8px}
+.calc__intro p{color:var(--slate)}
+.block{padding:28px 0;border-top:1px solid var(--line-2)}
+.block:first-of-type{border-top:0}
+.block__head{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.block__num{font-family:var(--disp);font-weight:700;font-size:.72rem;letter-spacing:.08em;color:#fff;background:var(--navy);padding:.5em .75em;border-radius:7px}
+.block__head h3{font-size:1.25rem}
+.block__tag{margin-left:auto;font-size:.84rem;color:var(--muted)}
+.calc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cinput{min-width:0}
+.cinput>label{display:block;font-weight:600;font-size:.9rem;margin-bottom:7px}
+.unitfield{position:relative;display:flex;align-items:center}
+.unitfield .input{padding-right:66px}
+.unitfield .unit{position:absolute;right:14px;color:var(--muted);font-size:.84rem;font-weight:500;pointer-events:none}
+.cinput .hint{font-size:.8rem;color:var(--muted);margin-top:6px;line-height:1.4}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:var(--soft-2);outline:none;margin-top:13px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--green);cursor:pointer;border:3px solid #fff;box-shadow:0 2px 8px rgba(19,102,200,.5)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff;border-radius:50%;background:var(--green);cursor:pointer}
+
+/* advanced */
+.adv{margin-top:10px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.adv>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:15px 20px;font-weight:600;color:var(--green-700);background:var(--green-50)}
+.adv>summary::-webkit-details-marker{display:none}
+.adv__chev{transition:.25s;margin-left:auto}
+.adv[open] .adv__chev{transform:rotate(180deg)}
+.adv__body{padding:24px 20px 6px}
+.adv__sub{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:4px 0 14px}
+.adv__body .calc-grid{margin-bottom:24px}
+
+/* result */
+.result{padding:30px 0 20px;background:#fff}
+.result__hero{background:var(--navy);border-radius:var(--r-lg);padding:42px 30px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--sh-lg)}
+.result__hero::before{content:"";position:absolute;inset:0;opacity:.55;background:radial-gradient(60% 90% at 50% 0%,rgba(19,102,200,.38),transparent 65%)}
+.result__hero>*{position:relative}
+.result__eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:#8fc2f7;font-weight:600;display:inline-flex;align-items:center;gap:.5em}
+.result__label{color:#c4d2e2;margin:16px 0 8px;font-size:1.02rem}
+.result__euro{display:inline-flex;align-items:baseline;gap:.08em;flex-wrap:wrap;justify-content:center}
+.result__euro .cur{color:#8fc2f7;font-size:clamp(1.8rem,5vw,2.6rem);font-weight:800}
+.result__euro .num{color:#fff;font-size:clamp(3rem,10vw,5.2rem);font-weight:800;letter-spacing:-.03em;line-height:.92}
+.result__euro .per{color:#c4d2e2;font-size:1.05rem;margin-left:.3em}
+.result__badge{display:inline-block;margin-top:14px;background:rgba(143,194,247,.16);color:#bcd9fb;border-radius:999px;padding:.45em 1em;font-size:.92rem;font-weight:600}
+.result__desc{color:#a9bbd0;max-width:64ch;margin:18px auto 0;font-size:.97rem}
+.result__desc strong{color:#fff}
+.result__3yr{margin-top:18px;background:var(--green-50);border:1px solid #cfe2fa;border-radius:var(--r);padding:18px 26px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.result__3yr span{color:var(--ink);font-size:1rem}
+.result__3yr b{font-family:var(--disp);font-weight:800;font-size:1.7rem;color:var(--green-700)}
+
+/* cost boxes */
+.costsec{margin-top:36px}
+.costsec h3{font-size:1.25rem;margin-bottom:6px}
+.costsec p{color:var(--slate);margin-bottom:18px}
+.costboxes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.costbox{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid #ea7317;border-radius:var(--r);padding:22px}
+.costbox b{display:block;font-family:var(--disp);font-weight:800;font-size:1.7rem;color:#c2410c;margin-bottom:8px}
+.costbox span{font-size:.9rem;color:#8a4b22;line-height:1.45}
+
+/* breakdown */
+.breakdown{margin-top:22px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.brow{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;border-top:1px solid var(--line-2);font-size:.95rem}
+.brow:first-child{border-top:0}
+.brow>span{color:var(--slate)}
+.brow b{font-family:var(--disp);font-weight:700;color:var(--green-700)}
+.brow--total{background:var(--green-50)}
+.brow--total>span{color:var(--ink);font-weight:700}
+.brow--total b{color:var(--green-700);font-size:1.15rem}
+
+/* lead form */
+.leadcard{margin-top:36px;background:#fff;border:2px solid var(--green);border-radius:var(--r-lg);padding:clamp(24px,4vw,38px);box-shadow:var(--sh)}
+.leadcard__eyebrow{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--green-700);font-weight:700;display:inline-flex;align-items:center;gap:.5em}
+.leadcard h2{font-size:clamp(1.5rem,3vw,2.05rem);margin:12px 0 12px}
+.leadcard h2 em{font-style:normal;color:var(--green-700)}
+.leadcard__p{color:var(--slate);max-width:66ch;margin-bottom:24px}
+.leadgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.leadgrid .full{grid-column:1/-1}
+.lead-foot{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:6px}
+.lead-foot .ok{font-size:.86rem;color:var(--green-700);font-weight:600;display:inline-flex;align-items:center;gap:.4em}
+.lead-foot .ok svg{width:15px;height:15px}
+
+@media (max-width:860px){
+  .calc-grid,.costboxes{grid-template-columns:1fr 1fr}
+  .livecard{grid-template-columns:1fr}
+  .livecard__cta{align-items:stretch}
+  .livecard__cta .small{text-align:left}
+  .leadgrid{grid-template-columns:1fr}
+}
+@media (max-width:560px){.calc-grid,.costboxes{grid-template-columns:1fr}}
+
+/* gated breakdown (erst nach Freischalten sichtbar) */
+.lockwrap{position:relative;margin-top:22px}
+.lockwrap .breakdown{margin-top:0;transition:filter .45s ease}
+.lockwrap:not(.unlocked) .breakdown{filter:blur(8px);pointer-events:none;user-select:none}
+.lockover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:18px;border-radius:var(--r);background:linear-gradient(180deg,rgba(244,247,251,.55),rgba(244,247,251,.82));transition:opacity .4s ease}
+.lockwrap.unlocked .lockover{opacity:0;pointer-events:none}
+.lockover__badge{display:inline-flex;align-items:center;gap:.5em;background:var(--navy);color:#fff;font-weight:600;font-size:.85rem;padding:.55em 1.05em;border-radius:999px}
+.lockover__badge svg{width:15px;height:15px}
+.lockover__t{font-size:.86rem;color:var(--navy);font-weight:600;max-width:36ch;line-height:1.4}
+
+/* ============================================================
+   WEBUNDO Rechner — Ergänzungen (Score-Gauge, Bereich-Chips)
+============================================================ */
+/* Bereich-Auswahl als Chips */
+.bchips{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.bchip{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;user-select:none;
+  padding:.7em 1.1em;border:1.6px solid var(--line);border-radius:999px;background:#fff;
+  font-weight:600;font-size:.94rem;color:var(--slate);transition:.16s}
+.bchip:hover{border-color:#c5d2e0}
+.bchip__dot{width:18px;height:18px;border-radius:50%;border:1.6px solid var(--line);display:grid;place-items:center;flex:0 0 auto;transition:.16s}
+.bchip__dot svg{width:11px;height:11px;color:#fff;opacity:0;transform:scale(.5);transition:.16s}
+.bchip.is-on{border-color:var(--blue);background:var(--blue-50);color:var(--blue-700)}
+.bchip.is-on .bchip__dot{background:var(--blue);border-color:var(--blue)}
+.bchip.is-on .bchip__dot svg{opacity:1;transform:scale(1)}
+
+/* Preset-Auswahl */
+.presetrow{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.presetrow label{font-weight:600;font-size:.9rem;color:var(--slate)}
+.presetrow .select{max-width:300px}
+
+/* Score-Gauge */
+.scorewrap{display:flex;align-items:center;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:22px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:22px 26px}
+.gauge{position:relative;width:140px;height:140px;flex:0 0 auto}
+.gauge svg{transform:rotate(-90deg)}
+.gauge__bg{fill:none;stroke:rgba(255,255,255,.14);stroke-width:12}
+.gauge__bar{fill:none;stroke:#8fc2f7;stroke-width:12;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.gauge__txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.gauge__num{font-family:var(--disp);font-weight:800;font-size:2.5rem;color:#fff;line-height:1}
+.gauge__max{font-size:.78rem;color:#9fb2c9}
+.scoremeta{max-width:32ch}
+.scoremeta .k{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#8fc2f7;font-weight:700}
+.scoremeta .v{font-family:var(--disp);font-weight:700;font-size:1.25rem;color:#fff;margin:4px 0 6px}
+.scoremeta p{font-size:.88rem;color:#a9bbd0}
+
+/* Sicherheits-Hinweis Lead */
+.leadtrust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px}
+.leadtrust span{display:inline-flex;align-items:center;gap:.5em;font-size:.86rem;color:var(--slate);font-weight:500}
+.leadtrust svg{width:16px;height:16px;color:var(--leaf);flex:0 0 auto}
+
+/* ============================================================
+   WEBUNDO Rechner — Slider-Felder (vereinfachte Eingabe)
+============================================================ */
+.sliders{display:grid;gap:28px;max-width:780px}
+.sfield__top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:12px}
+.sfield__top label{font-weight:600;font-size:1.02rem;color:var(--ink)}
+.sfield__val{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--blue);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sfield input[type=range]{margin-top:0}
+.sfield__scale{display:flex;justify-content:space-between;font-size:.74rem;color:var(--muted);margin-top:7px;font-weight:500}
+/* dickerer, griffigerer Regler */
+.sfield input[type=range]{height:8px}
+.sfield input[type=range]::-webkit-slider-thumb{width:26px;height:26px}
+.sfield input[type=range]::-moz-range-thumb{width:26px;height:26px}
+
+/* Vertrauens-/Konversionsleiste über dem Formular */
+.convbar{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:center;margin:22px 0 4px}
+.convbar span{display:inline-flex;align-items:center;gap:.5em;font-size:.9rem;font-weight:600;color:var(--navy)}
+.convbar svg{width:18px;height:18px;color:var(--leaf);flex:0 0 auto}
