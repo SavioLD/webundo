@@ -74,12 +74,24 @@
   ".wb-cw-send:hover{background:#0f57aa}.wb-cw-send svg{width:20px;height:20px}" +
   ".wb-cw-note{text-align:center;font-size:.72rem;color:#8aa0b8;margin-top:8px}" +
   "@media (max-width:480px){.wb-cw-panel{right:12px;left:12px;width:auto;bottom:90px;height:calc(100vh - 120px)}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
-  "@media (prefers-reduced-motion:reduce){.wb-cw-launch,.wb-cw-pulse,.wb-cw-on,.wb-cw-msg{animation:none!important;transition:none!important}.wb-cw-launch{transform:scale(1)}}";
+  /* WhatsApp-Button (unten links) */
+  ".wb-wa{position:fixed;left:24px;bottom:24px;z-index:99998;display:flex;align-items:center;height:60px;width:60px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.75);text-decoration:none;overflow:hidden;transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),width .3s,border-radius .3s,box-shadow .25s}" +
+  ".wb-wa.in{transform:scale(1)}" +
+  ".wb-wa:hover{box-shadow:0 18px 36px -12px rgba(37,211,102,.9)}" +
+  ".wb-wa__ic{flex:0 0 60px;width:60px;height:60px;display:grid;place-items:center}" +
+  ".wb-wa__ic svg{width:34px;height:34px}" +
+  ".wb-wa__lbl{white-space:nowrap;font-weight:700;font-size:.95rem;opacity:0;max-width:0;overflow:hidden;transition:opacity .25s,max-width .3s,padding .3s}" +
+  ".wb-wa__pulse{position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:wbpulse 2.4s ease-out infinite;pointer-events:none}" +
+  ".wb-wa:hover .wb-wa__pulse{display:none}" +
+  "@media(min-width:700px){.wb-wa:hover{width:206px;border-radius:32px}.wb-wa:hover .wb-wa__lbl{opacity:1;max-width:150px;padding-right:22px}}" +
+  "@media(max-width:480px){.wb-wa{left:16px;bottom:16px;width:54px;height:54px}.wb-wa__ic{flex-basis:54px;width:54px;height:54px}}" +
+  "@media (prefers-reduced-motion:reduce){.wb-cw-launch,.wb-cw-pulse,.wb-cw-on,.wb-cw-msg,.wb-wa,.wb-wa__pulse{animation:none!important;transition:none!important}.wb-cw-launch,.wb-wa{transform:scale(1)}}";
 
   var ICON_CHAT = '<svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>';
   var ICON_CLOSE = '<svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
   var ICON_SPARK = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></svg>';
   var ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>';
+  var ICON_WA = '<svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.5 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.3.6.6-3.2-.2-.4C7 18.9 6.5 17 6.5 15 6.5 9.8 10.8 5.5 16 5.5S25.5 9.8 25.5 15 21.2 24.8 16 24.8zm5.4-7c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>';
 
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 
@@ -165,6 +177,16 @@
     input.addEventListener("keydown", function(e){ if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); send(input.value); } });
     input.addEventListener("input", function(){ input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 90) + "px"; });
     document.addEventListener("keydown", function(e){ if (e.key === "Escape") close(); });
+
+    // WhatsApp-Button (unten links) – öffnet WhatsApp mit vorgefertigter Nachricht
+    var wa = document.createElement("a");
+    wa.className = "wb-wa";
+    wa.href = "https://wa.me/491723513643?text=" + encodeURIComponent("Liebes Webundo Team, ");
+    wa.target = "_blank"; wa.rel = "noopener";
+    wa.setAttribute("aria-label", "WhatsApp-Chat mit WEBUNDO");
+    wa.innerHTML = '<span class="wb-wa__pulse"></span><span class="wb-wa__ic">' + ICON_WA + '</span><span class="wb-wa__lbl">WhatsApp Chat</span>';
+    document.body.appendChild(wa);
+    setTimeout(function(){ wa.classList.add("in"); }, 900);
 
     // Eingangs-Animationen
     var launch = root.querySelector(".wb-cw-launch");

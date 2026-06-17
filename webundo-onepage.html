@@ -659,8 +659,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
 
 /* ---------- Footer (Webundo) ---------- */
 .wfooter{background:var(--navy-800);color:#a9bbd0}
-.wfooter__inner{display:grid;grid-template-columns:1fr 1.3fr 1.2fr;gap:40px;padding:56px 24px 40px}
-.wfooter h4{color:var(--blue-bright);font-family:var(--disp);font-size:1.15rem;margin-bottom:18px}
+.wfooter__inner{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:40px;padding:60px 24px 44px}
+.wfooter h4{color:var(--blue-bright);font-family:var(--disp);font-size:1.05rem;margin-bottom:18px}
 .wfooter a:hover{color:#fff}
 .wfooter__links{display:flex;flex-wrap:wrap;gap:10px 22px}
 .wfooter__links a{font-weight:600;color:#cdd9e7}
@@ -958,6 +958,44 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 }
 
 /* ============================================================
+   WEBUNDO — Promobar (Fokus auf Einsparrechner)
+============================================================ */
+.promobar{position:relative;background:linear-gradient(90deg,var(--navy) 0%,var(--blue) 100%);color:#fff}
+.promobar__link{display:flex;align-items:center;justify-content:center;gap:.55em;flex-wrap:wrap;padding:9px 46px;font-size:.9rem;font-weight:500;line-height:1.3;color:#fff;text-align:center}
+.promobar__link svg{width:18px;height:18px;flex:0 0 auto;color:#bcd9fb}
+.promobar__link strong{font-weight:800;color:#fff}
+.promobar__cta{font-weight:800;background:rgba(255,255,255,.16);padding:.24em .85em;border-radius:999px;white-space:nowrap;transition:background .15s}
+.promobar__link:hover .promobar__cta{background:rgba(255,255,255,.3)}
+.promobar__x{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#fff;opacity:.7;font-size:1.3rem;line-height:1;cursor:pointer;padding:4px 9px;border-radius:8px}
+.promobar__x:hover{opacity:1;background:rgba(255,255,255,.12)}
+.promobar.hide{display:none}
+@media(max-width:600px){.promobar__hideMob{display:none}.promobar__link{padding:8px 34px;font-size:.82rem;gap:.45em}}
+
+/* zwei Header-Buttons sauf engeren Desktops zusammenhalten */
+@media(max-width:1180px) and (min-width:1101px){.topbar__actions .btn--ghost{display:none}}
+
+/* ============================================================
+   WEBUNDO — Fußzeile (übersichtlich, 4 Spalten, WhatsApp + LinkedIn)
+============================================================ */
+.wfooter__brand .wfooter__logo{display:flex;align-items:center;gap:11px;font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:.02em;color:#fff;margin-bottom:14px}
+.wfooter__brand .wfooter__logo svg{width:36px;height:36px;flex:0 0 auto}
+.wfooter__brand p{color:#9fb2c9;font-size:.92rem;line-height:1.6;max-width:34ch;margin-bottom:20px}
+.wfooter__list{display:flex;flex-direction:column;gap:11px}
+.wfooter__list a{color:#cdd9e7;font-weight:500;font-size:.95rem;transition:color .15s,padding .15s}
+.wfooter__list a:hover{color:#fff;padding-left:3px}
+.social--wa:hover{background:#25d366;color:#fff}
+.wfooter address{display:grid;gap:14px}
+.wfooter address span,.wfooter address a{display:flex;align-items:flex-start;gap:11px;color:#cdd9e7;font-size:.95rem;line-height:1.4}
+.wfooter address svg{width:19px;height:19px;color:var(--blue-bright);flex:0 0 auto;margin-top:1px}
+@media (max-width:980px){
+  .wfooter__inner{grid-template-columns:1fr 1fr;gap:32px}
+  .wfooter__brand{grid-column:1 / -1}
+}
+@media (max-width:560px){
+  .wfooter__inner{grid-template-columns:1fr;gap:30px}
+}
+
+/* ============================================================
    Kurt Mager Solutions — Beschaffungs-/Kostenrechner
    Adaptiert nach Vorlage · Ländle Digital
 ============================================================ */
@@ -1150,6 +1188,10 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
 </head>
 <body>
 
+<div class="promobar" id="promobar">
+  <a class="promobar__link" href="#rechner"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M15 11h.01M8 15h2M15 15h.01"/></svg> <strong>Einsparrechner:</strong> <span class="promobar__hideMob">In 60 Sekunden Ihr Einsparpotenzial berechnen &amp; direkt anfragen.</span> <span class="promobar__cta">Jetzt berechnen &rarr;</span></a>
+  <button class="promobar__x" data-promo-x aria-label="Hinweis schließen">&times;</button>
+</div>
 <header class="topbar" id="topbar">
   <div class="shell topbar__inner">
     <a href="#start" class="brand" aria-label="WEBUNDO – Startseite"><span class="brand__logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 372 96" width="372" height="96" role="img" aria-label="WEBUNDO">
@@ -1179,7 +1221,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       <a href="#kontakt">Kontakt</a>
     </nav>
     <div class="topbar__actions">
-      <a href="#kontakt" class="btn btn--primary btn--sm">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#rechner" class="btn btn--primary btn--sm"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M15 11h.01M8 15h2M15 15h.01"/></svg> Sparrechner</a>
+      <a href="#kontakt" class="btn btn--ghost btn--sm">Anfrage</a>
     </div>
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -1190,7 +1233,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
     <a href="#optimierung">Optimierung</a>
     <a href="#unternehmen">Unternehmen</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="#kontakt" class="btn btn--primary btn--block">Anfrage starten</a>
+    <a href="#rechner" class="btn btn--primary btn--block">Einsparungsrechner</a>
+    <a href="#kontakt" class="btn btn--ghost btn--block">Anfrage starten</a>
   </div>
 </header>
 
@@ -1229,6 +1273,17 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2"/><path d="m13 15 2.5 2.5a1.4 1.4 0 0 0 2-2L13 11l-2 1.5a2 2 0 0 1-2.5 0L7 11l-4 4"/><path d="m21 11-4-4-3 1"/><path d="M3 7l4 4"/></svg></div><div><h3>Alles aus einer Hand</h3><p>Versorgung, Beschaffung und Optimierung vereint.</p></div></div>
       <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 22V10l5-8a2 2 0 0 1 3 2l-1 6h5a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 21 22z"/><path d="M7 10H4v12h3"/></svg></div><div><h3>Bewährte Qualität</h3><p>Geprüfte Marken und Industriestandards.</p></div></div>
     </div></section>
+
+<!-- RECHNER-TEASER (Fokus) -->
+<section class="ctaband"><div class="shell ctaband__inner">
+  <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M15 11h.01M8 15h2M15 15h.01"/></svg></div>
+  <div>
+    <span class="phero__eyebrow" style="margin-bottom:10px">Einsparrechner · in 60 Sekunden</span>
+    <h2>Sehen Sie, was WEBUNDO Ihnen spart – und fragen Sie direkt an</h2>
+    <p>Lieferanten, Bestellungen und Volumen eingeben, sofort Ihr jährliches Einsparpotenzial und Ihren Potenzial-Score erhalten – und Ihre Anfrage gleich mit absenden. Unverbindlich.</p>
+  </div>
+  <a href="#rechner" class="btn btn--primary btn--lg">Jetzt berechnen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></section>
 
 <!-- 3 SÄULEN -->
 <section class="pillars" id="leistungen"><div class="shell">
@@ -1269,17 +1324,6 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
       <a href="#optimierung" class="btn btn--primary">Lösung anfragen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
   </div>
-</div></section>
-
-<!-- RECHNER-TEASER -->
-<section class="ctaband"><div class="shell ctaband__inner">
-  <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
-  <div>
-    <span class="phero__eyebrow" style="margin-bottom:10px">Einkaufs-Potenzial-Rechner</span>
-    <h2>Sehen Sie in 60 Sekunden, was WEBUNDO Ihnen spart</h2>
-    <p>Lieferanten, Bestellungen und Volumen eingeben – Sie erhalten sofort Ihr jährliches Einsparpotenzial und Ihren persönlichen Potenzial-Score.</p>
-  </div>
-  <a href="#rechner" class="btn btn--primary btn--lg">Jetzt berechnen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </div></section>
 
 <!-- EIN PARTNER FÜR ALLES -->
@@ -2112,17 +2156,23 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
 
 <footer class="wfooter">
   <div class="shell wfooter__inner">
-    <div>
-      <h4>Social Media</h4>
-      <div class="socials"><a class="social" href="https://www.linkedin.com/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.76V21h-4z"/></svg></a></div>
+    <div class="wfooter__brand">
+      <div class="wfooter__logo"><svg viewBox="0 0 96 96" aria-hidden="true"><defs><linearGradient id="fwB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a90cc"/><stop offset="1" stop-color="#1c5a9c"/></linearGradient><linearGradient id="fwG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3f8f2c"/><stop offset="1" stop-color="#83c64b"/></linearGradient></defs><g transform="rotate(-20 48 48)"><path fill="url(#fwG)" fill-rule="evenodd" d="M10,48a38,38 0 1,0 76,0a38,38 0 1,0 -76,0Z M12,28a34,34 0 1,0 68,0a34,34 0 1,0 -68,0Z"/><path fill="url(#fwB)" fill-rule="evenodd" d="M10,48a38,38 0 1,0 76,0a38,38 0 1,0 -76,0Z M16,72a33,33 0 1,0 66,0a33,33 0 1,0 -66,0Z"/></g></svg><span>WEBUNDO</span></div>
+      <p>Einfach beschafft. Intelligent optimiert. Ihr Partner für Versorgung, Beschaffung und Optimierung.</p>
+      <div class="socials">
+        <a class="social" href="https://www.linkedin.com/in/thorsten-w-46a831162/" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.76V21h-4z"/></svg></a>
+        <a class="social social--wa" href="https://wa.me/491723513643?text=Liebes%20Webundo%20Team%2C%20" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.5 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.3.6.6-3.2-.2-.4C7 18.9 6.5 17 6.5 15 6.5 9.8 10.8 5.5 16 5.5S25.5 9.8 25.5 15 21.2 24.8 16 24.8zm5.4-7c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
+      </div>
     </div>
-    <div>
-      <h4>Quick Links</h4>
-      <nav class="wfooter__links" aria-label="Footer-Navigation">
-        <a href="#start">Start</a><a href="#versorgung">Versorgung</a><a href="#beschaffung">Beschaffung</a><a href="#optimierung">Optimierung</a><a href="#unternehmen">Unternehmen</a><a href="#kontakt">Kontakt</a><a href="#rechner">Rechner</a>
-      </nav>
+    <div class="wfooter__col">
+      <h4>Navigation</h4>
+      <ul class="wfooter__list"><li><a href="#start">Start</a></li><li><a href="#unternehmen">Unternehmen</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
     </div>
-    <div>
+    <div class="wfooter__col">
+      <h4>Leistungen</h4>
+      <ul class="wfooter__list"><li><a href="#versorgung">Versorgung</a></li><li><a href="#beschaffung">Beschaffung</a></li><li><a href="#optimierung">Optimierung</a></li><li><a href="#rechner">Einsparrechner</a></li></ul>
+    </div>
+    <div class="wfooter__col">
       <h4>Kontakt</h4>
       <address>
         <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bahnhofstraße 9, 78647 Trossingen</span>
@@ -2145,6 +2195,18 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
 
   // Jahr im Footer
   $$("[data-year]").forEach((e) => (e.textContent = new Date().getFullYear()));
+
+  // Promobar (Einsparrechner-Hinweis) – ausblendbar, gemerkt
+  const promo = $("#promobar");
+  if (promo) {
+    try { if (localStorage.getItem("wb_promo_hidden") === "1") promo.classList.add("hide"); } catch (_) {}
+    const px = promo.querySelector("[data-promo-x]");
+    if (px) px.addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      promo.classList.add("hide");
+      try { localStorage.setItem("wb_promo_hidden", "1"); } catch (_) {}
+    });
+  }
 
   // Mobile-Menü
   const burger = $("#burger"), mobile = $("#topbarMobile");
@@ -2639,12 +2701,24 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
   ".wb-cw-send:hover{background:#0f57aa}.wb-cw-send svg{width:20px;height:20px}" +
   ".wb-cw-note{text-align:center;font-size:.72rem;color:#8aa0b8;margin-top:8px}" +
   "@media (max-width:480px){.wb-cw-panel{right:12px;left:12px;width:auto;bottom:90px;height:calc(100vh - 120px)}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
-  "@media (prefers-reduced-motion:reduce){.wb-cw-launch,.wb-cw-pulse,.wb-cw-on,.wb-cw-msg{animation:none!important;transition:none!important}.wb-cw-launch{transform:scale(1)}}";
+  /* WhatsApp-Button (unten links) */
+  ".wb-wa{position:fixed;left:24px;bottom:24px;z-index:99998;display:flex;align-items:center;height:60px;width:60px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.75);text-decoration:none;overflow:hidden;transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),width .3s,border-radius .3s,box-shadow .25s}" +
+  ".wb-wa.in{transform:scale(1)}" +
+  ".wb-wa:hover{box-shadow:0 18px 36px -12px rgba(37,211,102,.9)}" +
+  ".wb-wa__ic{flex:0 0 60px;width:60px;height:60px;display:grid;place-items:center}" +
+  ".wb-wa__ic svg{width:34px;height:34px}" +
+  ".wb-wa__lbl{white-space:nowrap;font-weight:700;font-size:.95rem;opacity:0;max-width:0;overflow:hidden;transition:opacity .25s,max-width .3s,padding .3s}" +
+  ".wb-wa__pulse{position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:wbpulse 2.4s ease-out infinite;pointer-events:none}" +
+  ".wb-wa:hover .wb-wa__pulse{display:none}" +
+  "@media(min-width:700px){.wb-wa:hover{width:206px;border-radius:32px}.wb-wa:hover .wb-wa__lbl{opacity:1;max-width:150px;padding-right:22px}}" +
+  "@media(max-width:480px){.wb-wa{left:16px;bottom:16px;width:54px;height:54px}.wb-wa__ic{flex-basis:54px;width:54px;height:54px}}" +
+  "@media (prefers-reduced-motion:reduce){.wb-cw-launch,.wb-cw-pulse,.wb-cw-on,.wb-cw-msg,.wb-wa,.wb-wa__pulse{animation:none!important;transition:none!important}.wb-cw-launch,.wb-wa{transform:scale(1)}}";
 
   var ICON_CHAT = '<svg class="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg>';
   var ICON_CLOSE = '<svg class="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
   var ICON_SPARK = '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.6L18 9l-4.2 1.4L12 15l-1.8-4.6L6 9l4.2-1.4z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8z"/></svg>';
   var ICON_SEND = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>';
+  var ICON_WA = '<svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.5 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.3.6.6-3.2-.2-.4C7 18.9 6.5 17 6.5 15 6.5 9.8 10.8 5.5 16 5.5S25.5 9.8 25.5 15 21.2 24.8 16 24.8zm5.4-7c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>';
 
   function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 
@@ -2730,6 +2804,16 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #fff
     input.addEventListener("keydown", function(e){ if (e.key === "Enter" && !e.shiftKey){ e.preventDefault(); send(input.value); } });
     input.addEventListener("input", function(){ input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 90) + "px"; });
     document.addEventListener("keydown", function(e){ if (e.key === "Escape") close(); });
+
+    // WhatsApp-Button (unten links) – öffnet WhatsApp mit vorgefertigter Nachricht
+    var wa = document.createElement("a");
+    wa.className = "wb-wa";
+    wa.href = "https://wa.me/491723513643?text=" + encodeURIComponent("Liebes Webundo Team, ");
+    wa.target = "_blank"; wa.rel = "noopener";
+    wa.setAttribute("aria-label", "WhatsApp-Chat mit WEBUNDO");
+    wa.innerHTML = '<span class="wb-wa__pulse"></span><span class="wb-wa__ic">' + ICON_WA + '</span><span class="wb-wa__lbl">WhatsApp Chat</span>';
+    document.body.appendChild(wa);
+    setTimeout(function(){ wa.classList.add("in"); }, 900);
 
     // Eingangs-Animationen
     var launch = root.querySelector(".wb-cw-launch");

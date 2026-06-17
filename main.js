@@ -10,6 +10,18 @@
   // Jahr im Footer
   $$("[data-year]").forEach((e) => (e.textContent = new Date().getFullYear()));
 
+  // Promobar (Einsparrechner-Hinweis) – ausblendbar, gemerkt
+  const promo = $("#promobar");
+  if (promo) {
+    try { if (localStorage.getItem("wb_promo_hidden") === "1") promo.classList.add("hide"); } catch (_) {}
+    const px = promo.querySelector("[data-promo-x]");
+    if (px) px.addEventListener("click", (e) => {
+      e.preventDefault(); e.stopPropagation();
+      promo.classList.add("hide");
+      try { localStorage.setItem("wb_promo_hidden", "1"); } catch (_) {}
+    });
+  }
+
   // Mobile-Menü
   const burger = $("#burger"), mobile = $("#topbarMobile");
   if (burger && mobile) {
