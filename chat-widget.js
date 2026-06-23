@@ -39,7 +39,7 @@
   ".wb-cw.open .wb-cw-panel{opacity:1;transform:none;pointer-events:auto}" +
   ".wb-cw-frame{width:100%;height:100%;border:0;display:block}" +
   ".wb-cw-load{position:absolute;inset:0;display:grid;place-items:center;color:#9fb2c9;font-size:.9rem;font-weight:600}" +
-  "@media (max-width:480px){.wb-cw-panel{right:0;left:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
+  "@media (max-width:480px){.wb-cw-panel{right:16px;left:16px;bottom:88px;width:auto;max-width:none;height:calc(100vh - 140px)}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
   /* WhatsApp-Button (unten links) */
   ".wb-wa{position:fixed;left:24px;bottom:24px;z-index:99998;display:flex;align-items:center;height:60px;width:60px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.75);text-decoration:none;overflow:hidden;transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),width .3s,border-radius .3s,box-shadow .25s}" +
   ".wb-wa.in{transform:scale(1)}" +
@@ -78,6 +78,10 @@
 
     var frame = root.querySelector(".wb-cw-frame");
     var loaded = false;
+    frame.addEventListener("load", function () {
+      var l = root.querySelector(".wb-cw-load");
+      if (l) l.style.display = "none";
+    });
     function open() {
       root.classList.add("open");
       if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
