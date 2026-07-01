@@ -1001,3 +1001,31 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 .ucard p{color:var(--slate);font-size:.93rem;line-height:1.5}
 @media (max-width:980px){.usecase__grid{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.usecase__grid{grid-template-columns:1fr}}
+
+/* ============================================================
+   WEBUNDO — Nav-Dropdown „Lösungen" + Shop-Link
+============================================================ */
+.navdd{position:relative;display:inline-flex;align-items:center}
+.navdd__btn{background:none;border:0;cursor:pointer;font-family:inherit;font-weight:600;font-size:.8rem;
+  letter-spacing:.015em;text-transform:uppercase;color:var(--ink);padding:.5em .68em;
+  display:inline-flex;align-items:center;gap:.4em;position:relative;transition:color .15s}
+.navdd__btn svg{width:12px;height:12px;transition:transform .2s}
+.navdd__btn:hover,.navdd:hover .navdd__btn,.navdd.open .navdd__btn{color:var(--blue)}
+.navdd:hover .navdd__btn svg,.navdd.open .navdd__btn svg{transform:rotate(180deg)}
+.navdd__btn.is-active{color:var(--blue-bright)}
+.navdd__menu{position:absolute;top:calc(100% + 6px);left:0;min-width:210px;background:#fff;
+  border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-lg);padding:8px;
+  display:flex;flex-direction:column;gap:2px;opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .18s,transform .18s,visibility .18s;z-index:60}
+.navdd:hover .navdd__menu,.navdd:focus-within .navdd__menu,.navdd.open .navdd__menu{opacity:1;visibility:visible;transform:none}
+.navdd__menu a{padding:.62em .85em;border-radius:9px;font-weight:600;font-size:.92rem;color:var(--ink);
+  text-transform:none;letter-spacing:0;white-space:nowrap}
+.navdd__menu a::after{display:none}
+.navdd__menu a:hover{background:var(--blue-50);color:var(--blue)}
+.navdd__menu a.is-active{color:var(--blue-bright);background:var(--blue-50)}
+/* Shop-Link im Header dezent hervorgehoben */
+.navlink-shop{color:var(--blue)!important}
+.navlink-shop:hover{color:var(--blue-700)!important}
+/* Mobile: Gruppen-Label + Unterpunkte */
+.topbar__mobile-h{font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:.9em .6em .2em}
+.topbar__mobile a.topbar__mobile-sub{padding-left:1.5em}

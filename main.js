@@ -87,6 +87,26 @@
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
   }
+
+  // Nav-Dropdown „Lösungen" (Klick/Touch – Hover läuft per CSS)
+  $$(".navdd").forEach((dd) => {
+    const btn = dd.querySelector(".navdd__btn");
+    if (!btn) return;
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const open = dd.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".navdd")) {
+      $$(".navdd.open").forEach((d) => {
+        d.classList.remove("open");
+        const b = d.querySelector(".navdd__btn");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
 })();
 
 /* ============================================================
