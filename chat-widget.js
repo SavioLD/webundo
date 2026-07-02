@@ -1,7 +1,7 @@
 /* ============================================================
-   WEBUNDO — FAQ-Chatbot (ThinkUp AI) + WhatsApp-Button
+   WEBUNDO — KI-Assistent (ThinkUp AI) + WhatsApp-Button
    Eigenständiges Widget: injiziert eigenes CSS + DOM ins <body>.
-   Der Chatbot wird per iframe eingebunden und erst beim ersten
+   Der Assistent wird per iframe eingebunden und erst beim ersten
    Öffnen geladen (Lazy-Load). Ländle Digital
 ============================================================ */
 (function () {
@@ -11,7 +11,7 @@
 
   var CONFIG = {
     iframeSrc: "https://www.thinkupai.de/entwicklungen/webundo/faqbot",
-    tip: 'Fragen? Unser <b>FAQ-Chatbot</b> hilft.',
+    tip: 'Fragen? Unser <b>KI-Assistent</b> hilft.',
     waNumber: "491723513643",
     waText: "Liebes Webundo Team, "
   };
@@ -35,11 +35,16 @@
   ".wb-cw-tip b{color:#1366c8}" +
   ".wb-cw-tip__x{position:absolute;top:-7px;right:-7px;width:20px;height:20px;border-radius:50%;background:#0a3a66;color:#fff;border:0;cursor:pointer;font-size:12px;line-height:1}" +
   ".wb-cw.open .wb-cw-tip{display:none}" +
-  ".wb-cw-panel{position:fixed;right:24px;bottom:100px;width:400px;max-width:calc(100vw - 32px);height:680px;max-height:calc(100vh - 124px);background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(10,58,102,.6);z-index:99999;transform-origin:bottom right;opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:opacity .28s cubic-bezier(.16,.7,.2,1),transform .28s cubic-bezier(.16,.7,.2,1)}" +
+  ".wb-cw-panel{position:fixed;right:24px;bottom:100px;width:384px;max-width:calc(100vw - 32px);height:580px;max-height:calc(100vh - 124px);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(10,58,102,.6);z-index:99999;transform-origin:bottom right;opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:opacity .28s cubic-bezier(.16,.7,.2,1),transform .28s cubic-bezier(.16,.7,.2,1)}" +
   ".wb-cw.open .wb-cw-panel{opacity:1;transform:none;pointer-events:auto}" +
   ".wb-cw-frame{width:100%;height:100%;border:0;display:block}" +
-  ".wb-cw-load{position:absolute;inset:0;display:grid;place-items:center;color:#9fb2c9;font-size:.9rem;font-weight:600}" +
-  "@media (max-width:480px){.wb-cw-panel{right:16px;left:16px;bottom:88px;width:auto;max-width:none;height:calc(100vh - 140px)}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
+  ".wb-cw-load{position:absolute;inset:0;display:grid;place-items:center;color:#9fb2c9;font-size:.9rem;font-weight:600;pointer-events:none}" +
+  ".wb-cw-panel{display:flex;flex-direction:column}" +
+  ".wb-cw-frame{flex:1 1 auto;min-height:0}" +
+  ".wb-cw-faq{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;background:#f2f6fb;border-top:1px solid #e1e8f0;font-size:.86rem;font-weight:700;color:#0b4789;text-decoration:none;transition:background .15s}" +
+  ".wb-cw-faq:hover{background:#e8f1fc}" +
+  ".wb-cw-faq svg{width:16px;height:16px;flex:0 0 auto}" +
+  "@media (max-width:480px){.wb-cw-panel{right:0;left:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
   /* WhatsApp-Button (unten links) */
   ".wb-wa{position:fixed;left:24px;bottom:24px;z-index:99998;display:flex;align-items:center;height:60px;width:60px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.75);text-decoration:none;overflow:hidden;transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),width .3s,border-radius .3s,box-shadow .25s}" +
   ".wb-wa.in{transform:scale(1)}" +
@@ -62,43 +67,31 @@
     style.textContent = CSS;
     document.head.appendChild(style);
 
-    // FAQ-Chatbot (iframe, Lazy-Load)
+    // KI-Assistent (iframe, Lazy-Load)
     var root = document.createElement("div");
     root.className = "wb-cw";
     root.innerHTML =
       '<div class="wb-cw-tip" data-tip><button class="wb-cw-tip__x" data-tip-x aria-label="Schließen">×</button>👋 ' + CONFIG.tip + '</div>' +
-      '<button class="wb-cw-launch" data-toggle aria-label="FAQ-Chatbot öffnen">' +
+      '<button class="wb-cw-launch" data-toggle aria-label="KI-Assistent öffnen">' +
         '<span class="wb-cw-pulse"></span><span class="wb-cw-dot">1</span>' + ICON_CHAT + ICON_CLOSE +
       '</button>' +
-      '<aside class="wb-cw-panel" role="dialog" aria-label="WEBUNDO FAQ-Chatbot">' +
-        '<div class="wb-cw-load">FAQ-Chatbot wird geladen …</div>' +
-        '<iframe class="wb-cw-frame" title="WEBUNDO FAQ-Chatbot" allow="clipboard-write" loading="lazy" data-src="' + CONFIG.iframeSrc + '"></iframe>' +
+      '<aside class="wb-cw-panel" role="dialog" aria-label="WEBUNDO KI-Assistent">' +
+        '<div class="wb-cw-load">KI-Assistent wird geladen …</div>' +
+        '<iframe class="wb-cw-frame" title="WEBUNDO KI-Assistent" allow="clipboard-write" loading="lazy" data-src="' + CONFIG.iframeSrc + '"></iframe>' +
+        '<a class="wb-cw-faq" href="faq.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 0 1 5.2 1c0 1.8-2.7 2.7-2.7 2.7"/><path d="M12 17h.01"/></svg>Häufige Fragen (FAQ)</a>' +
       '</aside>';
     document.body.appendChild(root);
 
     var frame = root.querySelector(".wb-cw-frame");
     var loaded = false;
-    frame.addEventListener("load", function () {
-      var l = root.querySelector(".wb-cw-load");
-      if (l) l.style.display = "none";
-    });
-    function preload() {
-      if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
-    }
     function open() {
       root.classList.add("open");
-      preload();
+      if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
     }
     function close() { root.classList.remove("open"); }
     function toggle() { root.classList.contains("open") ? close() : open(); }
 
-    var launchBtn = root.querySelector("[data-toggle]");
-    launchBtn.addEventListener("click", toggle);
-    // Variante 2: iframe schon beim ersten Hover/Antippen/Fokus vorladen,
-    // damit der Chat beim Klick praktisch sofort da ist.
-    ["mouseenter", "touchstart", "focus"].forEach(function (ev) {
-      launchBtn.addEventListener(ev, preload, { once: true, passive: true });
-    });
+    root.querySelector("[data-toggle]").addEventListener("click", toggle);
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 
     // WhatsApp-Button (unten links)
