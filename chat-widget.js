@@ -84,6 +84,10 @@
 
     var frame = root.querySelector(".wb-cw-frame");
     var loaded = false;
+    frame.addEventListener("load", function () {
+      var l = root.querySelector(".wb-cw-load");
+      if (l) l.style.display = "none";
+    });
     function open() {
       root.classList.add("open");
       if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
