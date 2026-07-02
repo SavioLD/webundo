@@ -38,7 +38,6 @@
   ".wb-cw-panel{position:fixed;right:24px;bottom:100px;width:384px;max-width:calc(100vw - 32px);height:580px;max-height:calc(100vh - 124px);background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(10,58,102,.6);z-index:99999;transform-origin:bottom right;opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:opacity .28s cubic-bezier(.16,.7,.2,1),transform .28s cubic-bezier(.16,.7,.2,1)}" +
   ".wb-cw.open .wb-cw-panel{opacity:1;transform:none;pointer-events:auto}" +
   ".wb-cw-frame{width:100%;height:100%;border:0;display:block}" +
-  ".wb-cw-load{position:absolute;inset:0;display:grid;place-items:center;color:#9fb2c9;font-size:.9rem;font-weight:600;pointer-events:none}" +
   ".wb-cw-panel{display:flex;flex-direction:column}" +
   ".wb-cw-frame{flex:1 1 auto;min-height:0}" +
   ".wb-cw-faq{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;background:#f2f6fb;border-top:1px solid #e1e8f0;font-size:.86rem;font-weight:700;color:#0b4789;text-decoration:none;transition:background .15s}" +
@@ -76,7 +75,6 @@
         '<span class="wb-cw-pulse"></span><span class="wb-cw-dot">1</span>' + ICON_CHAT + ICON_CLOSE +
       '</button>' +
       '<aside class="wb-cw-panel" role="dialog" aria-label="WEBUNDO KI-Assistent">' +
-        '<div class="wb-cw-load">KI-Assistent wird geladen …</div>' +
         '<iframe class="wb-cw-frame" title="WEBUNDO KI-Assistent" allow="clipboard-write" loading="lazy" data-src="' + CONFIG.iframeSrc + '"></iframe>' +
         '<a class="wb-cw-faq" href="faq.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.3 9.3a2.7 2.7 0 0 1 5.2 1c0 1.8-2.7 2.7-2.7 2.7"/><path d="M12 17h.01"/></svg>Häufige Fragen (FAQ)</a>' +
       '</aside>';
@@ -84,10 +82,6 @@
 
     var frame = root.querySelector(".wb-cw-frame");
     var loaded = false;
-    frame.addEventListener("load", function () {
-      var l = root.querySelector(".wb-cw-load");
-      if (l) l.style.display = "none";
-    });
     function open() {
       root.classList.add("open");
       if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
