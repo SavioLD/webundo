@@ -1029,3 +1029,26 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 /* Mobile: Gruppen-Label + Unterpunkte */
 .topbar__mobile-h{font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:.9em .6em .2em}
 .topbar__mobile a.topbar__mobile-sub{padding-left:1.5em}
+
+/* ============================================================
+   WEBUNDO — FAQ (Seite + Mini-Accordions auf Unterseiten)
+============================================================ */
+.faqsec{padding:64px 0;background:#fff}
+.faqsec--soft{background:var(--soft)}
+.faqcat{max-width:820px;margin:0 auto 38px}
+.faqcat:last-child{margin-bottom:0}
+.faqcat>h2{font-size:1.3rem;margin-bottom:16px;color:var(--navy);display:flex;align-items:center;gap:.55em}
+.faqcat>h2 .fnum{flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.85rem;font-weight:800;color:#fff;background:linear-gradient(135deg,#2a8be8,var(--navy))}
+.faqacc{border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--sh-sm);overflow:hidden}
+.faqacc+.faqacc{margin-top:10px}
+.faqacc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:16px 18px;font-weight:600;font-size:1rem;color:var(--ink);transition:background .15s}
+.faqacc>summary::-webkit-details-marker{display:none}
+.faqacc>summary:hover{background:var(--blue-50)}
+.faqacc__chev{margin-left:auto;flex:0 0 auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--blue-50);color:var(--blue);transition:transform .25s}
+.faqacc__chev svg{width:14px;height:14px}
+.faqacc[open] .faqacc__chev{transform:rotate(180deg)}
+.faqacc[open]>summary{background:var(--blue-50)}
+.faqacc__a{padding:4px 18px 18px;color:var(--slate);font-size:.96rem;line-height:1.65}
+.faqacc__a strong{color:var(--ink)}
+.faqacc__a a{color:var(--blue);font-weight:600}
+.faq-more{text-align:center;margin-top:26px}
