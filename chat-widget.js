@@ -43,7 +43,7 @@
   ".wb-cw-faq{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;background:#f2f6fb;border-top:1px solid #e1e8f0;font-size:.86rem;font-weight:700;color:#0b4789;text-decoration:none;transition:background .15s}" +
   ".wb-cw-faq:hover{background:#e8f1fc}" +
   ".wb-cw-faq svg{width:16px;height:16px;flex:0 0 auto}" +
-  "@media (max-width:480px){.wb-cw-panel{right:0;left:0;bottom:0;width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
+  "@media (max-width:480px){.wb-cw-panel{right:16px;left:16px;bottom:88px;width:auto;max-width:none;height:calc(100vh - 140px)}.wb-cw-launch{right:16px;bottom:16px}.wb-cw-tip{display:none}}" +
   /* WhatsApp-Button (unten links) */
   ".wb-wa{position:fixed;left:24px;bottom:24px;z-index:99998;display:flex;align-items:center;height:60px;width:60px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 14px 30px -12px rgba(37,211,102,.75);text-decoration:none;overflow:hidden;transform:scale(0);transition:transform .35s cubic-bezier(.2,.8,.2,1.2),width .3s,border-radius .3s,box-shadow .25s}" +
   ".wb-wa.in{transform:scale(1)}" +
