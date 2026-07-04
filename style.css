@@ -1052,3 +1052,49 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 .faqacc__a strong{color:var(--ink)}
 .faqacc__a a{color:var(--blue);font-weight:600}
 .faq-more{text-align:center;margin-top:26px}
+
+/* ============================================================
+   WEBUNDO — Trust-Bausteine: 24h-Badge, Risikofrei-Kacheln, Gründer
+============================================================ */
+/* 24h-Angebots-Badge (Trust-Signal) */
+.badge24{display:inline-flex;align-items:center;gap:.6em;background:var(--leaf-50);border:1.5px solid #cfe6bd;color:var(--leaf-600);font-weight:700;font-size:.95rem;padding:.6em 1.15em;border-radius:999px;margin-top:20px}
+.badge24 svg{width:19px;height:19px;flex:0 0 auto}
+.badge24--dark{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35);color:#fff}
+.badge24--dark svg{color:#8fc2f7}
+
+/* Risikofrei-Kacheln (unter Hero) */
+.risk3{padding:36px 0;background:#fff;border-bottom:1px solid var(--line)}
+.risk3__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.riskcard{display:flex;gap:15px;align-items:flex-start;background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:20px 22px;transition:transform .25s,box-shadow .25s}
+.riskcard:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.riskcard__ic{flex:0 0 auto;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:#fff;color:var(--leaf-600);border:1px solid var(--line);box-shadow:var(--sh-sm)}
+.riskcard__ic svg{width:23px;height:23px}
+.riskcard h3{font-size:1rem;margin-bottom:4px}
+.riskcard p{font-size:.9rem;color:var(--slate);line-height:1.5}
+@media(max-width:860px){.risk3__grid{grid-template-columns:1fr}}
+
+/* Gründer-Profil (Unternehmen) + Teaser (Start) */
+.founder{display:grid;grid-template-columns:280px 1fr;gap:44px;align-items:start;margin-top:34px}
+.founder__media{position:relative}
+.founder__media img{width:100%;border-radius:22px;display:block;box-shadow:0 30px 60px -32px rgba(10,58,102,.45)}
+.founder__fallback{display:none;width:220px;height:220px;border-radius:50%;margin:0 auto;place-items:center;background:var(--navy);color:#fff;font-family:var(--disp);font-weight:800;font-size:3rem}
+.founder__media.noimg .founder__fallback{display:grid}
+.founder__body h3{font-size:1.6rem}
+.founder__body .role{color:var(--blue);font-weight:700;font-family:var(--disp);margin:4px 0 16px}
+.founder__body p{color:var(--slate);margin-bottom:13px;line-height:1.7}
+.founder__body p strong{color:var(--ink)}
+.fskills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.fskills span{background:var(--blue-50);color:var(--blue-700);font-weight:600;font-size:.87rem;padding:.5em 1em;border-radius:999px}
+.fteaser{display:grid;grid-template-columns:230px 1fr;gap:40px;align-items:center;background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:24px;padding:clamp(24px,4vw,40px);box-shadow:0 26px 54px -38px rgba(10,58,102,.35)}
+.fteaser__media img{width:100%;border-radius:18px;display:block}
+.fteaser__media .founder__fallback{width:170px;height:170px;font-size:2.4rem}
+.fteaser h2{font-size:clamp(1.25rem,2.6vw,1.7rem);line-height:1.35;margin-bottom:12px;color:var(--navy)}
+.fteaser p{color:var(--slate);margin-bottom:20px}
+.fteaser p strong{color:var(--ink)}
+@media(max-width:860px){
+  .founder{grid-template-columns:1fr;gap:26px}
+  .founder__media img{max-width:280px;margin:0 auto}
+  .fteaser{grid-template-columns:1fr;gap:22px;text-align:center}
+  .fteaser__media img{max-width:200px;margin:0 auto}
+  .fteaser .btn{margin-inline:auto}
+}
