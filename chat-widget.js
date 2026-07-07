@@ -78,14 +78,22 @@
 
     var frame = root.querySelector(".wb-cw-frame");
     var loaded = false;
+    function preload() {
+      if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
+    }
     function open() {
       root.classList.add("open");
-      if (!loaded) { frame.src = frame.getAttribute("data-src"); loaded = true; }
+      preload();
     }
     function close() { root.classList.remove("open"); }
     function toggle() { root.classList.contains("open") ? close() : open(); }
 
-    root.querySelector("[data-toggle]").addEventListener("click", toggle);
+    var launchBtn = root.querySelector("[data-toggle]");
+    launchBtn.addEventListener("click", toggle);
+    // Chat schon beim ersten Hover/Antippen/Fokus vorladen -> beim Klick sofort da
+    ["mouseenter", "touchstart", "focus"].forEach(function (ev) {
+      launchBtn.addEventListener(ev, preload, { once: true, passive: true });
+    });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
 
     // WhatsApp-Button (unten links)
