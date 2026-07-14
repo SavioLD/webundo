@@ -193,7 +193,7 @@
     const r = last || compute();
     const g = (id) => ($("#" + id) ? $("#" + id).value : "");
     const b = bereiche();
-    const bsel = [b.versorgung && "Versorgung", b.beschaffung && "Beschaffung", b.optimierung && "Optimierung"].filter(Boolean).join(", ") || "—";
+    const bsel = [b.versorgung && "Sortiment", b.beschaffung && "Sonderbedarfe", b.optimierung && "Service"].filter(Boolean).join(", ") || "—";
     const ref = "WB-POT-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
     const body = [
       "EINKAUFS-POTENZIAL-RECHNER — Auswertung",
