@@ -222,7 +222,25 @@ type AnalyticsEvent = {
 
 ## Kunden & Websites einrichten
 
-Im MVP über SQL/Seed. Beispiel (eine neue Kundin mit Website + Kunden-Login):
+### Massen-Provisionierung (empfohlen)
+
+Reale Kundenwebsites werden in **`config/websites.json`** gepflegt und per
+Skript idempotent in die Datenbank übernommen (Upsert per `tracking_id`,
+**ohne** Analytics-Daten zu löschen):
+
+```bash
+npm run provision
+```
+
+Jeder Eintrag legt einen Mandanten (`tenant`) und eine Website mit stabiler
+`tracking_id` an. Die passenden Einbindungs-Snippets pro Website stehen in
+**`config/tracker-snippets.md`** (dort vor dem Ausrollen die echte
+Analytics-Domain eintragen). Domains lassen sich in der JSON jederzeit
+ergänzen und mit erneutem `npm run provision` übernehmen.
+
+### Manuell per SQL
+
+Alternativ (eine neue Kundin mit Website + Kunden-Login):
 
 ```sql
 -- Mandant (Kunde)
