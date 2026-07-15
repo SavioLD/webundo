@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beispiel-Integration · WEBUNDO Analytics</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; line-height: 1.6; }
+      button { padding: 10px 16px; margin: 6px 6px 6px 0; cursor: pointer; }
+      code { background: #f0f0f0; padding: 2px 5px; border-radius: 4px; }
+      fieldset { margin: 16px 0; }
+      input, textarea { display: block; width: 100%; margin: 6px 0 12px; padding: 8px; }
+    </style>
+
+    <!--
+      Tracking-Script einbinden. In Produktion zeigt src auf die Analytics-Domain,
+      z. B. https://analytics.webundo.de/tracker.js
+      Für lokale Tests: http://localhost:4000/tracker.js
+      data-website-id ist die tracking_id der Website (siehe Seed: "sw_main").
+    -->
+    <script
+      src="http://localhost:4000/tracker.js"
+      data-website-id="sw_main"
+      data-require-consent="true"
+      defer
+    ></script>
+  </head>
+  <body>
+    <h1>Beispiel-Integration</h1>
+    <p>
+      Diese Seite demonstriert die Einbindung des Trackers. Weil
+      <code>data-require-consent="true"</code> gesetzt ist, werden Events erst
+      nach erteilter Einwilligung gesendet.
+    </p>
+
+    <fieldset>
+      <legend>Consent</legend>
+      <button onclick="window.analytics && window.analytics.consent(true)">Einwilligung erteilen</button>
+      <button onclick="window.analytics && window.analytics.consent(false)">Einwilligung widerrufen</button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Benutzerdefinierte Events</legend>
+      <!-- Variante 1: programmatisch -->
+      <button onclick="window.analytics.track('cta_clicked', { button: 'request_demo' })">
+        CTA: Demo anfragen (track)
+      </button>
+      <!-- Variante 2: deklarativ über data-Attribute -->
+      <button data-track="cta_clicked" data-track-button="pricing">
+        CTA: Preise (data-track)
+      </button>
+      <button onclick="window.analytics.trackConversion('newsletter_signup', { source: 'footer' })">
+        Conversion: Newsletter
+      </button>
+    </fieldset>
+
+    <fieldset>
+      <legend>Formular (nur Start/Abschluss werden erfasst – keine Inhalte)</legend>
+      <form name="contact" onsubmit="event.preventDefault(); window.analytics.track('contact_form_submitted', { form: 'contact' });">
+        <label>Name <input type="text" name="name" /></label>
+        <label>E-Mail <input type="email" name="email" /></label>
+        <label>Nachricht <textarea name="message"></textarea></label>
+        <button type="submit">Absenden</button>
+      </form>
+    </fieldset>
+
+    <fieldset>
+      <legend>Fehler simulieren</legend>
+      <button onclick="undefinedFunction()">JS-Fehler auslösen</button>
+    </fieldset>
+
+    <p class="muted">
+      Öffne die Netzwerk-Konsole, um die gebündelten POST-Requests an
+      <code>/api/analytics/events</code> zu sehen. Danach erscheinen die Daten
+      im Dashboard.
+    </p>
+  </body>
+</html>

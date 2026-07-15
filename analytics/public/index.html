@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>WEBUNDO Analytics</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Login -->
+    <div id="login" class="login-wrap">
+      <form id="loginForm" class="login-card">
+        <h1>WEBUNDO <span style="color: var(--accent)">Analytics</span></h1>
+        <p>Bitte anmelden</p>
+        <label for="email">E-Mail</label>
+        <input id="email" type="email" autocomplete="username" required />
+        <label for="password">Passwort</label>
+        <input id="password" type="password" autocomplete="current-password" required />
+        <div style="margin-top: 18px">
+          <button class="btn" type="submit" style="width: 100%">Anmelden</button>
+        </div>
+        <div class="error-msg" id="loginError"></div>
+      </form>
+    </div>
+
+    <!-- App -->
+    <div id="app" class="hidden">
+      <header class="topbar">
+        <div class="brand">WEBUNDO <span>Analytics</span></div>
+        <div class="spacer"></div>
+        <div class="user">
+          <span id="userName"></span><span class="role-badge" id="userRole"></span>
+        </div>
+        <button class="btn secondary" id="logoutBtn">Abmelden</button>
+      </header>
+
+      <div class="controls">
+        <div class="field">
+          <label for="websiteFilter">Website</label>
+          <select id="websiteFilter"></select>
+        </div>
+        <div class="field">
+          <label for="fromDate">Von</label>
+          <input id="fromDate" type="date" />
+        </div>
+        <div class="field">
+          <label for="toDate">Bis</label>
+          <input id="toDate" type="date" />
+        </div>
+        <div class="field">
+          <label for="rangePreset">Zeitraum</label>
+          <select id="rangePreset">
+            <option value="1">Heute</option>
+            <option value="7" selected>Letzte 7 Tage</option>
+            <option value="14">Letzte 14 Tage</option>
+            <option value="30">Letzte 30 Tage</option>
+          </select>
+        </div>
+        <button class="btn" id="applyBtn">Anwenden</button>
+      </div>
+
+      <main>
+        <!-- Realtime -->
+        <div class="card" style="margin-bottom: 16px">
+          <h3><span class="realtime-dot"></span>Aktive Besucher (letzte 5 Min.)</h3>
+          <div id="realtime"></div>
+        </div>
+
+        <!-- KPIs -->
+        <div class="grid kpis" id="kpis"></div>
+
+        <!-- Charts + lists -->
+        <div class="grid cards">
+          <div class="card" style="grid-column: 1 / -1">
+            <h3>Besucherentwicklung</h3>
+            <div id="trend"></div>
+            <div class="legend"><span class="s1">Besucher</span><span class="s2">Sessions</span></div>
+          </div>
+          <div class="card"><h3>Meistbesuchte Seiten</h3><div id="pages"></div></div>
+          <div class="card"><h3>Traffic-Quellen</h3><div id="referrers"></div></div>
+          <div class="card"><h3>Gerätetypen</h3><div id="devices"></div></div>
+          <div class="card"><h3>Browser</h3><div id="browsers"></div></div>
+          <div class="card"><h3>Länder / Regionen</h3><div id="countries"></div></div>
+          <div class="card"><h3>Ein- & Ausstiegsseiten</h3><div id="entryexit"></div></div>
+          <div class="card"><h3>Conversions</h3><div id="conversions"></div></div>
+          <div class="card"><h3>Fehler</h3><div id="errors"></div></div>
+          <div class="card"><h3>Performance (Core Web Vitals)</h3><div id="performance"></div></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
