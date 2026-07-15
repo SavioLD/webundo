@@ -14,6 +14,7 @@
     "migrate": "tsx src/db/migrate.ts",
     "seed": "tsx src/db/seed.ts",
     "provision": "tsx src/db/provision.ts",
+    "create-user": "tsx src/db/create-user.ts",
     "maintenance": "tsx src/db/maintenance.ts",
     "test": "vitest run",
     "test:watch": "vitest",

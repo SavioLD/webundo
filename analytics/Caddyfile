@@ -1,0 +1,6 @@
+# Caddy terminiert TLS automatisch (Let's Encrypt) und leitet an die App weiter.
+# Domain bei Bedarf anpassen.
+analytics.webundo.de {
+	encode gzip
+	reverse_proxy app:4000
+}

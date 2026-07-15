@@ -1,0 +1,39 @@
+# Produktions-Setup: Analytics-App + Caddy (automatisches HTTPS/Let's Encrypt).
+# Start:  docker compose up -d --build
+#
+# Voraussetzung: DNS A-Record  analytics.webundo.de -> Server-IP (siehe DEPLOY.md).
+# Secrets in .env setzen (JWT_SECRET, VISITOR_SALT).
+
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_PATH: /data/analytics.db
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET muss in .env gesetzt sein}
+      VISITOR_SALT: ${VISITOR_SALT:?VISITOR_SALT muss in .env gesetzt sein}
+      DASHBOARD_CORS_ORIGINS: https://analytics.webundo.de
+      DEFAULT_RETENTION_DAYS: ${DEFAULT_RETENTION_DAYS:-180}
+    volumes:
+      - analytics-data:/data
+    expose:
+      - "4000"
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - app
+
+volumes:
+  analytics-data:
+  caddy-data:
+  caddy-config:
