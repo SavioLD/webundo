@@ -1098,3 +1098,23 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
   .fteaser__media img{max-width:200px;margin:0 auto}
   .fteaser .btn{margin-inline:auto}
 }
+
+/* ============ Content-Update 2026: Sortiment/Sonderbedarfe/Service ============ */
+/* Grouped brand logos (Sortiment) */
+.brandgroups{display:flex;flex-direction:column;gap:34px;margin-top:36px}
+.brandgroup__title{font-family:var(--disp);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--green-600);text-align:center;margin-bottom:18px}
+.brandrow{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.brandrow .logos__item{width:152px;height:84px}
+.brandrow .brand-more{width:152px;height:84px;display:grid;place-items:center;text-align:center;border:1px dashed var(--green);border-radius:14px;color:var(--green-700);font-weight:600;font-size:.84rem;line-height:1.3;padding:10px;background:var(--green-50)}
+
+/* "Warum nicht Online-Shop?" callout (Sortiment) */
+.whyband{padding:56px 0}
+.whybox{display:flex;gap:26px;align-items:flex-start;background:linear-gradient(180deg,var(--green-50),#fff);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,4vw,40px);box-shadow:var(--sh-sm)}
+.whybox__q{flex:0 0 auto;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-family:var(--disp);font-weight:800;font-size:1.5rem}
+.whybox h3{font-size:clamp(1.15rem,2.2vw,1.5rem);margin-bottom:10px;color:var(--navy)}
+.whybox p{color:var(--slate);line-height:1.7;margin:0}
+@media(max-width:700px){.whybox{flex-direction:column;gap:16px}}
+
+/* Small note under category tiles */
+.catnote{text-align:center;color:var(--slate);margin-top:28px;font-size:1rem}
+.catnote a{color:var(--green-600);font-weight:600}
