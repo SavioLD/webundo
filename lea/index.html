@@ -8,7 +8,7 @@
   <!-- Hinweis: bewusst KEINE Analyse-, Tracking- oder Marketingtools, KEINE nicht notwendigen Cookies. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,14 +16,13 @@
   <!-- ============ NAVBAR ============ -->
   <header class="nav">
     <div class="container nav-inner">
-      <a href="index.html" class="brand">Lea<em>.</em></a>
+      <a href="index.html" class="brand">Lea <em>[Nachname]</em></a>
       <nav class="nav-links" id="navLinks">
         <a href="#ueber-mich">Über mich</a>
-        <a href="#schwerpunkte">Schwerpunkte</a>
-        <a href="#kennzahlen">Reichweite</a>
         <a href="#inhalte">Inhalte</a>
-        <a href="#leistungen">Für Marken</a>
-        <a href="#kontakt" class="btn">Kontakt</a>
+        <a href="#leistungen">Marken</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
       <button class="nav-toggle" id="navToggle" aria-label="Menü">☰</button>
     </div>
@@ -31,33 +30,30 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-top reveal">
-        <div class="hero-kicker">Triathletin · Läuferin · Content Creatorin <br /><span class="pin">◍ [Standort / Region]</span></div>
-        <div class="hero-kicker" style="text-align:right;">Auf dem Weg zum <span class="italic" style="font-size:1.1rem;">ersten Ironman 70.3</span></div>
-      </div>
-      <h1 class="hero-name reveal">Lea<br /><em>[Nachname]</em></h1>
+    <!-- schwebende Sticker (Desktop) -->
+    <span class="sticker st-loc"><span class="dot">◍</span> [Standort / Region]</span>
+    <span class="sticker st-tri">🏊‍♀️ 🚴‍♀️ 🏃‍♀️ Triathletin</span>
+    <span class="star-badge st-star"><span class="star-shape"></span><span class="star-text">[XX] K<br />Aufrufe<br />/ 30 Tage</span></span>
 
-      <div class="hero-lower">
-        <div class="hero-photo reveal">
-          <div class="img-ph">Hero-Foto von Lea<small>[Platzhalter: hochkant, ca. 1080×1350 px]</small></div>
-        </div>
-        <div class="hero-right reveal">
-          <p class="hero-tagline">
-            [PLATZHALTER Positionierung:] Vom Fußballplatz auf die Triathlon-Strecke.
-            Ich nehme meine Community mit auf dem Weg zu meinem ersten Ironman&nbsp;70.3 –
-            und teile <span class="italic">ästhetische Einblicke</span> in Training, Wettkampf und Mindset.
-          </p>
-          <div class="hero-actions">
-            <a href="#kontakt" class="btn">Zusammenarbeiten <span class="arrow">→</span></a>
-            <a href="#inhalte" class="btn btn-light">Inhalte ansehen</a>
-          </div>
-          <div class="hero-stats">
-            <div><strong>[XX K]</strong><span>Follower</span></div>
-            <div><strong>[X %]</strong><span>Ø Engagement</span></div>
-            <div><strong>’25</strong><span>Erste Sprintdistanz</span></div>
-          </div>
-        </div>
+    <div class="container hero-inner">
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Start</span>
+        <span class="cap">Triathletin × Läuferin × Creatorin</span>
+      </div>
+      <h1 class="hero-name reveal"><span>Lea</span><span class="accent">[Nachname]</span></h1>
+      <p class="hero-lead reveal">
+        [PLATZHALTER Positionierung:] Vom Fußballplatz auf die Triathlon-Strecke.
+        Ich nehme meine Community mit auf dem Weg zu meinem <span class="hl">ersten Ironman&nbsp;70.3</span>
+        – mit ehrlichen, ästhetischen Einblicken in Training und Wettkampf.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#kontakt" class="btn">Zusammenarbeiten <span class="arrow">→</span></a>
+        <a href="#ueber-mich" class="btn-outline btn">Mehr über mich <span class="arrow">↓</span></a>
+      </div>
+      <div class="hero-photo reveal">
+        <div class="img-ph">Hero-Foto von Lea<small>[Platzhalter: hochkant, ca. 1080×1350 px]</small></div>
+        <div class="ph-cap">Swim · Bike · Run</div>
       </div>
     </div>
   </section>
@@ -65,46 +61,74 @@
   <!-- ============ MARQUEE ============ -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>Swim</span><span>Bike</span><span>Run</span><span>Sprint Distance</span><span>Olympic Distance</span><span>Ironman 70.3</span>
-      <span>Swim</span><span>Bike</span><span>Run</span><span>Sprint Distance</span><span>Olympic Distance</span><span>Ironman 70.3</span>
+      <span>Schwimmen</span><span>Radfahren</span><span>Laufen</span><span>Sprintdistanz</span><span>Olympische Distanz</span><span>Ironman 70.3</span>
+      <span>Schwimmen</span><span>Radfahren</span><span>Laufen</span><span>Sprintdistanz</span><span>Olympische Distanz</span><span>Ironman 70.3</span>
     </div>
   </div>
 
-  <!-- ============ 01 · ÜBER MICH ============ -->
+  <!-- ============ KENNZAHLEN ============ -->
+  <section id="kennzahlen" class="stats">
+    <div class="container">
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Race Data</span>
+        <span class="cap">Letzte 30 Tage · Instagram Insights</span>
+      </div>
+      <h2 class="display reveal">Zahlen, die<br />Tempo machen</h2>
+      <p class="sub reveal">[PLATZHALTER: Alle Zahlen sind Platzhalter – bitte mit aktuellen Werten ersetzen.]</p>
+      <div class="stats-box reveal">
+        <div class="stat"><div class="num">[XXX K]</div><div class="label">Aufrufe / 30 Tage</div><span class="spill">[XX % Nicht-Follower]</span></div>
+        <div class="stat"><div class="num">[XX K]</div><div class="label">Erreichte Konten</div><span class="spill">[+X % z. Vormonat]</span></div>
+        <div class="stat"><div class="num">[X K]</div><div class="label">Interaktionen</div><span class="spill">[X % Engagement]</span></div>
+        <div class="stat"><div class="num">[X K]</div><div class="label">Follower</div><span class="spill">[+X % in 30 Tagen]</span></div>
+      </div>
+      <p class="source reveal">Quelle: Instagram Insights, [Zeitraum] · [@dein_handle]</p>
+    </div>
+  </section>
+
+  <!-- ============ ÜBER MICH ============ -->
   <section id="ueber-mich">
     <div class="container about-grid">
-      <div class="about-photo reveal">
-        <div class="img-ph">Foto „Über mich"<small>[Platzhalter: Portrait / Trainingsfoto, hochkant]</small></div>
-      </div>
       <div class="about-text reveal">
-        <div class="sec-label"><span class="num">01</span> Über mich</div>
-        <h2 class="display">Vom Fußball<br />zum <em class="italic">Triathlon</em>.</h2>
-        <p style="margin-top:26px;">
-          [PLATZHALTER – gerne mit deinen Worten:] Ich spiele Fußball, seit ich drei Jahre alt bin –
-          Sport war für mich also schon immer mehr als ein Hobby. Heute stecke ich meine ganze Energie
-          in eine neue Leidenschaft: den Triathlon.
+        <div class="tag-row">
+          <span class="dash"></span>
+          <span class="pill">Etappe 01 · Schwimmen</span>
+          <span class="cap">Über mich</span>
+        </div>
+        <h2 class="display">Die Athletin<br />hinter der <span class="accent">Kamera</span></h2>
+        <p>
+          [PLATZHALTER – gerne mit deinen Worten:] Ich bin Lea – <span class="hl">Triathletin &amp; Content Creatorin</span>.
+          Ich spiele Fußball, seit ich drei Jahre alt bin. Heute stecke ich meine ganze Energie in eine neue
+          Leidenschaft: den Triathlon.
         </p>
         <p>
-          Im September starte ich bei meiner ersten Sprintdistanz, im Oktober läuft es weiter beim
-          München Halbmarathon. Nächstes Jahr will ich meinen ersten Ironman&nbsp;70.3 finishen und
-          träume vom BMW Berlin Marathon. Nebenbei bin ich Studentin – und langfristig möchte ich in
-          diesem Sport richtig gut werden.
+          Im September starte ich bei meiner <span class="hl">ersten Sprintdistanz</span>, im Oktober läuft es weiter
+          beim München Halbmarathon. Nächstes Jahr will ich meinen ersten Ironman&nbsp;70.3 finishen und träume vom
+          BMW Berlin Marathon.
         </p>
-        <ul class="about-facts">
-          <li><span class="k">Herkunft</span> Fußball seit dem 3. Lebensjahr</li>
-          <li><span class="k">September ’25</span> Erste Sprintdistanz</li>
-          <li><span class="k">Oktober ’25</span> München Halbmarathon</li>
-          <li><span class="k">Ziel ’26</span> Ironman 70.3 &amp; Berlin Marathon</li>
-        </ul>
+        <p>
+          Nebenbei bin ich Studentin – und langfristig möchte ich in diesem Sport <span class="hl alt">richtig gut werden</span>.
+          Meine Community ist immer mit dabei: ehrlich, nahbar und ästhetisch.
+        </p>
+      </div>
+      <div class="reveal">
+        <div class="polaroid">
+          <div class="img-ph">Foto „Über mich"<small>[Platzhalter: Portrait / Trainingsfoto, hochkant]</small></div>
+          <div class="ph-cap">[Bildunterschrift, z. B. „Training in [Ort]"]</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 02 · CONTENT-SCHWERPUNKTE ============ -->
-  <section id="schwerpunkte">
+  <!-- ============ CONTENT-SCHWERPUNKTE ============ -->
+  <section id="schwerpunkte" class="services" style="background:var(--bg);">
     <div class="container">
-      <div class="sec-label reveal"><span class="num">02</span> Content-Schwerpunkte</div>
-      <h2 class="display reveal" style="max-width:14ch; margin-bottom:50px;">Worüber ich <em class="italic">Content</em> mache</h2>
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Etappe 02 · Radfahren</span>
+        <span class="cap">Content-Schwerpunkte</span>
+      </div>
+      <h2 class="display reveal" style="max-width:15ch;">Worüber ich Content mache</h2>
       <div class="pillars">
         <div class="pillar reveal">
           <div class="p-num">01</div>
@@ -125,30 +149,15 @@
     </div>
   </section>
 
-  <!-- ============ 03 · KENNZAHLEN ============ -->
-  <section id="kennzahlen">
-    <div class="container">
-      <div class="stats-wrap reveal">
-        <div class="sec-label"><span class="num">03</span> Reichweite</div>
-        <div class="stats-head">
-          <h2 class="display">Social-Media-<br />Kennzahlen</h2>
-          <p>[PLATZHALTER: Alle Zahlen sind Platzhalter – bitte mit aktuellen Werten ersetzen.]</p>
-        </div>
-        <div class="stats-grid">
-          <div class="stat"><div class="num">[XX K]</div><div class="label">Follower</div><div class="platform">Instagram</div></div>
-          <div class="stat"><div class="num">[XX K]</div><div class="label">Follower</div><div class="platform">TikTok</div></div>
-          <div class="stat"><div class="num">[X %]</div><div class="label">Ø Engagement-Rate</div><div class="platform">Instagram</div></div>
-          <div class="stat"><div class="num">[XXX K]</div><div class="label">Ø Aufrufe / Monat</div><div class="platform">Reels &amp; Videos</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 04 · INHALTE ============ -->
+  <!-- ============ INHALTE / GALERIE ============ -->
   <section id="inhalte">
     <div class="container">
-      <div class="sec-label reveal"><span class="num">04</span> Portfolio</div>
-      <h2 class="display reveal" style="max-width:16ch; margin-bottom:50px;">Beispiele meiner <em class="italic">bisherigen Inhalte</em></h2>
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Etappe 03 · Laufen</span>
+        <span class="cap">Portfolio</span>
+      </div>
+      <h2 class="display reveal" style="max-width:16ch; margin-bottom:44px;">Beispiele meiner Inhalte</h2>
       <div class="gallery">
         <div class="item g1 reveal"><div class="img-ph">Inhalt 1<small>[Reel]</small></div><span class="cap">Reel</span></div>
         <div class="item g2 reveal"><div class="img-ph">Inhalt 2<small>[Foto-Serie]</small></div><span class="cap">Post</span></div>
@@ -159,31 +168,31 @@
     </div>
   </section>
 
-  <!-- ============ 05 · LEISTUNGEN / PAKETE ============ -->
+  <!-- ============ LEISTUNGEN / PAKETE ============ -->
   <section id="leistungen" class="services">
     <div class="container">
-      <div class="sec-label reveal"><span class="num">05</span> Für Unternehmen &amp; Marken</div>
-      <h2 class="display reveal" style="max-width:14ch; margin-bottom:14px;">Leistungen &amp; <em class="italic">Pakete</em></h2>
-      <p class="lead reveal" style="max-width:560px; margin-bottom:10px;">[PLATZHALTER: Wie Marken mit mir zusammenarbeiten können. Alle Leistungen &amp; Preise sind Platzhalter.]</p>
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Ziellinie</span>
+        <span class="cap">Für Unternehmen &amp; Marken</span>
+      </div>
+      <h2 class="display reveal" style="max-width:14ch;">Wähl deine Distanz</h2>
       <div class="packages">
         <div class="package reveal">
-          <span class="tier">Einstieg</span>
-          <div class="pname">Sprint Distance</div>
-          <div class="psub">Kompakt &amp; schnell</div>
-          <div class="price">ab [Preis] €<small> / Kooperation</small></div>
+          <div class="tier">Sprint Distance</div>
+          <div class="price">auf Anfrage<small> · Einstieg</small></div>
           <ul>
             <li>[Platzhalter: 1 Instagram-Reel]</li>
             <li>[Platzhalter: 1 Story-Sequenz]</li>
             <li>[Platzhalter: Produktplatzierung]</li>
             <li>[Platzhalter: Nutzungsrechte n. Absprache]</li>
           </ul>
-          <a href="#kontakt" class="btn btn-light">Anfragen <span class="arrow">→</span></a>
+          <a href="#kontakt" class="btn btn-outline">Anfragen <span class="arrow">→</span></a>
         </div>
         <div class="package featured reveal">
-          <span class="tier">Beliebt</span>
-          <div class="pname">Olympic Distance</div>
-          <div class="psub">Das ausgewogene Paket</div>
-          <div class="price">ab [Preis] €<small> / Kooperation</small></div>
+          <span class="badge-top">★ Am beliebtesten</span>
+          <div class="tier">Olympic Distance</div>
+          <div class="price">auf Anfrage<small> · ausgewogen</small></div>
           <ul>
             <li>[Platzhalter: 2 Reels]</li>
             <li>[Platzhalter: 1 Feed-Post]</li>
@@ -191,78 +200,80 @@
             <li>[Platzhalter: ästhetisches Foto-Paket]</li>
             <li>[Platzhalter: erweiterte Nutzungsrechte]</li>
           </ul>
-          <a href="#kontakt" class="btn btn-blue">Anfragen <span class="arrow">→</span></a>
+          <a href="#kontakt" class="btn">Anfragen <span class="arrow">→</span></a>
         </div>
         <div class="package reveal">
-          <span class="tier">Premium</span>
-          <div class="pname">Ironman</div>
-          <div class="psub">Langfristige Partnerschaft</div>
-          <div class="price">auf Anfrage</div>
+          <div class="tier">Ironman</div>
+          <div class="price">auf Anfrage<small> · Partnerschaft</small></div>
           <ul>
             <li>[Platzhalter: langfristige Kampagne]</li>
-            <li>[Platzhalter: mehrere Content-Formate]</li>
+            <li>[Platzhalter: mehrere Content-Formate / Monat]</li>
             <li>[Platzhalter: Event-Begleitung]</li>
             <li>[Platzhalter: Marken-Botschafterin]</li>
             <li>[Platzhalter: individuelle Nutzungsrechte]</li>
           </ul>
-          <a href="#kontakt" class="btn btn-light">Anfragen <span class="arrow">→</span></a>
+          <a href="#kontakt" class="btn btn-outline">Botschaft anfragen <span class="arrow">→</span></a>
         </div>
+      </div>
+
+      <!-- Einzel-Formate -->
+      <div class="formats reveal">
+        <h3>Einzelne Formate</h3>
+        <p class="intro">Preise auf Anfrage – jede Kooperation wird individuell abgestimmt. <a href="#kontakt">Kontakt aufnehmen →</a></p>
+        <table class="ftable">
+          <thead><tr><th>Format</th><th>Leistung</th></tr></thead>
+          <tbody>
+            <tr><td>Story-Paket</td><td>[Platzhalter: 3–5 Story-Frames mit Markennennung]</td></tr>
+            <tr><td>Feed-Post</td><td>[Platzhalter: 1 Feed-Beitrag – Foto + Caption]</td></tr>
+            <tr><td>Reel</td><td>[Platzhalter: 1 produziertes Reel, selbst geschnitten]</td></tr>
+            <tr><td>Foto-Paket</td><td>[Platzhalter: X ästhetische Fotos zur freien Nutzung]</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- ============ 06 · ABLAUF ============ -->
+  <!-- ============ ABLAUF ============ -->
   <section id="ablauf">
     <div class="container">
-      <div class="sec-label reveal"><span class="num">06</span> Ablauf</div>
-      <h2 class="display reveal" style="max-width:16ch; margin-bottom:30px;">So läuft eine <em class="italic">Zusammenarbeit</em> ab</h2>
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Der Weg</span>
+        <span class="cap">Ablauf</span>
+      </div>
+      <h2 class="display reveal" style="max-width:16ch; margin-bottom:20px;">So läuft eine Zusammenarbeit</h2>
       <div class="process">
-        <div class="step reveal">
-          <div class="s-num">01</div>
-          <h3>Kennenlernen</h3>
-          <p>[Platzhalter: Erste Anfrage per E-Mail – wir klären Ziele, Marke und Idee.]</p>
-        </div>
-        <div class="step reveal">
-          <div class="s-num">02</div>
-          <h3>Konzept</h3>
-          <p>[Platzhalter: Ich entwickle ein passendes Content-Konzept und ein Angebot.]</p>
-        </div>
-        <div class="step reveal">
-          <div class="s-num">03</div>
-          <h3>Umsetzung</h3>
-          <p>[Platzhalter: Produktion der Inhalte – Fotos, Reels, Stories.]</p>
-        </div>
-        <div class="step reveal">
-          <div class="s-num">04</div>
-          <h3>Veröffentlichung</h3>
-          <p>[Platzhalter: Freigabe, Posting und gemeinsame Auswertung.]</p>
-        </div>
+        <div class="step reveal"><div class="s-num">01</div><h3>Kennenlernen</h3><p>[Platzhalter: Erste Anfrage per E-Mail – wir klären Ziele, Marke und Idee.]</p></div>
+        <div class="step reveal"><div class="s-num">02</div><h3>Konzept</h3><p>[Platzhalter: Ich entwickle ein passendes Content-Konzept und ein Angebot.]</p></div>
+        <div class="step reveal"><div class="s-num">03</div><h3>Umsetzung</h3><p>[Platzhalter: Produktion der Inhalte – Fotos, Reels, Stories.]</p></div>
+        <div class="step reveal"><div class="s-num">04</div><h3>Veröffentlichung</h3><p>[Platzhalter: Freigabe, Posting und gemeinsame Auswertung.]</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 07 · KONTAKT ============ -->
+  <!-- ============ KONTAKT ============ -->
   <section id="kontakt" class="contact">
     <div class="container">
-      <div class="sec-label reveal"><span class="num">07</span> Kontakt</div>
-      <h2 class="contact-big reveal">Lass uns <em class="italic">zusammen</em> arbeiten</h2>
-      <a href="mailto:[deine-email@beispiel.de]" class="contact-email reveal">✉ [deine-email@beispiel.de]</a>
-      <div class="contact-socials reveal">
-        <a href="[Instagram-Link]" target="_blank" rel="noopener">Instagram ↗</a>
-        <a href="[TikTok-Link]" target="_blank" rel="noopener">TikTok ↗</a>
-        <a href="[Strava-/YouTube-Link]" target="_blank" rel="noopener">[Weiterer Kanal] ↗</a>
+      <div class="tag-row reveal">
+        <span class="dash"></span>
+        <span class="pill">Finish</span>
+        <span class="cap">Kontakt</span>
       </div>
+      <h2 class="contact-big reveal">Lass uns was<br /><span class="accent">bewegen</span></h2>
+      <p class="sub reveal">[PLATZHALTER: z. B. „Standort [Region] · Kooperationen [Zeitraum] buchbar.“]</p>
+      <a href="mailto:[deine-email@beispiel.de]" class="contact-email reveal">[deine-email@beispiel.de] <span class="arrow">→</span></a>
+      <p class="contact-dm reveal">oder schreib mir → <a href="[Instagram-Link]" target="_blank" rel="noopener">[@dein_handle]</a></p>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-huge reveal">Let’s <em class="italic">move</em>.</div>
+      <div class="footer-huge reveal">Let’s <span class="accent">move</span>.</div>
       <div class="footer-cols">
         <div>
-          <div class="brand" style="font-size:1.4rem;">Lea<em style="color:var(--blue-500)">.</em></div>
-          <p class="footer-tag">[PLATZHALTER: kurzer Footer-Slogan – z. B. „Triathletin &amp; Content Creatorin auf dem Weg zum ersten Ironman 70.3.“]</p>
+          <div class="brand" style="box-shadow:none;">Lea <em>[Nachname]</em></div>
+          <p class="footer-tag" style="margin-top:14px;">[PLATZHALTER: kurzer Footer-Slogan – z. B. „Triathletin &amp; Content Creatorin auf dem Weg zum ersten Ironman 70.3.“]</p>
         </div>
         <div class="footer-nav">
           <div>
@@ -291,14 +302,11 @@
   </footer>
 
   <script>
-    // Mobile-Menü
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
     links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
-    // Jahr
     document.getElementById('year').textContent = new Date().getFullYear();
-    // Scroll-Reveal (ohne externe Libs / Tracking)
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
