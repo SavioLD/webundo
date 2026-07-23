@@ -1,0 +1,9 @@
+Hier kommen deine Bilder rein.
+
+Empfohlene Platzhalter, die du später ersetzt:
+- hero.jpg          (Hero-Foto, hochkant, ca. 1080x1350 px)
+- ueber-mich.jpg    (Portrait / Trainingsfoto, hochkant)
+- inhalt-1.jpg ... inhalt-6.jpg   (Galerie „Beispiele meiner Inhalte")
+
+Sobald die Bilder da sind, in index.html die <div class="img-ph">-Platzhalter
+durch <img src="images/hero.jpg" alt="..."> ersetzen.
