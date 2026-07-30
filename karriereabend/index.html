@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Vertrieb erleben – Dein Karriereabend bei Ländle Digital</title>
+<meta name="description" content="Karriereabend Vertrieb bei Ländle Digital in Rottweil: Arbeitsalltag kennenlernen, offen über Verdienst und Entwicklung sprechen und direkt einen Platz für eine Probewoche sichern." />
+
+<!-- Diese Seite ist NICHT Teil der Website und soll NICHT in Google auftauchen.
+     Sie wird ausschliesslich über Anzeigen (Instagram / Meta / LinkedIn), QR-Code
+     und direkt geteilte Links erreicht. -->
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Link-Vorschau (Instagram-Bio, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Vertrieb erleben – Dein Karriereabend bei Ländle Digital" />
+<meta property="og:description" content="Ein Abend, echter Einblick in unseren Vertrieb – und die Chance, direkt einen Platz für eine Probewoche zu sichern." />
+<meta property="og:locale" content="de_DE" />
+<!-- TODO: Vorschaubild ergaenzen (empfohlen 1200x630 px), sonst zeigen WhatsApp/LinkedIn nur Text:
+<meta property="og:image" content="https://DEINE-DOMAIN/karriereabend/og-bild.jpg" />
+<meta property="og:url" content="https://DEINE-DOMAIN/karriereabend/" /> -->
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M9 17.5 14 22l9-11' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E" />
+
+<style>
+/* ============================================================
+   KARRIEREABEND VERTRIEB — Landingpage & Anmeldung
+   Ländle Digital GmbH · September 2026
+
+   Eigenständige Einzeldatei: kein externes CSS, kein externes JS,
+   keine Web-Fonts und keine Tracker. Die Datei kann 1:1 auf jede
+   beliebige Domain kopiert werden und funktioniert dort sofort.
+
+   MARKENFARBEN: nur die vier Werte unter "MARKE" anpassen.
+============================================================ */
+:root{
+  /* ---------- MARKE ---------- */
+  --brand:#0f766e;          /* Hauptfarbe (Buttons, Links, Akzente) */
+  --brand-dark:#0b5b55;     /* Hover-Zustand der Hauptfarbe */
+  --brand-soft:#e6f4f2;     /* zarter Hintergrund der Hauptfarbe */
+  --accent:#f59e0b;         /* Highlight-Farbe (Zahlen, Marker) */
+
+  /* ---------- Basis ---------- */
+  --ink:#0d1721; --ink-2:#16283a;
+  --slate:#55677c; --muted:#7d8ea3;
+  --line:#e3e9f0; --line-2:#eef2f7;
+  --bg:#ffffff; --soft:#f5f8fb;
+  --danger:#c62828; --ok:#15803d;
+
+  --r:16px; --r-sm:11px; --r-lg:24px;
+  --sh-sm:0 1px 2px rgba(13,23,33,.06), 0 1px 3px rgba(13,23,33,.05);
+  --sh:0 12px 34px -14px rgba(13,23,33,.22);
+  --sh-lg:0 34px 66px -26px rgba(13,23,33,.34);
+  --ring:0 0 0 4px rgba(15,118,110,.18);
+
+  --shell:1080px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);
+  font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;line-height:1.13;letter-spacing:-.02em;font-weight:750}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:6px}
+
+.shell{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:22px}
+.sec{padding:74px 0}
+.sec--soft{background:var(--soft);border-block:1px solid var(--line-2)}
+@media(max-width:720px){.sec{padding:52px 0}}
+
+/* ---------- Bausteine ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6em;line-height:1.4;
+  font-weight:650;font-size:.76rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--brand);background:var(--brand-soft);padding:.5em 1em;border-radius:999px;
+}
+.eyebrow .dot{align-self:center}
+.eyebrow--light{color:#c8ece7;background:rgba(255,255,255,.1)}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:currentColor}
+.sec__title{font-size:clamp(1.6rem,3.6vw,2.3rem);margin:.65rem 0 .7rem}
+.sec__sub{color:var(--slate);max-width:62ch;font-size:1.05rem}
+.sec__head{max-width:640px;margin-bottom:38px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+  font-weight:650;font-size:1rem;line-height:1;cursor:pointer;text-align:center;
+  padding:1.05em 1.7em;border-radius:999px;border:2px solid transparent;
+  background:var(--brand);color:#fff;
+  transition:transform .15s,box-shadow .2s,background .2s,border-color .2s;
+  box-shadow:0 10px 24px -10px rgba(15,118,110,.65);
+}
+.btn:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(15,118,110,.7)}
+.btn:active{transform:translateY(0)}
+.btn:disabled{opacity:.6;cursor:progress;transform:none}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.35);box-shadow:none}
+.btn--ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn--block{width:100%}
+
+/* ============================================================ HERO ============================================================ */
+.hero{position:relative;overflow:hidden;background:var(--ink);color:#fff}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(58% 62% at 82% 6%, rgba(15,118,110,.55), transparent 62%),
+    radial-gradient(50% 60% at 4% 96%, rgba(245,158,11,.20), transparent 58%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;opacity:.13;
+  background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);
+  background-size:52px 52px;
+  -webkit-mask-image:radial-gradient(78% 62% at 50% 22%,#000,transparent 76%);
+          mask-image:radial-gradient(78% 62% at 50% 22%,#000,transparent 76%);
+}
+.hero__inner{position:relative;padding:30px 22px 78px}
+.hero__brand{
+  display:flex;align-items:center;gap:11px;width:fit-content;margin-bottom:54px;
+  font-weight:650;font-size:1.02rem;letter-spacing:-.01em;
+}
+@media(max-width:720px){.hero__brand{margin-bottom:38px}}
+.hero__mark{
+  display:grid;place-items:center;width:38px;height:38px;border-radius:10px;
+  background:var(--brand);box-shadow:0 8px 18px -8px rgba(15,118,110,.9);
+}
+.hero__mark svg{width:20px;height:20px}
+.hero__brand small{display:block;font-weight:500;font-size:.7rem;letter-spacing:.04em;color:rgba(255,255,255,.62)}
+.hero__title{font-size:clamp(2.3rem,7.2vw,4.1rem);letter-spacing:-.035em;margin:1rem 0 .5rem;max-width:17ch}
+.hero__title span{
+  display:block;font-size:clamp(1.05rem,2.9vw,1.5rem);font-weight:600;letter-spacing:-.015em;
+  color:#9ddbd3;margin-top:.5rem;
+}
+.hero__sub{font-size:1.12rem;color:rgba(255,255,255,.82);max-width:50ch;margin-top:1.1rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:13px;margin:2.2rem 0 0}
+.hero__note{font-size:.9rem;color:rgba(255,255,255,.6);margin-top:1.1rem}
+/* Am Handy volle Breite: größere Tap-Fläche für Anzeigen-Traffic */
+@media(max-width:560px){
+  .hero__cta{flex-direction:column;gap:11px}
+  .hero__cta .btn{width:100%}
+  .hero__title{max-width:none}
+}
+
+/* Fakten-Leiste */
+.facts{
+  position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;margin-top:-40px;box-shadow:var(--sh)
+}
+.fact{background:#fff;padding:20px 22px}
+.fact b{display:block;font-size:.72rem;font-weight:650;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.fact span{font-weight:650;font-size:1.02rem;letter-spacing:-.01em}
+.fact em{font-style:normal;color:var(--muted);font-weight:500}
+@media(max-width:860px){.facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:420px){.facts{grid-template-columns:1fr}}
+
+/* ============================================================ FRAGEN ============================================================ */
+.qgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:720px){.qgrid{grid-template-columns:1fr}}
+.qcard{
+  display:flex;gap:14px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);padding:20px 22px;box-shadow:var(--sh-sm);
+}
+.qcard svg{flex:none;width:22px;height:22px;color:var(--brand);margin-top:2px}
+.qcard p{font-weight:600;letter-spacing:-.01em}
+
+/* ============================================================ ABLAUF ============================================================ */
+.tl{position:relative;max-width:760px}
+.tl::before{content:"";position:absolute;left:74px;top:14px;bottom:14px;width:2px;background:var(--line);}
+.tl__row{position:relative;display:grid;grid-template-columns:74px 1fr;gap:26px;padding:11px 0}
+.tl__time{font-weight:700;font-size:.98rem;text-align:right;padding-top:2px;letter-spacing:-.01em}
+.tl__row::after{
+  content:"";position:absolute;left:69px;top:20px;width:12px;height:12px;border-radius:50%;
+  background:#fff;border:3px solid var(--brand);
+}
+.tl__row--soft .tl__time{color:var(--muted);font-weight:600}
+.tl__row--soft::after{border-color:var(--line);}
+.tl__body h3{font-size:1.06rem;letter-spacing:-.015em}
+.tl__body p{color:var(--slate);font-size:.97rem;margin-top:3px}
+@media(max-width:560px){
+  .tl::before{left:0}
+  .tl__row{grid-template-columns:1fr;gap:0;padding-left:24px}
+  .tl__row::after{left:-5px;top:14px}
+  .tl__time{text-align:left;margin-bottom:2px}
+}
+
+/* ============================================================ PROBEWOCHE ============================================================ */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+@media(max-width:820px){.split{grid-template-columns:1fr;gap:30px}}
+.checks li{display:flex;gap:11px;padding:7px 0;color:var(--slate)}
+.checks svg{flex:none;width:20px;height:20px;color:var(--brand);margin-top:3px}
+.checks strong{color:var(--ink)}
+.panel{
+  background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:32px;
+  box-shadow:var(--sh-lg);position:relative;overflow:hidden;
+}
+.panel::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 100% 0%,rgba(15,118,110,.5),transparent 60%)}
+.panel>*{position:relative}
+.panel h3{font-size:1.25rem;margin-bottom:14px}
+.panel p{color:rgba(255,255,255,.78);font-size:.98rem}
+.panel hr{border:0;border-top:1px solid rgba(255,255,255,.14);margin:20px 0}
+.panel dl{display:grid;gap:13px;margin:0}
+.panel dt{font-size:.74rem;font-weight:650;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.panel dd{margin:2px 0 0;font-weight:600}
+.panel .big{font-size:2rem;font-weight:750;letter-spacing:-.03em;color:var(--accent);line-height:1.1}
+.panel a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
+/* ============================================================ FORMULAR ============================================================ */
+.formwrap{max-width:720px;margin-inline:auto}
+.formcard{
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:34px;box-shadow:var(--sh)
+}
+@media(max-width:560px){.formcard{padding:24px 20px;border-radius:var(--r)}}
+.formcard__head{margin-bottom:26px}
+.formcard__head h2{font-size:clamp(1.45rem,3.4vw,1.9rem)}
+.formcard__head p{color:var(--slate);margin-top:8px}
+
+.field{margin-bottom:19px}
+.field>label,.flabel{display:block;font-weight:650;font-size:.95rem;margin-bottom:7px;letter-spacing:-.01em}
+.req{color:var(--brand)}
+.opt{font-weight:500;color:var(--muted)}
+.hint{display:block;font-weight:500;font-size:.87rem;color:var(--muted);margin-top:-3px;margin-bottom:8px}
+.input{
+  width:100%;font:inherit;font-size:1rem;color:var(--ink);background:#fff;
+  border:1.5px solid var(--line);border-radius:var(--r-sm);padding:.82em .95em;
+  transition:border-color .15s,box-shadow .15s;
+}
+.input::placeholder{color:#a9b6c6}
+.input:focus{outline:0;border-color:var(--brand);box-shadow:var(--ring)}
+textarea.input{resize:vertical;min-height:96px;line-height:1.55}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid-2{grid-template-columns:1fr}}
+
+/* Mehrfachauswahl Termine */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt-box{
+  display:flex;align-items:flex-start;gap:11px;cursor:pointer;
+  border:1.5px solid var(--line);border-radius:var(--r-sm);padding:.85em .95em;
+  font-size:.97rem;font-weight:600;transition:border-color .15s,background .15s;
+}
+.opt-box:hover{border-color:#c3d0de;background:var(--soft)}
+.opt-box input{margin:0;accent-color:var(--brand);width:19px;height:19px;flex:none;margin-top:1px}
+.opt-box:has(input:checked){border-color:var(--brand);background:var(--brand-soft)}
+
+.check{display:flex;align-items:flex-start;gap:11px;cursor:pointer;font-size:.94rem;color:var(--slate);line-height:1.5}
+.check input{margin:0;accent-color:var(--brand);width:19px;height:19px;flex:none;margin-top:2px}
+.check a{color:var(--brand);text-decoration:underline;text-underline-offset:2px}
+
+.err-msg{display:none;color:var(--danger);font-size:.87rem;font-weight:600;margin-top:6px}
+.field.is-err .err-msg{display:block}
+.field.is-err .input{border-color:var(--danger)}
+.field.is-err .opt-box{border-color:#f0c4c4}
+
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.formnote{font-size:.88rem;color:var(--muted);margin-top:16px;text-align:center}
+.formfail{
+  display:none;background:#fdf2f2;border:1px solid #f5c6c6;color:#8f2222;
+  border-radius:var(--r-sm);padding:14px 16px;font-size:.94rem;font-weight:600;margin-bottom:18px;
+}
+.formfail.show{display:block}
+.formfail a{color:inherit;text-decoration:underline}
+
+/* Hinweis für das Team, solange kein Endpoint eingetragen ist */
+.setupwarn{
+  display:none;background:#fffbeb;border:1px solid #fcd34d;color:#7c4a03;
+  border-radius:var(--r-sm);padding:14px 16px;font-size:.9rem;line-height:1.5;margin-bottom:20px;
+}
+.setupwarn.show{display:block}
+.setupwarn b{display:block;margin-bottom:3px}
+.setupwarn code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86em;background:rgba(124,74,3,.1);padding:.1em .4em;border-radius:4px}
+
+/* Danke-Zustand */
+.done{display:none;text-align:center;padding:12px 0}
+.done.show{display:block}
+.done__ic{
+  width:66px;height:66px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+  display:grid;place-items:center;margin:0 auto 20px;
+}
+.done__ic svg{width:32px;height:32px}
+.done h2{font-size:1.65rem}
+.done p{color:var(--slate);margin-top:12px;max-width:46ch;margin-inline:auto}
+.done__btns{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin-top:26px}
+.done__btns .btn{font-size:.94rem;padding:.9em 1.4em}
+.btn--soft{background:var(--brand-soft);color:var(--brand);box-shadow:none}
+.btn--soft:hover{background:#d6ece9;color:var(--brand-dark)}
+
+/* ============================================================ FAQ ============================================================ */
+.faq{max-width:760px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:19px 40px 19px 0;position:relative;
+  font-weight:650;font-size:1.04rem;letter-spacing:-.01em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:8px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--brand);border-bottom:2.5px solid var(--brand);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq p{color:var(--slate);padding:0 0 20px}
+
+/* ============================================================ SCHLUSS-CTA + FOOTER ============================================================ */
+.endcta{background:var(--ink);color:#fff;text-align:center;padding:76px 0}
+.endcta h2{font-size:clamp(1.7rem,4vw,2.4rem);max-width:22ch;margin:14px auto 14px}
+.endcta p{color:rgba(255,255,255,.75);max-width:50ch;margin:0 auto 30px}
+
+.foot{background:var(--ink-2);color:rgba(255,255,255,.66);font-size:.92rem;padding:34px 0}
+.foot__inner{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:flex-start}
+.foot b{color:#fff;display:block;font-weight:650;margin-bottom:4px}
+.foot a{color:rgba(255,255,255,.85);text-decoration:underline;text-underline-offset:2px}
+.foot__legal{display:flex;gap:18px;flex-wrap:wrap}
+
+/* ============================================================ STICKY MOBILE CTA ============================================================ */
+.sticky{
+  position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+  padding:11px 14px calc(11px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.94);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);box-shadow:0 -8px 24px -14px rgba(13,23,33,.3);
+}
+.sticky .btn{width:100%;padding:.95em 1.4em}
+@media(max-width:820px){
+  .sticky.on{display:block}
+  body.has-sticky{padding-bottom:78px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================ HERO ============================================================ -->
+<header class="hero">
+  <div class="shell hero__inner">
+
+    <!-- Logo: das Häkchen ist ein neutraler Platzhalter. Zum Austauschen einfach
+         das <span class="hero__mark"> ersetzen durch:
+         <img src="logo.svg" alt="Ländle Digital" style="height:38px;width:auto" /> -->
+    <div class="hero__brand">
+      <span class="hero__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </span>
+      <span>Ländle Digital<small>Rottweil</small></span>
+    </div>
+
+    <span class="eyebrow eyebrow--light"><span class="dot"></span><span>Karriereabend Vertrieb · <span data-cfg="monat">September 2026</span></span></span>
+
+    <h1 class="hero__title">Vertrieb erleben<span>Dein Karriereabend bei Ländle Digital</span></h1>
+
+    <p class="hero__sub">Lerne unseren Arbeitsalltag kennen, sprich mit unserem Team und sichere dir direkt einen Platz für eine Probewoche.</p>
+
+    <div class="hero__cta">
+      <a href="#anmeldung" class="btn">Platz sichern
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#ablauf" class="btn btn--ghost">Ablauf ansehen</a>
+    </div>
+
+    <p class="hero__note">Kostenlos &amp; unverbindlich · 12–20 Plätze · Pizza, Getränke und ehrliche Antworten inklusive</p>
+  </div>
+</header>
+
+<!-- Fakten -->
+<div class="shell">
+  <div class="facts">
+    <div class="fact"><b>Termin</b><span data-cfg="datum"><em>wird noch bekannt gegeben</em></span></div>
+    <div class="fact"><b>Uhrzeit</b><span>18:00 – 20:25 Uhr</span></div>
+    <div class="fact"><b>Ort</b><span data-cfg="ort"><em>wird noch bekannt gegeben</em></span></div>
+    <div class="fact"><b>Für wen</b><span>Interesse an Vertrieb</span></div>
+  </div>
+</div>
+
+<main>
+
+<!-- ============================================================ WORUM ES GEHT ============================================================ -->
+<section class="sec">
+  <div class="shell">
+    <div class="sec__head">
+      <span class="eyebrow"><span class="dot"></span>Worum es geht</span>
+      <h2 class="sec__title">Kein Infoabend. Ein echter Einblick.</h2>
+      <p class="sec__sub">Keine dreistündige Präsentation, keine Hochglanz-Folien. Kurze Beiträge, echte Geschichten, offene Zahlen – und viel Zeit für persönliche Gespräche. Diese Fragen beantworten wir dir an dem Abend:</p>
+    </div>
+
+    <ul class="qgrid">
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1 1-1.1 1.8"/><path d="M12 17h.01"/></svg><p>Was macht man bei uns im Vertrieb konkret?</p></li>
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><p>Wie sieht ein typischer Arbeitstag aus?</p></li>
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M15 8h5v5"/></svg><p>Welche Entwicklungsmöglichkeiten gibt es?</p></li>
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><p>Was muss man mitbringen?</p></li>
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg><p>Wie läuft eine Probewoche ab?</p></li>
+      <li class="qcard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-7-10a4.5 4.5 0 0 1 8.4-2.3A4.5 4.5 0 0 1 22 11c0 5.4-7 10-7 10"/></svg><p>Und vor allem: passt das grundsätzlich zu mir?</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ ABLAUF ============================================================ -->
+<section class="sec sec--soft" id="ablauf">
+  <div class="shell">
+    <div class="sec__head">
+      <span class="eyebrow"><span class="dot"></span>Der Abend</span>
+      <h2 class="sec__title">Ablauf auf einen Blick</h2>
+      <p class="sec__sub">Rund zweieinhalb Stunden – danach noch so lange Zeit für Einzelgespräche, wie du magst.</p>
+    </div>
+
+    <ol class="tl">
+      <li class="tl__row"><div class="tl__time">18:00</div><div class="tl__body"><h3>Lockeres Ankommen</h3><p>Getränke, Pizza, Musik. Unser Team ist im Raum verteilt – komm einfach ins Gespräch.</p></div></li>
+      <li class="tl__row"><div class="tl__time">18:15</div><div class="tl__body"><h3>Wer wir sind</h3><p>Wie Ländle Digital entstanden ist, was wir für Unternehmen machen und wohin wir wollen.</p></div></li>
+      <li class="tl__row"><div class="tl__time">18:30</div><div class="tl__body"><h3>Was Vertrieb bei uns wirklich bedeutet</h3><p>Wie wir neue Kunden ansprechen, wie ein erstes Gespräch abläuft, was du in den ersten Wochen lernst – und wie man mit Absagen umgeht. Inklusive kurzem Beispielgespräch.</p></div></li>
+      <li class="tl__row"><div class="tl__time">19:00</div><div class="tl__body"><h3>Erfahrungsbericht aus der Probewoche</h3><p>Jemand, der die Woche schon gemacht hat, erzählt offen: Erwartung, Realität, Überraschungen.</p></div></li>
+      <li class="tl__row"><div class="tl__time">19:15</div><div class="tl__body"><h3>Kleine praktische Aufgabe</h3><p>In Gruppen von 3–4 Personen: Wie würdest du ein Gespräch eröffnen? Kein Test, keine Bühne – einfach mal ausprobieren.</p></div></li>
+      <li class="tl__row"><div class="tl__time">19:35</div><div class="tl__body"><h3>Entwicklung, Verdienst und Erwartungen</h3><p>Transparent: Einstieg, Verdienstmodell, realistische Ziele – und was wir dafür von dir erwarten.</p></div></li>
+      <li class="tl__row"><div class="tl__time">19:55</div><div class="tl__body"><h3>Die Probewoche im Detail</h3><p>Dauer, Aufgaben, Ansprechpartner, Termine. Alles, was du wissen musst, um zu entscheiden.</p></div></li>
+      <li class="tl__row"><div class="tl__time">20:05</div><div class="tl__body"><h3>Offene Fragen &amp; direkte Anmeldung</h3><p>Alles fragen, was noch offen ist – und bei Interesse direkt vor Ort einen Platz sichern.</p></div></li>
+      <li class="tl__row tl__row--soft"><div class="tl__time">ab 20:25</div><div class="tl__body"><h3>Ausklang &amp; Einzelgespräche</h3><p>Wer mag, bleibt noch: Kennenlerngespräche unter vier Augen, Termine fixieren, weiterreden.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ PROBEWOCHE ============================================================ -->
+<section class="sec">
+  <div class="shell split">
+    <div>
+      <span class="eyebrow"><span class="dot"></span>Der nächste Schritt</span>
+      <h2 class="sec__title">Die Probewoche</h2>
+      <p class="sec__sub" style="margin-bottom:20px">Der Karriereabend ist der Einstieg – die Probewoche ist der Test. Eine Woche mit uns im Alltag, mit festem Ansprechpartner und echten Aufgaben statt Zuschauen.</p>
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Echte Aufgaben</strong> – du läufst nicht nur mit, sondern machst mit.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Fester Ansprechpartner</strong> – jemand ist die ganze Woche für dich zuständig.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Klare Termine</strong> – du wählst bei der Anmeldung, was dir zeitlich passt.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Ohne Verpflichtung</strong> – am Ende der Woche entscheiden wir gemeinsam, ob es passt.</span></li>
+      </ul>
+    </div>
+
+    <aside class="panel">
+      <h3>Das solltest du mitbringen</h3>
+      <p>Keine Vertriebserfahrung, kein perfekter Lebenslauf. Lust auf Gespräche mit Menschen, Neugier und die Bereitschaft, etwas aufzubauen – das reicht als Start.</p>
+      <hr />
+      <dl>
+        <div><dt>Dauer des Abends</dt><dd>18:00 – 20:25 Uhr</dd></div>
+        <div><dt>Teilnehmer</dt><dd>12 – 20 Personen</dd></div>
+        <div><dt>Teilnahme</dt><dd>kostenlos &amp; unverbindlich</dd></div>
+        <div><dt>Anmeldung</dt><dd>2 Minuten, unten auf dieser Seite</dd></div>
+      </dl>
+      <hr />
+      <div class="big">Fragen?</div>
+      <p style="margin-top:6px">Schreib oder ruf einfach durch – <span data-cfg="kontaktname">Savio Röckle</span> antwortet dir persönlich.<br />
+        <span data-cfg="kontaktzeile"><em style="color:rgba(255,255,255,.6);font-style:normal">Kontaktdaten siehe unten</em></span>
+      </p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================================================ ANMELDUNG ============================================================ -->
+<section class="sec sec--soft" id="anmeldung">
+  <div class="shell formwrap">
+    <div class="formcard">
+
+      <!-- Formular -->
+      <div id="formShell">
+        <div class="formcard__head">
+          <span class="eyebrow"><span class="dot"></span>Anmeldung</span>
+          <h2 style="margin-top:12px">Sichere dir deinen Platz</h2>
+          <p>Zwei Minuten ausfüllen – du bekommst von uns eine persönliche Bestätigung mit allen Details zum Abend. Kostenlos und unverbindlich.</p>
+        </div>
+
+        <div class="setupwarn" id="setupWarn">
+          <b>Hinweis für das Team – noch nicht scharf</b>
+          In <code>CONFIG.endpoint</code> ist noch kein Formular-Dienst eingetragen. Anmeldungen werden
+          dadurch aktuell <strong>nicht gespeichert</strong>. Bitte vor dem Start der Anzeigen ergänzen
+          (siehe Kommentar oben im <code>&lt;script&gt;</code>-Block) – dieser Kasten verschwindet dann automatisch.
+        </div>
+
+        <div class="formfail" id="formFail" role="alert"></div>
+
+        <form id="anmeldeForm" novalidate>
+
+          <!-- Spamschutz: für Menschen unsichtbar, Bots füllen es aus -->
+          <div class="hp" aria-hidden="true">
+            <label for="af_website">Website</label>
+            <input id="af_website" name="_gotcha" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="field" data-field>
+            <label for="af_name">Vor- und Nachname <span class="req">*</span></label>
+            <input class="input" id="af_name" name="Name" type="text" autocomplete="name" placeholder="Max Mustermann" required />
+            <div class="err-msg">Bitte gib deinen Vor- und Nachnamen an.</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="field" data-field>
+              <label for="af_phone">Telefonnummer <span class="req">*</span></label>
+              <input class="input" id="af_phone" name="Telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="0170 1234567" required />
+              <div class="err-msg">Bitte gib eine erreichbare Telefonnummer an.</div>
+            </div>
+            <div class="field" data-field>
+              <label for="af_email">E-Mail-Adresse <span class="req">*</span></label>
+              <input class="input" id="af_email" name="E-Mail" type="email" inputmode="email" autocomplete="email" placeholder="max@beispiel.de" required />
+              <div class="err-msg">Bitte gib eine gültige E-Mail-Adresse an.</div>
+            </div>
+          </div>
+
+          <div class="field" data-field>
+            <label for="af_job">Aktuelle Tätigkeit <span class="req">*</span></label>
+            <span class="hint">Schule, Ausbildung, Studium, Job – einfach kurz in eigenen Worten.</span>
+            <input class="input" id="af_job" name="Aktuelle Tätigkeit" type="text" placeholder="z. B. Ausbildung, 2. Jahr" required />
+            <div class="err-msg">Bitte sag uns kurz, was du aktuell machst.</div>
+          </div>
+
+          <div class="field" data-field>
+            <label for="af_why">Warum interessiert dich Vertrieb? <span class="req">*</span></label>
+            <span class="hint">Zwei, drei Sätze genügen völlig. Es gibt keine falsche Antwort.</span>
+            <textarea class="input" id="af_why" name="Warum Vertrieb" rows="3" placeholder="Was reizt dich daran? Was möchtest du herausfinden?" required></textarea>
+            <div class="err-msg">Bitte schreib uns kurz, was dich an Vertrieb interessiert.</div>
+          </div>
+
+          <div class="field" data-field>
+            <span class="flabel">Welche Termine passen für eine Probewoche? <span class="req">*</span></span>
+            <span class="hint">Mehrfachauswahl möglich – nichts davon ist verbindlich.</span>
+            <div class="opts" id="afTermine">
+              <!-- wird aus CONFIG.probewochen erzeugt; Fallback siehe <noscript> unten -->
+            </div>
+            <div class="err-msg">Bitte wähle mindestens einen Zeitraum aus.</div>
+          </div>
+
+          <div class="field" data-field>
+            <label for="af_more">Gibt es noch etwas, das wir wissen sollten? <span class="opt">(optional)</span></label>
+            <textarea class="input" id="af_more" name="Sonstiges" rows="2" placeholder="Fragen, Wünsche, Hinweise – oder einfach leer lassen."></textarea>
+          </div>
+
+          <div class="field" data-field style="margin-bottom:24px">
+            <label class="check">
+              <input type="checkbox" id="af_privacy" required />
+              <span>Ich bin damit einverstanden, dass Ländle Digital meine Angaben zur Organisation des Karriereabends und zur Kontaktaufnahme wegen einer Probewoche verarbeitet. Details in der <a data-cfg-href="datenschutz" href="#datenschutz-hinweis" target="_blank" rel="noopener">Datenschutzerklärung</a>. <span class="req">*</span></span>
+            </label>
+            <div class="err-msg">Ohne diese Zustimmung können wir deine Anmeldung leider nicht annehmen.</div>
+          </div>
+
+          <button type="submit" class="btn btn--block" id="afSubmit">
+            <span>Verbindlich anmelden</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <p class="formnote">Deine Daten bleiben bei uns – keine Weitergabe an Dritte, keine Werbung.</p>
+        </form>
+      </div>
+
+      <!-- Danke-Zustand -->
+      <div class="done" id="formDone" role="status" aria-live="polite">
+        <div class="done__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>Dein Platz ist reserviert.</h2>
+        <p>Danke für deine Anmeldung! Wir melden uns persönlich bei dir und schicken dir alle Details zum Abend. Wenn du vorher Fragen hast: einfach anrufen oder schreiben.</p>
+        <div class="done__btns">
+          <a class="btn btn--soft" id="afIcs" href="#" download="Karriereabend-Vertrieb.ics" hidden>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+            Termin in den Kalender
+          </a>
+          <a class="btn btn--soft" data-cfg-href="instagram" href="#" target="_blank" rel="noopener" hidden id="afInsta">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>
+            Auf Instagram folgen
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FAQ ============================================================ -->
+<section class="sec">
+  <div class="shell">
+    <div class="sec__head">
+      <span class="eyebrow"><span class="dot"></span>Häufige Fragen</span>
+      <h2 class="sec__title">Gut zu wissen</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Muss ich mich vorbereiten oder Unterlagen mitbringen?</summary>
+        <p>Nein. Kein Lebenslauf, keine Bewerbungsmappe, keine Vorbereitung. Komm so, wie du bist – der Abend ist kein Bewerbungsgespräch, sondern ein Kennenlernen.</p>
+      </details>
+      <details>
+        <summary>Was kostet die Teilnahme?</summary>
+        <p>Nichts. Der Abend ist kostenlos und unverbindlich, Pizza und Getränke gehen auf uns.</p>
+      </details>
+      <details>
+        <summary>Was ziehe ich an?</summary>
+        <p>Zieh an, worin du dich wohlfühlst. Kein Anzug nötig.</p>
+      </details>
+      <details>
+        <summary>Ich habe noch keine Erfahrung im Vertrieb – ist das ein Problem?</summary>
+        <p>Im Gegenteil, der Abend ist genau dafür gemacht. Viele Teilnehmer sind noch in Schule, Ausbildung oder Studium oder überlegen, ob Vertrieb überhaupt zu ihnen passt.</p>
+      </details>
+      <details>
+        <summary>Kann ich jemanden mitbringen?</summary>
+        <p>Ja, gerne – die Plätze sind begrenzt, deshalb bitte die Begleitung im Feld „Gibt es noch etwas, das wir wissen sollten?“ kurz erwähnen, damit wir mitplanen können.</p>
+      </details>
+      <details>
+        <summary>Verpflichtet mich die Anmeldung zu einer Probewoche?</summary>
+        <p>Nein. Mit der Anmeldung sicherst du dir nur deinen Platz für den Abend. Ob und wann du eine Probewoche machst, entscheidest du danach in Ruhe. Deine Terminangaben helfen uns nur bei der Planung.</p>
+      </details>
+      <details>
+        <summary>Ich kann an dem Abend nicht – gibt es eine Alternative?</summary>
+        <p>Melde dich trotzdem und schreib es uns ins Freitextfeld. Dann vereinbaren wir ein persönliches Gespräch oder du kommst beim nächsten Termin dazu.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SCHLUSS-CTA ============================================================ -->
+<section class="endcta">
+  <div class="shell">
+    <span class="eyebrow eyebrow--light"><span class="dot"></span>Plätze begrenzt</span>
+    <h2>Ein Abend. Ehrliche Antworten. Vielleicht dein Einstieg.</h2>
+    <p>12 bis 20 Plätze, <span data-cfg="monat">September 2026</span> in <span data-cfg="ortkurz">Rottweil</span>. Anmeldung dauert zwei Minuten.</p>
+    <a href="#anmeldung" class="btn">Jetzt Platz sichern
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="foot" id="datenschutz-hinweis">
+  <div class="shell foot__inner">
+    <div>
+      <b>Ländle Digital GmbH</b>
+      Königstraße 26 · 78628 Rottweil<br />
+      <a data-cfg-href="website" href="https://laendle-digital.com" target="_blank" rel="noopener">laendle-digital.com</a>
+    </div>
+    <div>
+      <b>Fragen zum Karriereabend?</b>
+      <span data-cfg="kontaktname">Savio Röckle</span><br />
+      <span data-cfg="kontaktzeile"><em style="font-style:normal;color:rgba(255,255,255,.5)">Kontaktdaten bitte in CONFIG ergänzen</em></span>
+    </div>
+    <div>
+      <b>Rechtliches</b>
+      <div class="foot__legal">
+        <a data-cfg-href="impressum" href="https://laendle-digital.com/impressum" target="_blank" rel="noopener">Impressum</a>
+        <a data-cfg-href="datenschutz" href="https://laendle-digital.com/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky CTA für Mobil (Anzeigen-Traffic kommt fast ausschließlich vom Handy) -->
+<div class="sticky" id="sticky">
+  <a href="#anmeldung" class="btn">Platz für den Karriereabend sichern</a>
+</div>
+
+<script>
+/* ============================================================
+   1) KONFIGURATION — alles Änderbare an einer Stelle
+   ============================================================
+   Leere Werte ("") bleiben einfach unbefüllt: Die Seite zeigt dann
+   "wird noch bekannt gegeben" statt eines falschen Platzhalters.
+============================================================ */
+const CONFIG = {
+
+  /* --- Wohin gehen die Anmeldungen? -----------------------------------
+     Trag hier die URL deines Formular-Dienstes ein. Die Felder werden
+     als normales Formular (multipart/form-data) gesendet, das versteht
+     praktisch jeder Anbieter:
+
+       Formspree   https://formspree.io/f/DEINE-ID
+       Web3Forms   https://api.web3forms.com/submit   (+ accessKey unten)
+       Getform     https://getform.io/f/DEINE-ID
+       Make/Zapier Webhook-URL
+
+     Solange das Feld leer ist, öffnet das Formular als Notlösung eine
+     vorbefüllte E-Mail an mailTo. Vor dem Anzeigen-Start bitte
+     unbedingt einen Endpoint eintragen und einmal testen.          */
+  endpoint: "",
+  accessKey: "",                 // nur bei Web3Forms nötig
+  mailTo: "",                    // Fallback-Empfänger, z. B. "karriere@laendle-digital.com"
+
+  /* --- Eckdaten des Abends ------------------------------------------- */
+  monat:  "September 2026",
+  datum:  "",                    // z. B. "Donnerstag, 17. September 2026"
+  ort:    "",                    // z. B. "Königstraße 26, 78628 Rottweil"
+  ortkurz:"Rottweil",
+
+  /* ISO-Zeiten für den Kalender-Button im Danke-Zustand.
+     Erst ausfüllen, wenn der Termin steht – sonst wird der Button
+     automatisch ausgeblendet.  Format: "2026-09-17T18:00:00"        */
+  startISO: "",
+  endeISO:  "",
+
+  /* --- Ansprechpartner ----------------------------------------------- */
+  kontaktname:  "Savio Röckle",
+  kontaktTel:   "",              // z. B. "+49 741 123456"
+  kontaktMail:  "",              // z. B. "savio@laendle-digital.com"
+
+  /* --- Links ---------------------------------------------------------- */
+  website:    "https://laendle-digital.com",
+  impressum:  "https://laendle-digital.com/impressum",
+  datenschutz:"https://laendle-digital.com/datenschutz",
+  instagram:  "",                // z. B. "https://instagram.com/laendle.digital"
+
+  /* --- Auswahl "Welche Termine passen für eine Probewoche?" ------------
+     Sobald die Herbst-Termine feststehen, hier die konkreten Wochen
+     eintragen, z. B. "KW 41 · 05.–09.10.2026".                      */
+  probewochen: [
+    "Oktober 2026",
+    "November 2026",
+    "Nach den Herbstferien",
+    "Ich bin zeitlich flexibel"
+  ]
+};
+
+/* ============================================================
+   2) CONFIG in die Seite schreiben
+============================================================ */
+(function fillConfig(){
+  const set = (key, value) => {
+    if(!value) return;
+    document.querySelectorAll('[data-cfg="'+key+'"]').forEach(el => { el.textContent = value; });
+  };
+  set("monat",   CONFIG.monat);
+  set("datum",   CONFIG.datum);
+  set("ort",     CONFIG.ort);
+  set("ortkurz", CONFIG.ortkurz);
+  set("kontaktname", CONFIG.kontaktname);
+
+  /* Telefon + Mail als klickbare Links */
+  const parts = [];
+  if(CONFIG.kontaktTel)  parts.push('<a href="tel:'+CONFIG.kontaktTel.replace(/[^\d+]/g,"")+'">'+CONFIG.kontaktTel+'</a>');
+  if(CONFIG.kontaktMail) parts.push('<a href="mailto:'+CONFIG.kontaktMail+'">'+CONFIG.kontaktMail+'</a>');
+  if(parts.length){
+    document.querySelectorAll('[data-cfg="kontaktzeile"]').forEach(el => { el.innerHTML = parts.join(" · "); });
+  }
+
+  /* Links */
+  document.querySelectorAll("[data-cfg-href]").forEach(el => {
+    const v = CONFIG[el.getAttribute("data-cfg-href")];
+    if(v) el.setAttribute("href", v);
+  });
+
+  /* Instagram-Button im Danke-Zustand nur zeigen, wenn Link gesetzt ist */
+  const insta = document.getElementById("afInsta");
+  if(insta && CONFIG.instagram) insta.hidden = false;
+
+  /* Titel um das konkrete Datum ergänzen (gut für Link-Vorschauen) */
+  if(CONFIG.datum) document.title = "Karriereabend Vertrieb · " + CONFIG.datum + " · Ländle Digital";
+
+  /* Warnen, solange die Anmeldungen nirgends landen können */
+  if(!CONFIG.endpoint && !CONFIG.mailTo){
+    const warn = document.getElementById("setupWarn");
+    if(warn) warn.classList.add("show");
+    console.warn("[Karriereabend] CONFIG.endpoint und CONFIG.mailTo sind leer – Anmeldungen können nicht zugestellt werden.");
+  }
+})();
+
+/* ============================================================
+   3) Terminauswahl (Mehrfachauswahl) aufbauen
+============================================================ */
+(function buildTermine(){
+  const box = document.getElementById("afTermine");
+  if(!box) return;
+  box.innerHTML = CONFIG.probewochen.map((t, i) =>
+    '<label class="opt-box"><input type="checkbox" name="Probewoche" value="'+
+    String(t).replace(/"/g,"&quot;")+'" id="af_t'+i+'" /><span>'+
+    String(t).replace(/</g,"&lt;")+'</span></label>'
+  ).join("");
+})();
+
+/* ============================================================
+   4) Sticky-CTA auf Mobil ein-/ausblenden
+============================================================ */
+(function stickyCta(){
+  const bar  = document.getElementById("sticky");
+  const form = document.getElementById("anmeldung");
+  if(!bar || !form) return;
+
+  const update = () => {
+    const heroDone = window.scrollY > window.innerHeight * .6;
+    const rect     = form.getBoundingClientRect();
+    const formOpen = rect.top < window.innerHeight && rect.bottom > 0;
+    const show     = heroDone && !formOpen;
+    bar.classList.toggle("on", show);
+    document.body.classList.toggle("has-sticky", show);
+  };
+  update();
+  addEventListener("scroll", update, {passive:true});
+  addEventListener("resize", update);
+})();
+
+/* ============================================================
+   5) Formular: Validierung + Versand
+============================================================ */
+(function anmeldeFormular(){
+  const form   = document.getElementById("anmeldeForm");
+  if(!form) return;
+  const shell  = document.getElementById("formShell");
+  const done   = document.getElementById("formDone");
+  const fail   = document.getElementById("formFail");
+  const submit = document.getElementById("afSubmit");
+  const opened = Date.now();
+
+  const fieldOf = el => el.closest("[data-field]");
+  const clear   = el => { const f = fieldOf(el); if(f) f.classList.remove("is-err"); };
+  const mark    = el => { const f = fieldOf(el); if(f) f.classList.add("is-err"); return f; };
+
+  /* Fehler verschwindet, sobald korrigiert wird */
+  form.addEventListener("input",  e => clear(e.target));
+  form.addEventListener("change", e => clear(e.target));
+
+  const emailOk = v => /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(v.trim());
+  const phoneOk = v => (v.replace(/[^\d]/g,"").length >= 7);
+
+  function validate(){
+    const bad = [];
+    const g   = id => document.getElementById(id);
+
+    if(g("af_name").value.trim().length < 3)      bad.push(g("af_name"));
+    if(!phoneOk(g("af_phone").value))             bad.push(g("af_phone"));
+    if(!emailOk(g("af_email").value))             bad.push(g("af_email"));
+    if(g("af_job").value.trim().length < 2)       bad.push(g("af_job"));
+    if(g("af_why").value.trim().length < 5)       bad.push(g("af_why"));
+    if(!form.querySelector('input[name="Probewoche"]:checked')) bad.push(document.getElementById("afTermine"));
+    if(!g("af_privacy").checked)                  bad.push(g("af_privacy"));
+
+    document.querySelectorAll("[data-field].is-err").forEach(f => f.classList.remove("is-err"));
+    bad.forEach(mark);
+
+    if(bad.length){
+      const first = fieldOf(bad[0]) || bad[0];
+      first.scrollIntoView({behavior:"smooth", block:"center"});
+      const focusable = first.querySelector("input,textarea,select");
+      if(focusable) focusable.focus({preventScroll:true});
+    }
+    return bad.length === 0;
+  }
+
+  /* Daten sammeln — inkl. Anzeigen-Herkunft, damit ihr sehen könnt,
+     welche Kampagne die Anmeldungen bringt. */
+  function payload(){
+    const fd = new FormData();
+    const p  = new URLSearchParams(location.search);
+
+    fd.append("Name",               document.getElementById("af_name").value.trim());
+    fd.append("Telefon",            document.getElementById("af_phone").value.trim());
+    fd.append("E-Mail",             document.getElementById("af_email").value.trim());
+    fd.append("Aktuelle Tätigkeit", document.getElementById("af_job").value.trim());
+    fd.append("Warum Vertrieb",     document.getElementById("af_why").value.trim());
+    fd.append("Passende Probewochen",
+      Array.from(form.querySelectorAll('input[name="Probewoche"]:checked')).map(c => c.value).join(", "));
+    fd.append("Sonstiges",          document.getElementById("af_more").value.trim() || "–");
+    fd.append("Datenschutz",        "zugestimmt");
+
+    fd.append("Anmeldung für", "Karriereabend Vertrieb" + (CONFIG.datum ? " am " + CONFIG.datum : " " + CONFIG.monat));
+    fd.append("Herkunft", [p.get("utm_source"), p.get("utm_medium"), p.get("utm_campaign"), p.get("src")]
+      .filter(Boolean).join(" / ") || (document.referrer || "direkt"));
+
+    /* Anbieter-spezifische Zusatzfelder */
+    fd.append("_subject", "Neue Anmeldung Karriereabend Vertrieb");
+    if(CONFIG.accessKey) fd.append("access_key", CONFIG.accessKey);
+    return fd;
+  }
+
+  /* Notlösung ohne Endpoint: vorbefüllte E-Mail öffnen */
+  function mailtoFallback(fd){
+    const lines = [];
+    fd.forEach((v,k) => { if(k[0] !== "_" && k !== "access_key") lines.push(k + ": " + v); });
+    const to = CONFIG.mailTo || "";
+    location.href = "mailto:" + to
+      + "?subject=" + encodeURIComponent("Anmeldung Karriereabend Vertrieb")
+      + "&body="    + encodeURIComponent(lines.join("\n"));
+  }
+
+  function showDone(){
+    shell.hidden = true;
+    done.classList.add("show");
+    done.scrollIntoView({behavior:"smooth", block:"center"});
+    buildIcs();
+  }
+
+  function showFail(msg){
+    fail.innerHTML = msg;
+    fail.classList.add("show");
+    fail.scrollIntoView({behavior:"smooth", block:"center"});
+  }
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    fail.classList.remove("show");
+
+    /* Bot-Bremse: unsichtbares Feld gefüllt oder in unter 3 Sekunden
+       abgeschickt → still schlucken. */
+    if(form.querySelector('[name="_gotcha"]').value || (Date.now() - opened) < 3000){
+      showDone();
+      return;
+    }
+    if(!validate()) return;
+
+    const fd = payload();
+
+    /* Kein Endpoint eingerichtet: notfalls per E-Mail, sonst ehrlich melden
+       statt die Anmeldung ins Nichts zu schicken. */
+    if(!CONFIG.endpoint){
+      if(CONFIG.mailTo){
+        mailtoFallback(fd);
+        showDone();
+      }else{
+        showFail("Die Anmeldung ist online gerade nicht möglich. Bitte melde dich kurz telefonisch oder per E-Mail bei uns – die Kontaktdaten stehen unten auf dieser Seite. Sorry für die Umstände!");
+      }
+      return;
+    }
+
+    submit.disabled = true;
+    submit.querySelector("span").textContent = "Wird gesendet …";
+
+    try{
+      const res = await fetch(CONFIG.endpoint, {method:"POST", body:fd, headers:{Accept:"application/json"}});
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      showDone();
+    }catch(err){
+      const alt = CONFIG.kontaktMail
+        ? ' Schreib uns bitte kurz an <a href="mailto:'+CONFIG.kontaktMail+'">'+CONFIG.kontaktMail+'</a>'
+          + (CONFIG.kontaktTel ? ' oder ruf an: <a href="tel:'+CONFIG.kontaktTel.replace(/[^\d+]/g,"")+'">'+CONFIG.kontaktTel+'</a>.' : '.')
+        : '';
+      showFail("Das hat leider nicht funktioniert." + alt + " Wir kümmern uns um deinen Platz.");
+      submit.disabled = false;
+      submit.querySelector("span").textContent = "Nochmal versuchen";
+    }
+  });
+
+  /* Kalender-Datei (.ics) für den Danke-Zustand — nur wenn der Termin steht */
+  function buildIcs(){
+    const btn = document.getElementById("afIcs");
+    if(!btn || !CONFIG.startISO || !CONFIG.endeISO) return;
+
+    /* Ortszeit ohne Zeitzonen-Angabe ("floating time"): Der Abend findet
+       vor Ort statt, alle Teilnehmer sind in derselben Zeitzone. Das ist
+       deutlich robuster als TZID-Angaben ohne VTIMEZONE-Block. */
+    const stamp = s => s.replace(/[-:]/g,"").replace(/\.\d+/,"");
+    const ics = [
+      "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Laendle Digital//Karriereabend//DE","CALSCALE:GREGORIAN",
+      "BEGIN:VEVENT",
+      "UID:karriereabend-vertrieb-" + stamp(CONFIG.startISO) + "@laendle-digital.com",
+      "DTSTART:" + stamp(CONFIG.startISO),
+      "DTEND:"   + stamp(CONFIG.endeISO),
+      "SUMMARY:Karriereabend Vertrieb · Ländle Digital",
+      "DESCRIPTION:Vertrieb erleben – Dein Karriereabend bei Ländle Digital.",
+      "LOCATION:" + (CONFIG.ort || "Rottweil"),
+      "END:VEVENT","END:VCALENDAR"
+    ].join("\r\n");
+
+    btn.href   = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+    btn.hidden = false;
+  }
+})();
+</script>
+
+<noscript>
+  <div style="max-width:720px;margin:0 auto 60px;padding:22px;border:1.5px solid #e3e9f0;border-radius:16px;background:#f5f8fb">
+    <b>Anmeldung ohne JavaScript</b>
+    <p style="margin-top:8px;color:#55677c">
+      Für das Formular wird JavaScript benötigt. Melde dich stattdessen einfach per E-Mail oder Telefon an –
+      die Kontaktdaten stehen im Fuß dieser Seite. Bitte gib dabei Namen, Telefonnummer, deine aktuelle
+      Tätigkeit und passende Termine für eine Probewoche an.
+    </p>
+  </div>
+</noscript>
+
+</body>
+</html>

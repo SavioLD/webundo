@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /karriereabend/
+
+# Der Karriereabend ist eine eigenständige Kampagnen-Seite und gehört nicht
+# in den Suchindex. Sie wird ausschließlich über Anzeigen (Instagram / Meta),
+# QR-Code und direkt geteilte Links erreicht.
+# Alle übrigen Seiten bleiben ausdrücklich crawlbar.

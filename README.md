@@ -16,6 +16,18 @@ mit integriertem **Einkaufs-Potenzial-Rechner** und KI-Assistent-Vorschau.
 | `js/` | Logik (`main.js`, `rechner.js`, `chat-widget.js`) |
 | `logo.svg` | Logo |
 | `webundo-onepage.html` | **Bonus:** komplette Seite als eine einzige Datei (alles inline) |
+| `karriereabend/` | Eigenständige Kampagnen-Seite (siehe unten) – **gehört nicht zur WEBUNDO-Website** |
+
+### Ordner `karriereabend/`
+
+Anmeldeformular für den Karriereabend Vertrieb von **Ländle Digital** (September 2026).
+Die Seite ist bewusst **nirgends verlinkt** – keine Navigation, kein Footer-Link, kein
+Menü-Eintrag – und über `robots.txt` sowie `noindex` vom Suchindex ausgeschlossen.
+Erreichbar nur über Anzeige, Instagram-Bio-Link und QR-Code.
+
+Sie ist eine vollständig eigenständige Einzeldatei ohne Bezug zum Rest des Repos und
+kann jederzeit auf eine eigene Domain oder Subdomain umziehen. Details, Konfiguration
+und Go-live-Checkliste: [`karriereabend/README.md`](karriereabend/README.md).
 
 ## Auf GitHub Pages veröffentlichen
 
