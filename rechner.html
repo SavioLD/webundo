@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Einkaufs-Potenzial-Rechner · WEBUNDO — Ihr Einsparpotenzial in 60 Sekunden</title>
-<meta name="description" content="Wie viel kostet Sie Ihre aktuelle Beschaffung wirklich? Berechnen Sie in 60 Sekunden Ihr jährliches Einsparpotenzial mit WEBUNDO – zentrale Beschaffung, weniger Lieferanten, weniger Aufwand. Auf Basis Ihrer eigenen Zahlen." />
+<title>Sonderbedarfs-Einsparrechner · WEBUNDO — Prozesskosten sparen (BME 2025)</title>
+<meta name="description" content="Sonderbedarfs-Einsparrechner: Berechnen Sie in 60 Sekunden Ihr jährliches Einsparpotenzial bei Sonder- und Einmalbedarfen. Basiert auf den durchschnittlichen Prozesskosten je Bestellvorgang (121,75 €) laut BME Benchmark 2025." />
 <meta name="robots" content="index,follow" />
 <link rel="icon" href="logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,13 +61,12 @@
 <section class="calc-hero" id="rechner">
   <div class="calc-hero__bg" aria-hidden="true"></div>
   <div class="shell">
-    <span class="eyebrow"><span class="dot"></span>Einkaufs-Potenzial-Rechner</span>
-    <h1>Was kostet Sie Ihre aktuelle Beschaffung <u>wirklich</u>?</h1>
-    <p class="lead">Viele Lieferanten, unzählige Bestellungen, jede Rechnung einzeln geprüft: Die teuersten Kosten im Einkauf stehen auf <strong>keiner Rechnung</strong>. Berechnen Sie in 60 Sekunden, wie viel Sie pro Jahr mit <strong>WEBUNDO</strong> als zentralem Beschaffungspartner einsparen – auf Basis <strong>Ihrer eigenen Zahlen</strong>.</p>
+    <span class="eyebrow"><span class="dot"></span>Sonderbedarfs-Einsparrechner</span>
+    <h1>Was Sie bei Sonder- und Einmalbedarfen <u>sparen</u> können.</h1>
+    <p class="lead">WEBUNDO spart bei Sonder- und Einmalbedarfen vor allem <strong>Prozesskosten</strong> – durch die Bündelung von Lieferanten-, Bestell- und Rechnungsprozessen. Der Rechner basiert auf einer einzigen, belegbaren Kennzahl: den durchschnittlichen Prozesskosten je Bestellvorgang laut <strong>BME Benchmark 2025</strong>.</p>
     <div class="tchips">
-      <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Nur ein Kreditor</span>
+      <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Belegbare BME-Kennzahl</span>
       <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Ergebnis in 60 Sekunden</span>
-      <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>Mit Potenzial-Score</span>
       <span class="tchip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>Unverbindlich &amp; kostenlos</span>
     </div>
 
@@ -76,11 +75,11 @@
       <div>
         <span class="livecard__eyebrow"><span class="pulse"></span>Live-Vorschau · rechnet automatisch mit</span>
         <div class="livecard__eu"><span class="cur">€</span><span class="num" id="livEuro">0</span><span class="per">/ Jahr</span></div>
-        <p class="livecard__note">Passen Sie unten Ihre Werte an – hier erscheint sofort Ihr <strong>ungefähres Einsparpotenzial pro Jahr</strong>.</p>
+        <p class="livecard__note">Passen Sie unten die Anzahl Ihrer Sonderbedarfe an – hier erscheint sofort Ihr <strong>ungefähres Einsparpotenzial pro Jahr</strong>.</p>
       </div>
       <div class="livecard__cta">
-        <a href="#auswertung" class="btn btn--primary">Volle Auswertung ansehen</a>
-        <span class="small">Detail-Aufschlüsselung &amp; Score am Ende</span>
+        <a href="#auswertung" class="btn btn--primary">Zur vollen Auswertung</a>
+        <span class="small">Persönliche Auswertung anfordern</span>
       </div>
     </div>
   </div>
@@ -91,101 +90,32 @@
   <div class="shell">
     <div class="calc__intro">
       <h2>Ihre Ausgangslage</h2>
-      <p>Geben Sie ein paar Eckdaten ein – alle Werte sind Schätzungen und lassen sich frei anpassen. Es werden keine Daten gespeichert, solange Sie nichts absenden.</p>
+      <p>Ein Wert genügt: Wie viele Sonder- und Einmalbedarfe wickeln Sie ungefähr pro Jahr ab? Alle Angaben sind Schätzungen und lassen sich frei anpassen. Es werden keine Daten gespeichert, solange Sie nichts absenden.</p>
     </div>
 
-    <!-- Preset -->
     <div class="block">
-      <div class="presetrow">
-        <label for="preset">Schnellstart mit typischem Profil:</label>
-        <select class="select" id="preset">
-          <option value="">– eigene Werte eingeben –</option>
-          <option value="klein">Kleinbetrieb (≈ 25 Lieferanten)</option>
-          <option value="mittel">Mittelstand (≈ 60 Lieferanten)</option>
-          <option value="gross">Großbetrieb (≈ 120 Lieferanten)</option>
-          <option value="handel">Handel / Produktion (≈ 80 Lieferanten)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Bereiche -->
-    <div class="block">
-      <div class="block__head"><span class="block__num">SCHRITT 1</span><h3>Worum geht es?</h3><span class="block__tag">Mehrfachauswahl</span></div>
-      <p class="cinput" style="margin-bottom:4px;color:var(--slate)">Welche Bereiche möchten Sie verbessern?</p>
-      <div class="bchips">
-        <span class="bchip is-on" id="b_versorgung"><span class="bchip__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sortiment</span>
-        <span class="bchip is-on" id="b_beschaffung"><span class="bchip__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sonderbedarfe</span>
-        <span class="bchip is-on" id="b_optimierung"><span class="bchip__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Service</span>
-      </div>
-    </div>
-
-    <!-- Basis -->
-    <div class="block">
-      <div class="block__head"><span class="block__num">SCHRITT 2</span><h3>Ihre Einkaufskennzahlen</h3><span class="block__tag">Schieberegler bewegen</span></div>
+      <div class="block__head"><span class="block__num">SCHRITT 1</span><h3>Sonder- und Einmalbedarfe pro Jahr</h3><span class="block__tag">Schieberegler bewegen</span></div>
       <div class="sliders">
         <div class="sfield">
-          <div class="sfield__top"><label for="lieferanten">Aktive Lieferanten</label><span class="sfield__val" id="outLief">60</span></div>
-          <input type="range" id="lieferanten" min="3" max="300" step="1" value="60" />
-          <div class="sfield__scale"><span>3</span><span>300+</span></div>
-        </div>
-        <div class="sfield">
-          <div class="sfield__top"><label for="bestellungen">Bestellvorgänge pro Jahr</label><span class="sfield__val" id="outBest">1.200</span></div>
-          <input type="range" id="bestellungen" min="50" max="10000" step="50" value="1200" />
-          <div class="sfield__scale"><span>50</span><span>10.000+</span></div>
-        </div>
-        <div class="sfield">
-          <div class="sfield__top"><label for="volumen">Einkaufsvolumen pro Jahr</label><span class="sfield__val" id="outVol">1,2 Mio. €</span></div>
-          <input type="range" id="volumen" min="50000" max="10000000" step="50000" value="1200000" />
-          <div class="sfield__scale"><span>50 Tsd. €</span><span>10 Mio. €+</span></div>
+          <div class="sfield__top"><label for="vorgaenge">Anzahl Vorgänge pro Jahr</label><span class="sfield__val" id="outVorg">100</span></div>
+          <input type="range" id="vorgaenge" min="10" max="2000" step="10" value="100" />
+          <div class="sfield__scale"><span>10</span><span>2.000+</span></div>
         </div>
       </div>
 
-      <!-- Detailannahmen -->
-      <details class="adv">
-        <summary>
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 7"/></svg>
-          Detailannahmen anpassen <span style="font-weight:500;color:var(--slate)">(optional – sonst gelten Erfahrungswerte)</span>
-          <svg class="adv__chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </summary>
-        <div class="adv__body">
-          <p class="adv__sub">Aufwand &amp; Kosten</p>
-          <div class="calc-grid">
-            <div class="cinput">
-              <label for="minuten">Ø Zeit pro Bestellvorgang</label>
-              <div class="unitfield"><input class="input" id="minuten" type="text" inputmode="numeric" value="25" /><span class="unit">Min.</span></div>
-              <p class="hint">Anlegen, Bestellen, Nachfassen, Wareneingang, Rechnungsprüfung.</p>
-            </div>
-            <div class="cinput">
-              <label for="stundensatz">Stundensatz Einkauf / Verwaltung</label>
-              <div class="unitfield"><input class="input" id="stundensatz" type="text" inputmode="numeric" value="55" /><span class="unit">€ / h</span></div>
-              <p class="hint">Voll belasteter interner Stundensatz.</p>
-            </div>
-            <div class="cinput">
-              <label for="aufwandLieferant">Verwaltungsaufwand je Lieferant</label>
-              <div class="unitfield"><input class="input" id="aufwandLieferant" type="text" inputmode="numeric" value="600" /><span class="unit">€ / Jahr</span></div>
-              <p class="hint">Stammdaten, Kommunikation, Verträge, Rechnungsläufe pro Lieferant.</p>
-            </div>
-          </div>
-          <p class="adv__sub">Einspar-Annahmen (WEBUNDO)</p>
-          <div class="calc-grid">
-            <div class="cinput">
-              <label for="fConsol">Bündelbare Lieferanten</label>
-              <div class="unitfield"><input class="input" id="fConsol" type="text" inputmode="numeric" value="70" /><span class="unit">%</span></div>
-              <p class="hint">Anteil der Lieferanten, der über WEBUNDO gebündelt wird.</p>
-            </div>
-            <div class="cinput">
-              <label for="fProcess">Prozess-Effizienzgewinn</label>
-              <div class="unitfield"><input class="input" id="fProcess" type="text" inputmode="numeric" value="35" /><span class="unit">%</span></div>
-              <p class="hint">Zeitersparnis in der Bestellabwicklung.</p>
-            </div>
-            <div class="cinput">
-              <label for="fPrice">Bündelungs- / Preisvorteil</label>
-              <div class="unitfield"><input class="input" id="fPrice" type="text" inputmode="numeric" value="4" /><span class="unit">%</span></div>
-              <p class="hint">Konditionsverbesserung durch Bündelung des Volumens.</p>
-            </div>
-          </div>
+      <div class="block__head" style="margin-top:22px"><span class="block__num">SCHRITT 2</span><h3>Kennzahlen</h3><span class="block__tag">Prozesskosten fix · Einsparfaktor anpassbar</span></div>
+      <div class="calc-grid">
+        <div class="cinput">
+          <label for="kosten">Prozesskosten je Bestellvorgang</label>
+          <div class="unitfield"><input class="input" id="kosten" type="text" inputmode="decimal" value="121,75" readonly aria-readonly="true" /><span class="unit">€</span></div>
+          <p class="hint">Fixwert laut BME Benchmark 2025 (Kapitel 3.1.2.1).</p>
         </div>
-      </details>
+        <div class="cinput">
+          <label for="faktor">Einsparfaktor</label>
+          <div class="unitfield"><input class="input" id="faktor" type="text" inputmode="numeric" value="80" /><span class="unit">%</span></div>
+          <p class="hint">Standardwert 80 % – berücksichtigt den verbleibenden Restaufwand. Individuell anpassbar.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -195,64 +125,28 @@
   <div class="shell">
     <div class="result__hero">
       <span class="result__eyebrow"><span class="pulse"></span>Ihr Ergebnis</span>
-      <p class="result__label">Geschätztes Einsparpotenzial mit WEBUNDO</p>
+      <p class="result__label">Potenzielles Einsparvolumen bei Sonderbedarfen mit WEBUNDO</p>
       <div class="result__euro"><span class="cur">€</span><span class="num" id="resEuro">0</span><span class="per">/ Jahr</span></div>
       <span class="result__badge" id="resBadge">Einsparpotenzial pro Jahr</span>
-      <p class="result__desc">Statt mit vielen Lieferanten arbeiten Sie mit WEBUNDO als <strong>einem zentralen Partner</strong> – aus vielen Bestell- und Rechnungsströmen werden gebündelte Prozesse. Geschätzt nur noch <strong><span id="redSuppliers">1</span> aktive Lieferantenbeziehung</strong> in der Verwaltung.</p>
-
-      <div class="scorewrap">
-        <div class="gauge">
-          <svg width="140" height="140" viewBox="0 0 120 120" aria-hidden="true">
-            <circle class="gauge__bg" cx="60" cy="60" r="52"/>
-            <circle class="gauge__bar" id="scoreRing" cx="60" cy="60" r="52"/>
-          </svg>
-          <div class="gauge__txt"><span class="gauge__num" id="scoreNum">0</span><span class="gauge__max">von 100</span></div>
-        </div>
-        <div class="scoremeta">
-          <div class="k">WEBUNDO Potenzial-Score</div>
-          <div class="v" id="scoreLabel">—</div>
-          <p>Je fragmentierter und manueller Ihr Einkauf heute ist, desto höher ist Ihr Optimierungspotenzial mit WEBUNDO.</p>
-        </div>
-      </div>
-
+      <p class="result__desc">Berechnung: <strong><span id="fVorg">100</span> Vorgänge</strong> × <strong>121,75 €</strong> × <strong><span id="fFakt">80</span> %</strong> Einsparfaktor.</p>
       <div class="result__3yr"><span>Hochgerechnet auf <strong>3 Jahre</strong></span><b id="res3yr">€ 0</b></div>
     </div>
 
-    <!-- Status quo -->
+    <!-- Hinweistext -->
     <div class="costsec">
-      <h3>Was Ihr heutiger Einkauf bindet</h3>
-      <p>Diese Kosten und Aufwände entstehen aktuell – oft unbemerkt im Tagesgeschäft.</p>
-      <div class="costboxes">
-        <div class="costbox"><b id="costAdmin">€ 0</b><span>Aufwand für Lieferanten- &amp; Kreditorenpflege pro Jahr</span></div>
-        <div class="costbox"><b id="costProcess">€ 0</b><span>Interner Aufwand für die Bestellabwicklung pro Jahr</span></div>
-        <div class="costbox"><b id="costKred">0</b><span>Lieferanten = ebenso viele Rechnungs- &amp; Kommunikationswege</span></div>
-      </div>
+      <p class="rechner-hint">Grundlage der Berechnung sind durchschnittliche Prozesskosten von 121,75 € je Bestellvorgang laut BME Benchmark 2025. Da auch bei einer Beschaffung über WEBUNDO ein Restaufwand bestehen bleibt, berücksichtigt der Rechner standardmäßig ein Einsparpotenzial von 80 %. Der Wert dient der Orientierung und kann individuell angepasst werden.</p>
     </div>
 
-    <!-- gated breakdown + lead -->
+    <!-- lead -->
     <div class="costsec">
-      <h3>Ihre Einsparpotenziale im Detail</h3>
-      <p>Tragen Sie kurz Ihre Kontaktdaten ein – wir schalten die vollständige Aufschlüsselung frei und senden Ihnen die persönliche Auswertung zu.</p>
+      <h3>Persönliche Auswertung anfordern</h3>
+      <p>Tragen Sie kurz Ihre Kontaktdaten ein – wir bereiten Ihre individuelle Einsparrechnung auf und melden uns für ein unverbindliches Gespräch.</p>
 
-      <div class="lockwrap" id="breakdownLock">
-        <div class="breakdown">
-          <div class="brow"><span>Lieferanten- &amp; Kreditorenpflege (Bündelung)</span><b id="bdAdmin">€ 0</b></div>
-          <div class="brow"><span>Bestell- &amp; Prozessabwicklung (Effizienz)</span><b id="bdProcess">€ 0</b></div>
-          <div class="brow"><span>Bündelungs- &amp; Preisvorteil im Volumen</span><b id="bdPrice">€ 0</b></div>
-          <div class="brow brow--total"><span>Gesamtes Einsparpotenzial pro Jahr</span><b id="bdTotal">€ 0</b></div>
-        </div>
-        <div class="lockover">
-          <span class="lockover__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Detail-Auswertung gesperrt</span>
-          <p class="lockover__t">Kostenlos freischalten – mit dem Formular unten in 30 Sekunden.</p>
-        </div>
-      </div>
-
-      <!-- lead form -->
       <div class="leadcard">
         <div id="leadDone" hidden></div>
         <form id="leadForm" novalidate>
           <span class="leadcard__eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>Persönliche Auswertung anfordern</span>
-          <h2>Volle Auswertung freischalten &amp; <em>an die Geschäftsstelle senden</em></h2>
+          <h2>Auswertung <em>an die Geschäftsstelle senden</em></h2>
           <p class="leadcard__p">Wir bereiten Ihre individuelle Einsparrechnung auf und melden uns für ein unverbindliches Gespräch – in der Regel innerhalb von 24 Stunden. Ihre Angaben gehen direkt an die WEBUNDO-Geschäftsstelle.</p>
           <div class="leadgrid">
             <div><label class="lbl" for="lf_vorname">Vorname *</label><input class="input" id="lf_vorname" autocomplete="given-name" /><div class="err-msg" data-for="lf_vorname">Bitte ausfüllen.</div></div>
@@ -266,7 +160,7 @@
               <div class="err-msg" data-for="lf_privacy">Bitte bestätigen Sie die Datenschutzerklärung.</div>
             </div>
             <div class="full">
-              <button type="submit" class="btn btn--primary btn--lg btn--block">Auswertung freischalten &amp; senden</button>
+              <button type="submit" class="btn btn--primary btn--lg btn--block">Auswertung anfordern &amp; senden</button>
             </div>
           </div>
           <div class="leadtrust">
@@ -276,7 +170,9 @@
           </div>
         </form>
       </div>
-      <p class="compare__foot" style="margin-top:18px">Alle Werte sind unverbindliche Schätzungen auf Basis Ihrer Eingaben und dienen der Orientierung. Die verbindliche Berechnung erfolgt im persönlichen Gespräch.</p>
+
+      <p class="compare__foot" style="margin-top:18px">Alle Werte sind unverbindliche Schätzungen und dienen der Orientierung. Die verbindliche Berechnung erfolgt im persönlichen Gespräch.</p>
+      <p class="rechner-quelle">Quelle: BME Benchmark 2025 „Top-Kennzahlen Einkauf“, Kapitel 3.1.2.1: „Aktuell liegen die Kosten je Bestellvorgang bei 121,75 Euro.“ <a href="https://shop.bme.de/system/public_downloads/files/000/006/800/original/Leseprobe_Top-Kennzahlen_Durchschnittswerte_2025.pdf" target="_blank" rel="noopener">BME-Leseprobe (PDF) &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -287,7 +183,7 @@
     <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
     <div>
       <h2>Lieber direkt sprechen?</h2>
-      <p>Senden Sie uns Ihren Bedarf – wir finden die passende Lösung und übernehmen die Abwicklung.</p>
+      <p>Senden Sie uns Ihren Sonderbedarf – wir finden die passende Lösung und übernehmen die Abwicklung.</p>
     </div>
     <a href="kontakt.html" class="btn btn--primary btn--lg">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
@@ -300,9 +196,11 @@
   <div class="shell wfooter__inner">
     <div class="wfooter__brand">
       <div class="wfooter__logo"><img src="WEBUNDO_Logo.PNG" alt="WEBUNDO" /></div>
-      <p>Handel, Sonderbedarfe und Service – aus Trossingen, für Unternehmen und öffentliche Einrichtungen.</p>
+      <p>Betriebsbedarf, Sonderbedarfe und Service – aus Balingen, für Unternehmen und öffentliche Einrichtungen.</p>
       <div class="socials">
-        <a class="social" href="https://www.linkedin.com/in/thorsten-w-46a831162/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.76V21h-4z"/></svg></a>
+        <a class="social social--li" href="https://www.linkedin.com/in/thorsten-w-46a831162/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.76V21h-4z"/></svg></a>
+        <a class="social social--ig" href="https://instagram.com/webundo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="social social--yt" href="https://youtube.com/@webundo" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2s-.21-1.5-.87-2.16c-.83-.87-1.76-.87-2.19-.92C15.4 4 12 4 12 4h-.01s-3.4 0-6.54.12c-.43.05-1.36.05-2.19.92C2.6 5.7 2.4 7.2 2.4 7.2S2.18 8.95 2.18 10.7v1.6c0 1.75.22 3.5.22 3.5s.21 1.5.87 2.16c.83.87 1.92.84 2.4.93 1.75.17 7.33.22 7.33.22s3.4 0 6.54-.12c.43-.05 1.36-.05 2.19-.92.65-.65.87-2.16.87-2.16s.22-1.75.22-3.5v-1.6c0-1.75-.22-3.5-.22-3.5zM9.95 14.6V8.9l5.4 2.85-5.4 2.85z"/></svg></a>
         <a class="social social--wa" href="https://wa.me/491723513643?text=Liebes%20Webundo%20Team%2C%20" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9.4 3 4 8.4 4 15c0 2.1.5 4.1 1.6 5.9L4 29l8.3-1.6c1.7.9 3.6 1.4 5.7 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.3.6.6-3.2-.2-.4C7 18.9 6.5 17 6.5 15 6.5 9.8 10.8 5.5 16 5.5S25.5 9.8 25.5 15 21.2 24.8 16 24.8zm5.4-7c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.7-.8-2.8-1.5-3.9-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.8.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg></a>
       </div>
     </div>
@@ -317,8 +215,8 @@
     <div class="wfooter__col">
       <h4>Kontakt</h4>
       <address>
-        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Bahnhofstraße 9, 78647 Trossingen</span>
-        <a href="tel:+4974253341580"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 7425 334 1580</a>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Im Rohrbach 30, 72336 Balingen</span>
+        <a href="tel:+4974339558260"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+49 7433 955 8260</a>
         <a href="mailto:info@webundo.de"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>info@webundo.de</a>
       </address>
     </div>
