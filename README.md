@@ -25,9 +25,11 @@ Die Seite ist bewusst **nirgends verlinkt** – keine Navigation, kein Footer-Li
 Menü-Eintrag – und über `robots.txt` sowie `noindex` vom Suchindex ausgeschlossen.
 Erreichbar nur über Anzeige, Instagram-Bio-Link und QR-Code.
 
-Sie ist eine vollständig eigenständige Einzeldatei ohne Bezug zum Rest des Repos und
-kann jederzeit auf eine eigene Domain oder Subdomain umziehen. Details, Konfiguration
-und Go-live-Checkliste: [`karriereabend/README.md`](karriereabend/README.md).
+Gestaltet mit unserem Standard-Designkonzept (gleiche Palette, Inter, gleiche
+Komponenten wie `style.css`), technisch aber eine **eigenständige Einzeldatei**: Die
+benötigten Komponenten sind inline kopiert statt per `<link>` eingebunden, damit die
+Seite jederzeit auf eine eigene Domain oder Subdomain umziehen kann. Details,
+Konfiguration und Go-live-Checkliste: [`karriereabend/README.md`](karriereabend/README.md).
 
 ## Auf GitHub Pages veröffentlichen
 

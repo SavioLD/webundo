@@ -18,14 +18,50 @@ Zusätzlich ist sie per `<meta name="robots" content="noindex, nofollow">` und �
 
 ## Aufbau
 
-Ein einziges File: **`index.html`** – CSS, JavaScript und Icons sind inline.
-Keine Web-Fonts, keine externen Skripte, keine Tracker, keine Abhängigkeit zum Rest
-des Repos. Der Ordner lässt sich deshalb 1:1 überall hinkopieren (eigene Subdomain,
-eigenes GitHub-Pages-Repo, Netlify-Drop, Webspace) und funktioniert dort sofort.
+Ein einziges File: **`index.html`** – CSS, JavaScript und Icons sind inline. Keine
+externen Skripte, keine Tracker, keine Abhängigkeit zum Rest des Repos. Der Ordner
+lässt sich deshalb 1:1 überall hinkopieren (eigene Subdomain, eigenes
+GitHub-Pages-Repo, Netlify-Drop, Webspace) und funktioniert dort sofort.
 
-> Weil keine Google Fonts o. Ä. nachgeladen werden, verlässt beim Aufruf der Seite
-> kein Datenpaket an Dritte das Gerät der Besucher – bei einem Formular mit
-> personenbezogenen Daten die einfachere Variante.
+### Design
+
+Die Seite nutzt unser Standard-Designkonzept aus `style.css` – dieselbe Palette
+(Blau für Aktion, Navy für dunkle Flächen, Grün für Häkchen, Sky für Icons),
+Inter, dieselben Radien und Schatten und dieselben Komponenten wie die übrigen
+Seiten:
+
+| Komponente | Einsatz hier |
+|-----------|--------------|
+| `.phero` | Hero in Navy mit Großbuchstaben-Headline |
+| `.valband` / `.valprop` | Fakten-Band unter dem Hero |
+| `.checklist` | „Diese Fragen beantworten wir" und „Was du mitbringen solltest" |
+| `.mstone` | Ablauf des Abends als Zeitschiene |
+| `.tlist` | Häkchen-Listen zur Probewoche |
+| `.stats` / `.stat` | Kennzahlen-Zeile |
+| `.ctaband` | Navy-CTA-Band vor der Anmeldung |
+| `.kontakt__grid` + `.formcard` | Anmeldung, wie das Kontaktformular |
+| `.opt` | Mehrfachauswahl der Probewochen-Termine |
+| `.faqacc` | FAQ-Akkordeon |
+| `.wfooter` | Fußzeile |
+| `.scrollprog` + Reveal-on-Scroll | Premium-Layer wie auf den anderen Seiten |
+
+Weil die Komponenten inline kopiert sind (nicht per `<link>` eingebunden), bleibt die
+Seite portabel. Wenn sich das Designkonzept ändert, muss diese Datei bewusst
+nachgezogen werden – das ist der Preis für die Unabhängigkeit.
+
+Zwei optische Stellen sind absichtlich offen gelassen:
+
+- **Logo:** Im Header und in der Fußzeile steht die Wortmarke `LD` als
+  `.brand__mark`. Der Austausch gegen das echte Logo ist im HTML kommentiert.
+- **Hero-Bild:** `.phero` hat wie auf den übrigen Seiten einen Platz für ein
+  Hintergrundbild (Team, Büro, Fotos vom letzten Abend). Die passende Zeile ist im
+  Markup vorbereitet und auskommentiert.
+
+> **Inter** kommt wie auf den anderen Seiten von Google Fonts. Wer die Schrift
+> lieber selbst ausliefert (kein Verbindungsaufbau zu Google beim Seitenaufruf),
+> kann die woff2-Dateien daneben legen und den `<link>` durch eine eigene
+> `@font-face`-Regel ersetzen – auf einer Seite mit Anmeldeformular ist das die
+> datenschutzfreundlichere Variante.
 
 ---
 
@@ -41,6 +77,7 @@ an, es erscheint also nie ein kaputter Platzhalter.
 | `accessKey` | nur bei Web3Forms nötig |
 | `mailTo` | Notfall-Empfänger, falls kein `endpoint` gesetzt ist |
 | `datum` | z. B. `"Donnerstag, 17. September 2026"` |
+| `datumkurz` | Kurzform für die Kopfzeile, z. B. `"17.09.2026"` (leer = nimmt `datum`) |
 | `ort` | vollständige Adresse des Abends |
 | `startISO` / `endeISO` | z. B. `"2026-09-17T18:00:00"` – schaltet den Kalender-Button („Termin in den Kalender") frei |
 | `kontaktTel`, `kontaktMail` | Ansprechpartner, erscheinen im Fuß und in Fehlermeldungen |
@@ -115,7 +152,8 @@ Ohne Parameter wird der Referrer eingetragen, sonst `direkt`.
 - **Impressum / Datenschutz** verlinken derzeit auf `laendle-digital.com`. Bitte
   prüfen, dass die Datenschutzerklärung die Verarbeitung der Anmeldedaten (Zweck,
   Speicherdauer, Kontaktaufnahme wegen Probewoche) auch abdeckt.
-- **Markenfarben:** die vier Werte unter `/* MARKE */` am Anfang des `<style>`-Blocks.
+- **Markenfarben:** im `:root`-Block am Anfang des `<style>`-Teils, identisch benannt
+  wie in `style.css` (`--blue`, `--navy`, `--leaf`, `--sky`).
 
 ---
 
