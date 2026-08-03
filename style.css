@@ -1124,3 +1124,11 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 
 /* ---- Marken-Logos als Bilder ---- */
 .logos__item img{max-width:100%;max-height:52px;width:auto;object-fit:contain;display:block}
+
+/* ---- Farbige Social-Icons im Footer ---- */
+.social--li{background:#0A66C2;color:#fff}
+.social--ig{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);color:#fff}
+.social--yt{background:#FF0000;color:#fff}
+.social--wa{background:#25D366;color:#fff}
+.social--li:hover,.social--ig:hover,.social--yt:hover,.social--wa:hover{color:#fff;transform:translateY(-2px);filter:brightness(1.06)}
+.social--ig:hover{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}

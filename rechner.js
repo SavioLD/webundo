@@ -1,83 +1,37 @@
 /* ============================================================
-   WEBUNDO — Einkaufs-Potenzial-Rechner
-   Designkonzept · Ländle Digital
-   Modell: zentrale Beschaffung ("nur ein Kreditor") +
-   Prozess-/Zeitersparnis + Bündelungs-/Preisvorteil → €/Jahr + Score
+   WEBUNDO — Sonderbedarfs-Einsparrechner
+   Modell: Prozesskosten-Ersparnis bei Sonder- und Einmalbedarfen.
+   Grundlage: BME Benchmark 2025 „Top-Kennzahlen Einkauf", Kap. 3.1.2.1
+   → Kosten je Bestellvorgang: 121,75 €
+   Formel: Anzahl Vorgänge/Jahr × 121,75 € × Einsparfaktor
 ============================================================ */
 (function () {
   "use strict";
+
+  /* ---------- KONFIGURATION (Admin/Customizer) ----------
+     Diese beiden Werte hier anpassen, um Standardwerte zentral zu ändern. */
+  const COST_PER_ORDER = 121.75;      // € je Bestellvorgang (BME Benchmark 2025)
+  const DEFAULT_SAVINGS_FACTOR = 80;  // % Einsparfaktor (Standardwert, editierbar)
+  /* ------------------------------------------------------- */
+
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
   const clamp = (n, a, b) => Math.min(Math.max(n, a), b);
   const eur = (n) => "€ " + Math.round(Math.max(0, n)).toLocaleString("de-DE");
   const plain = (n) => Math.round(Math.max(0, n)).toLocaleString("de-DE");
-  const num = (id) => { const e = $("#" + id); if (!e) return 0; const v = parseFloat(String(e.value).replace(/\./g, "").replace(",", ".")); return isNaN(v) ? 0 : v; };
-  const dec = (id) => { const e = $("#" + id); if (!e) return 0; const v = parseFloat(String(e.value).replace(",", ".")); return isNaN(v) ? 0 : v; };
-
-  const PRESETS = {
-    klein:    { lief: 25,  best: 350,  vol: 250000 },
-    mittel:   { lief: 60,  best: 1200, vol: 1200000 },
-    gross:    { lief: 120, best: 3500, vol: 4000000 },
-    handel:   { lief: 80,  best: 2200, vol: 2500000 },
-  };
-
-  const INPUT_IDS = ["lieferanten", "bestellungen", "volumen", "minuten",
-    "stundensatz", "aufwandLieferant", "fConsol", "fProcess", "fPrice"];
+  const intVal = (id) => { const e = $("#" + id); if (!e) return 0; const v = parseInt(String(e.value).replace(/\D/g, ""), 10); return isNaN(v) ? 0 : v; };
+  const pct = (id, def) => { const e = $("#" + id); if (!e) return def; const v = parseFloat(String(e.value).replace(",", ".")); return isNaN(v) ? def : v; };
 
   let last = null;
   let revealActive = false;
   let resultPlayed = false;
 
-  function bereiche() {
-    return {
-      versorgung:  $("#b_versorgung")?.classList.contains("is-on"),
-      beschaffung: $("#b_beschaffung")?.classList.contains("is-on"),
-      optimierung: $("#b_optimierung")?.classList.contains("is-on"),
-    };
-  }
-
   function compute() {
-    const L = num("lieferanten");
-    const B = num("bestellungen");
-    const V = num("volumen");
-    const t = dec("minuten") || 25;           // Minuten pro Bestellvorgang
-    const R = dec("stundensatz") || 55;        // Stundensatz Verwaltung
-    const A = num("aufwandLieferant") || 600;  // Verwaltungsaufwand je Lieferant / Jahr
-    const fConsol = (dec("fConsol") || 70) / 100;
-    const fProcess = (dec("fProcess") || 35) / 100;
-    const fPrice = (dec("fPrice") || 4) / 100;
-    const b = bereiche();
-
-    // Ist-Kosten (Status quo)
-    const adminCost = L * A;                       // Lieferanten-/Kreditorenpflege gesamt
-    const processCost = B * (t / 60) * R;          // Bestellabwicklung gesamt
-
-    // Einsparungen mit WEBUNDO
-    const consolidatable = Math.max(0, L - 1) * fConsol;   // bündelbare Lieferanten ("ein Kreditor")
-    const sAdmin = consolidatable * A;
-    const sProcess = processCost * fProcess;
-    const sPrice = (b.versorgung || b.optimierung) ? V * fPrice : V * fPrice * 0.5;
-
-    const total = sAdmin + sProcess + sPrice;
-    const pct = V > 0 ? (total / V) * 100 : 0;
-    const reducedSuppliers = Math.max(1, Math.round(L - consolidatable));
-
-    // Potenzial-Score (0–100): je fragmentierter & manueller, desto höher
-    const d1 = clamp(L / 70, 0, 1);
-    const d2 = clamp(t / 30, 0, 1);
-    const d3 = clamp(B / 3000, 0, 1);
-    const d4 = V > 0 ? clamp((sAdmin + sProcess) / (V * 0.12), 0, 1) : 0.5;
-    let score = Math.round(clamp(18 + 82 * (0.30 * d1 + 0.22 * d2 + 0.20 * d3 + 0.28 * d4), 5, 98));
-
-    return { L, B, V, A, adminCost, processCost, sAdmin, sProcess, sPrice, total, pct, score, reducedSuppliers };
-  }
-
-  function scoreLabel(s) {
-    if (s >= 70) return "Sehr hohes Optimierungspotenzial";
-    if (s >= 45) return "Deutliches Optimierungspotenzial";
-    if (s >= 25) return "Solides Optimierungspotenzial";
-    return "Bereits gut aufgestellt";
+    const V = intVal("vorgaenge");                     // Sonder-/Einmalbedarfe pro Jahr
+    let f = clamp(pct("faktor", DEFAULT_SAVINGS_FACTOR), 0, 100); // Einsparfaktor %
+    const total = V * COST_PER_ORDER * (f / 100);
+    return { V, f, total };
   }
 
   function render() {
@@ -85,58 +39,36 @@
     last = r;
     const set = (id, v) => { const e = $("#" + id); if (e) e.textContent = v; };
 
-    set("livEuro", plain(r.total));
-    set("resEuro", plain(r.total));
-    set("resBadge", r.V > 0 ? "≈ " + r.pct.toFixed(1).replace(".", ",") + " % Ihres Einkaufsvolumens" : "Einsparpotenzial pro Jahr");
-    set("res3yr", eur(r.total * 3));
-    set("costAdmin", eur(r.adminCost));
-    set("costProcess", eur(r.processCost));
-    set("costKred", r.L.toLocaleString("de-DE"));
-    set("bdAdmin", eur(r.sAdmin));
-    set("bdProcess", eur(r.sProcess));
-    set("bdPrice", eur(r.sPrice));
-    set("bdTotal", eur(r.total));
-    set("redSuppliers", r.reducedSuppliers.toLocaleString("de-DE"));
-
-    // Score-Gauge
-    if (!revealActive) set("scoreNum", r.score);
-    set("scoreLabel", scoreLabel(r.score));
-    const ring = $("#scoreRing");
-    if (ring) {
-      const C = 2 * Math.PI * 52;
-      ring.style.strokeDasharray = C;
-      ring.style.strokeDashoffset = C * (1 - r.score / 100);
-    }
+    if (!revealActive) { set("livEuro", plain(r.total)); set("resEuro", plain(r.total)); }
+    set("resBadge", "Einsparpotenzial pro Jahr");
+    set("fVorg", r.V.toLocaleString("de-DE"));
+    set("fFakt", (Number.isInteger(r.f) ? r.f : r.f.toFixed(1).replace(".", ",")));
+    if (!revealActive) set("res3yr", eur(r.total * 3));
   }
 
-  // Slider-Werte formatiert anzeigen
-  function fmtVol(v) {
-    if (v >= 1000000) return (v / 1000000).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " Mio. €";
-    return Math.round(v / 1000).toLocaleString("de-DE") + " Tsd. €";
-  }
   function updateOutputs() {
-    const set = (id, v) => { const e = $("#" + id); if (e) e.textContent = v; };
-    set("outLief", num("lieferanten").toLocaleString("de-DE"));
-    set("outBest", num("bestellungen").toLocaleString("de-DE"));
-    set("outVol", fmtVol(num("volumen")));
+    const e = $("#outVorg");
+    if (e) e.textContent = intVal("vorgaenge").toLocaleString("de-DE");
   }
 
   // Eingaben verdrahten
-  INPUT_IDS.forEach((id) => { const e = $("#" + id); if (e) { e.addEventListener("input", onInput); e.addEventListener("change", onInput); } });
+  ["vorgaenge", "faktor"].forEach((id) => {
+    const e = $("#" + id);
+    if (e) { e.addEventListener("input", onInput); e.addEventListener("change", onInput); }
+  });
   function onInput() { updateOutputs(); render(); }
 
-  // Bereich-Chips
-  $$(".bchip").forEach((c) => c.addEventListener("click", () => { c.classList.toggle("is-on"); render(); }));
-
-  // Presets
-  const preset = $("#preset");
-  if (preset) preset.addEventListener("change", () => {
-    const p = PRESETS[preset.value]; if (!p) return;
-    $("#lieferanten").value = p.lief;
-    $("#bestellungen").value = p.best;
-    $("#volumen").value = p.vol;
-    updateOutputs(); render();
-  });
+  // Standard-Einsparfaktor aus Konfiguration setzen; optionale URL-Parameter (?vorgaenge= & ?faktor=)
+  (function initFromConfig() {
+    const fEl = $("#faktor");
+    if (fEl) fEl.value = String(DEFAULT_SAVINGS_FACTOR);
+    try {
+      const q = new URLSearchParams(location.search);
+      const qv = q.get("vorgaenge"), qf = q.get("faktor");
+      if (qv && $("#vorgaenge")) $("#vorgaenge").value = String(clamp(parseInt(qv, 10) || 0, 10, 2000));
+      if (qf && fEl) fEl.value = String(clamp(parseFloat(qf.replace(",", ".")) || DEFAULT_SAVINGS_FACTOR, 0, 100));
+    } catch (_) {}
+  })();
 
   updateOutputs();
   render();
@@ -145,7 +77,7 @@
   const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function animNum(el, to, fmt, dur) {
     if (!el) return;
-    const t0 = performance.now(); dur = dur || 1200;
+    const t0 = performance.now(); dur = dur || 1100;
     (function s(now) {
       const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
       el.textContent = fmt(to * e);
@@ -159,8 +91,7 @@
     revealActive = true;
     animNum($("#resEuro"), r.total, (v) => plain(v));
     animNum($("#res3yr"), r.total * 3, (v) => eur(v));
-    animNum($("#scoreNum"), r.score, (v) => String(Math.round(v)));
-    setTimeout(() => { revealActive = false; }, 1300);
+    setTimeout(() => { revealActive = false; render(); }, 1200);
   }
   window.__wbPlayRechner = playResultCount;
   const heroEl = $(".result__hero");
@@ -192,44 +123,37 @@
 
     const r = last || compute();
     const g = (id) => ($("#" + id) ? $("#" + id).value : "");
-    const b = bereiche();
-    const bsel = [b.versorgung && "Sortiment", b.beschaffung && "Sonderbedarfe", b.optimierung && "Service"].filter(Boolean).join(", ") || "—";
-    const ref = "WB-POT-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
+    const fStr = Number.isInteger(r.f) ? r.f + " %" : r.f.toFixed(1).replace(".", ",") + " %";
+    const ref = "WB-SB-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random() * 9000);
     const body = [
-      "EINKAUFS-POTENZIAL-RECHNER — Auswertung",
+      "SONDERBEDARFS-EINSPARRECHNER — Auswertung",
       "",
-      "Einsparpotenzial / Jahr: " + eur(r.total) + (r.V > 0 ? "  (" + r.pct.toFixed(1).replace(".", ",") + " % vom Volumen)" : ""),
-      "Auf 3 Jahre: " + eur(r.total * 3),
-      "WEBUNDO Potenzial-Score: " + r.score + " / 100  (" + scoreLabel(r.score) + ")",
+      "Potenzielles Einsparvolumen / Jahr: " + eur(r.total),
+      "Hochgerechnet auf 3 Jahre: " + eur(r.total * 3),
       "",
-      "Aufschlüsselung:",
-      "  Lieferanten-/Kreditorenpflege: " + eur(r.sAdmin),
-      "  Bestell-/Prozessabwicklung: " + eur(r.sProcess),
-      "  Bündelungs-/Preisvorteil: " + eur(r.sPrice),
-      "",
-      "Eingaben:",
-      "  Aktive Lieferanten: " + g("lieferanten"),
-      "  Bestellvorgänge / Jahr: " + g("bestellungen"),
-      "  Einkaufsvolumen / Jahr: " + g("volumen") + " €",
-      "  Interessante Bereiche: " + bsel,
+      "Berechnung:",
+      "  Sonder-/Einmalbedarfe pro Jahr: " + r.V.toLocaleString("de-DE"),
+      "  Prozesskosten je Bestellvorgang: 121,75 € (BME Benchmark 2025)",
+      "  Einsparfaktor: " + fStr,
+      "  = " + r.V.toLocaleString("de-DE") + " × 121,75 € × " + fStr + " = " + eur(r.total),
       "",
       "Kontakt:",
       "  " + g("lf_vorname") + " " + g("lf_nachname") + (g("lf_position") ? " (" + g("lf_position") + ")" : ""),
       "  " + g("lf_firma"),
       "  " + g("lf_email") + (g("lf_phone") ? " · " + g("lf_phone") : ""),
       "",
+      "Grundlage: BME Benchmark 2025 „Top-Kennzahlen Einkauf\", Kap. 3.1.2.1 — Kosten je Bestellvorgang 121,75 €.",
       "Referenz: " + ref,
     ].join("\n");
-    const mailto = "mailto:info@webundo.de?subject=" + encodeURIComponent("Einkaufs-Potenzial-Rechner – Auswertung " + g("lf_firma") + " (" + ref + ")") + "&body=" + encodeURIComponent(body);
+    const mailto = "mailto:info@webundo.de?subject=" + encodeURIComponent("Sonderbedarfs-Einsparrechner – Auswertung " + g("lf_firma") + " (" + ref + ")") + "&body=" + encodeURIComponent(body);
 
     form.hidden = true;
-    const bl = $("#breakdownLock"); if (bl) bl.classList.add("unlocked");
     const done = $("#leadDone");
     done.hidden = false;
     done.innerHTML = `<div class="done" style="padding:8px 0 0">
         <div class="done__badge"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>Danke, ${(g("lf_vorname") || "").replace(/[<>&]/g, "")}! Ihre Auswertung ist freigeschaltet.</h3>
-        <p>Wir haben Ihr Einsparpotenzial von <strong>${eur(r.total)} / Jahr</strong> (Score ${r.score}/100) erfasst und melden uns zur persönlichen Besprechung — in der Regel innerhalb von 24 Stunden.</p>
+        <h3>Danke, ${(g("lf_vorname") || "").replace(/[<>&]/g, "")}! Ihre Auswertung ist bereit.</h3>
+        <p>Wir haben Ihr Einsparpotenzial von <strong>${eur(r.total)} / Jahr</strong> erfasst und melden uns zur persönlichen Besprechung — in der Regel innerhalb von 24 Stunden.</p>
         <div class="done__ref">Ihre Referenz: <b>${ref}</b></div>
         <div class="done__actions">
           <a class="btn btn--primary" href="${mailto}">Auswertung als E-Mail senden</a>
@@ -238,7 +162,7 @@
       </div>`;
     (document.getElementById("auswertung") || done).scrollIntoView({ behavior: "smooth", block: "start" });
     if (window.__wbBurst) window.__wbBurst();
-    $("#lfRestart").addEventListener("click", () => { done.hidden = true; done.innerHTML = ""; form.hidden = false; form.reset(); if (bl) bl.classList.remove("unlocked"); render(); form.scrollIntoView({ behavior: "smooth", block: "center" }); });
+    $("#lfRestart").addEventListener("click", () => { done.hidden = true; done.innerHTML = ""; form.hidden = false; form.reset(); render(); form.scrollIntoView({ behavior: "smooth", block: "center" }); });
   });
 
   $$("#leadForm .input").forEach((i) => i.addEventListener("input", () => { i.classList.remove("err"); const m = $(`.err-msg[data-for="${i.id}"]`); if (m) m.classList.remove("show"); }));
