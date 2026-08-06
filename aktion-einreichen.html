@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aktion einreichen – Gesichter der Stadt</title>
+<meta name="description" content="Teilnehmende Betriebe reichen hier ihre Aktion, ihr Gewinnspiel oder ihren Geheimtipp ein – wir bringen sie auf den gemeinsamen Social-Media-Kanal für Rottweil." />
+<meta name="robots" content="index,follow" />
+<link rel="icon" href="logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="gesichter.css" />
+<script>if(!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("anim");</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="top">
+  <div class="shell top__in">
+    <a class="top__brand" href="gesichter-der-stadt.html">Gesichter der Stadt</a>
+    <nav class="top__nav" aria-label="Hauptnavigation">
+      <a href="gesichter-der-stadt.html#projekt">Projekt</a>
+      <a href="gesichter-der-stadt.html#vorteile">Vorteile</a>
+      <a href="gesichter-der-stadt.html#ziele">Ziele</a>
+      <a href="gesichter-der-stadt.html#betriebe">Betriebe</a>
+      <a href="aktion-einreichen.html" class="tab-cta" aria-current="page">Aktion einreichen</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="top__mobile" id="mobileNav" aria-label="Navigation mobil">
+    <a href="gesichter-der-stadt.html#projekt">Projekt</a>
+    <a href="gesichter-der-stadt.html#vorteile">Vorteile</a>
+    <a href="gesichter-der-stadt.html#ziele">Ziele</a>
+    <a href="gesichter-der-stadt.html#betriebe">Betriebe</a>
+    <a href="gesichter-der-stadt.html#mitmachen">Teilnehmen</a>
+    <a href="aktion-einreichen.html" class="tab-cta" aria-current="page">Aktion einreichen</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ========================================================= SEITENKOPF -->
+  <section class="phead">
+    <span class="dots" aria-hidden="true"></span>
+    <div class="shell phead__in rv">
+      <p class="eyebrow eyebrow--dot eyebrow--light">Für teilnehmende Betriebe</p>
+      <h1>Aktion <span class="it">einreichen</span></h1>
+      <p class="lede lede--light">Sie haben eine Aktion, ein Gewinnspiel, einen Aktionstag oder einen
+        Geheimtipp? Reichen Sie sie hier ein – wir bringen sie auf den gemeinsamen Kanal für Rottweil.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================== FORMULAR -->
+  <section class="formwrap arc-top">
+    <div class="shell formgrid">
+
+      <aside class="formside rv">
+        <p class="eyebrow">Ablauf</p>
+        <h2 class="caps">In drei <span class="hl">Schritten</span></h2>
+        <ol class="steps">
+          <li>
+            <div>
+              <b>Formular ausfüllen</b>
+              <span>Ein paar Angaben zu Ihrem Betrieb und zur Aktion genügen.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <b>Wir melden uns</b>
+              <span>Wir prüfen die Einreichung und klären offene Punkte kurz mit Ihnen.</span>
+            </div>
+          </li>
+          <li>
+            <div>
+              <b>Veröffentlichung</b>
+              <span>Die Aktion geht auf den Kanälen des Projekts online und erreicht die Region.</span>
+            </div>
+          </li>
+        </ol>
+        <p class="formnote">Noch kein Teilnehmer?
+          <a href="gesichter-der-stadt.html#mitmachen" style="color:var(--orange-dark)">Betrieb anmelden →</a>
+        </p>
+      </aside>
+
+      <div class="formcard rv">
+        <div class="formcard__head">
+          <h3>Ihre Aktion</h3>
+          <p>Felder mit <span class="req">*</span> sind Pflichtangaben. Der Rest hilft uns, die Aktion besser
+            zu platzieren.</p>
+        </div>
+
+        <form id="aktionForm" data-mailto="info@wave2network.de" novalidate>
+
+          <div class="fields">
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="af_company">Betrieb <span class="req">*</span></label>
+                <input class="input" id="af_company" name="betrieb" autocomplete="organization" />
+                <p class="err-msg" data-for="af_company">Bitte den Namen Ihres Betriebs angeben.</p>
+              </div>
+              <div class="field">
+                <label for="af_contact">Ansprechpartner <span class="opt">(optional)</span></label>
+                <input class="input" id="af_contact" name="ansprechpartner" autocomplete="name" />
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="af_email">E-Mail <span class="req">*</span></label>
+                <input class="input" id="af_email" name="email" type="email" autocomplete="email" placeholder="name@betrieb.de" />
+                <p class="err-msg" data-for="af_email">Bitte eine gültige E-Mail-Adresse angeben.</p>
+              </div>
+              <div class="field">
+                <label for="af_phone">Telefon <span class="opt">(optional)</span></label>
+                <input class="input" id="af_phone" name="telefon" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="field">
+              <span class="flabel" id="kindLabel">Art der Aktion <span class="req">*</span></span>
+              <div class="chips" id="aktionKind" role="group" aria-labelledby="kindLabel">
+                <button type="button" class="chip" data-kind="Rabattaktion" aria-pressed="false">Rabattaktion</button>
+                <button type="button" class="chip" data-kind="Gewinnspiel" aria-pressed="false">Gewinnspiel</button>
+                <button type="button" class="chip" data-kind="Veranstaltung" aria-pressed="false">Veranstaltung</button>
+                <button type="button" class="chip" data-kind="Aktionstag" aria-pressed="false">Aktionstag</button>
+                <button type="button" class="chip" data-kind="Neueröffnung" aria-pressed="false">Neueröffnung</button>
+                <button type="button" class="chip" data-kind="Geheimtipp" aria-pressed="false">Geheimtipp</button>
+                <button type="button" class="chip" data-kind="Sonstiges" aria-pressed="false">Sonstiges</button>
+              </div>
+              <p class="err-msg" data-for="aktionKind">Bitte eine Art der Aktion auswählen.</p>
+            </div>
+
+            <div class="field">
+              <label for="af_title">Titel der Aktion <span class="req">*</span></label>
+              <input class="input" id="af_title" name="titel" placeholder="z. B. Sommerfest mit Livemusik" />
+              <p class="err-msg" data-for="af_title">Bitte einen kurzen Titel angeben.</p>
+            </div>
+
+            <div class="grid-2">
+              <div class="field">
+                <label for="af_from">Von <span class="opt">(optional)</span></label>
+                <input class="input" id="af_from" name="von" type="date" />
+              </div>
+              <div class="field">
+                <label for="af_to">Bis <span class="opt">(optional)</span></label>
+                <input class="input" id="af_to" name="bis" type="date" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="af_text">Beschreibung <span class="req">*</span></label>
+              <textarea class="input" id="af_text" name="beschreibung" rows="5"
+                placeholder="Worum geht es? Was sollen die Leute wissen? Zwei, drei Sätze genügen."></textarea>
+              <p class="err-msg" data-for="af_text">Bitte kurz beschreiben, worum es geht.</p>
+            </div>
+
+            <div class="field">
+              <label for="af_link">Link <span class="opt">(optional)</span></label>
+              <input class="input" id="af_link" name="link" type="url" placeholder="https://" />
+            </div>
+
+            <!-- Honigtopf gegen Bots – bleibt für Menschen unsichtbar -->
+            <div class="hp" aria-hidden="true">
+              <label for="af_website">Bitte leer lassen</label>
+              <input id="af_website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="field">
+              <label class="check" for="af_privacy">
+                <input type="checkbox" id="af_privacy" name="datenschutz" />
+                <span>Ich stimme der Verarbeitung meiner Daten gemäß der
+                  <a href="datenschutz.html">Datenschutzerklärung</a> zu. <span class="req">*</span></span>
+              </label>
+              <p class="err-msg" data-for="af_privacy">Bitte bestätigen Sie die Datenschutzerklärung.</p>
+            </div>
+
+            <button type="submit" class="btn btn--solid btn--block">
+              Aktion einreichen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+
+            <div class="formdone" id="aktionDone" hidden role="status">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Danke! Ihr E-Mail-Programm öffnet sich mit der fertigen Nachricht – bitte noch absenden.
+                Wir melden uns zeitnah bei Ihnen.</span>
+            </div>
+
+            <p class="formnote">Das Formular öffnet Ihr E-Mail-Programm mit allen Angaben. Klappt das nicht,
+              schreiben Sie uns direkt an
+              <a href="mailto:info@wave2network.de" style="color:var(--orange-dark)">info@wave2network.de</a>.</p>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell foot__in">
+    <div>
+      <p class="foot__claim">Gesichter der Stadt.</p>
+      <p style="margin:0;max-width:38ch">Ein gemeinsamer Social-Media-Kanal für Rottweil – von den Betrieben
+        der Stadt, für die Menschen der Region.</p>
+      <div class="social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3v10.5a4 4 0 1 1-3-3.87"/><path d="M15 6a5 5 0 0 0 5 4"/></svg>
+        </a>
+        <a href="#" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.2-4.6A9 9 0 1 1 21 12Z"/><path d="M8.5 9.5c0 3.5 2.5 6 6 6 .8 0 1.4-.6 1.4-1.3l-1.8-.8-.9 1c-1.2-.5-2.2-1.5-2.7-2.7l1-.9-.8-1.8c-.7 0-1.2.6-1.2 1.4Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h3>Projekt</h3>
+      <ul>
+        <li><a href="gesichter-der-stadt.html#projekt">So funktioniert es</a></li>
+        <li><a href="gesichter-der-stadt.html#vorteile">Vorteile</a></li>
+        <li><a href="gesichter-der-stadt.html#ziele">Ziele</a></li>
+        <li><a href="gesichter-der-stadt.html#betriebe">Betriebe</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Teilnehmen</h3>
+      <ul>
+        <li><a href="aktion-einreichen.html">Aktion einreichen</a></li>
+        <li><a href="gesichter-der-stadt.html#mitmachen">Betrieb anmelden</a></li>
+        <li><a href="mailto:info@wave2network.de">info@wave2network.de</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="shell foot__bar">
+    © <span data-year>2026</span> wave2network. Alle Rechte vorbehalten. ·
+    <a href="impressum.html">Nutzungsbedingungen</a> ·
+    <a href="datenschutz.html">Datenschutzerklärung</a>
+  </div>
+</footer>
+
+<!-- Chatbot-Slot – siehe gesichter-der-stadt.html -->
+<div id="chat-slot" data-chat="gesichter-der-stadt"></div>
+
+<script src="gesichter.js"></script>
+</body>
+</html>
