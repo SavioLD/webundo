@@ -238,7 +238,8 @@ section{position:relative}
 .statband b{display:block;font-family:var(--disp);font-size:clamp(1.8rem,3.4vw,2.6rem);
   letter-spacing:-.03em;line-height:1;background:linear-gradient(94deg,#fff,var(--cyan-300));
   -webkit-background-clip:text;background-clip:text;color:transparent}
-.statband span{display:block;margin-top:8px;font-size:.86rem;color:rgba(255,255,255,.66);line-height:1.45}
+/* nur das Label darunter, nicht die Zahl innerhalb von <b> */
+.statband > div > span{display:block;margin-top:8px;font-size:.86rem;color:rgba(255,255,255,.66);line-height:1.45}
 
 /* ============================================================
    PLATZHALTER FÜR FOTOS

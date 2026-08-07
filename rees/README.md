@@ -7,6 +7,15 @@ Statisches HTML/CSS/JS, kein Build-Schritt, keine Abhängigkeiten außer Google 
 Einfach `index.html` im Browser öffnen oder den Ordner auf GitHub Pages ausliefern
 (erreichbar dann unter `…/rees/`).
 
+## Schnellster Weg zum Anschauen
+
+`vorschau.html` öffnen – eine einzige Datei, die alle neun Seiten enthält und über die
+Leiste unten rechts durchschaltbar ist. Schriften sind eingebettet, es werden keine
+externen Ressourcen geladen. Ideal zum Weitergeben per E-Mail oder USB-Stick.
+
+Erzeugt wird die Datei aus den Einzelseiten; wenn sich dort etwas ändert, muss sie neu
+gebaut werden (Skript siehe Abschnitt „Vorschau neu bauen").
+
 ## Dateien
 
 | Datei | Inhalt |
@@ -18,8 +27,12 @@ Einfach `index.html` im Browser öffnen oder den Ordner auf GitHub Pages auslief
 | `karriere.html` | **Karriereseite**: Kampagnen-Hero, Benefits, offene Stellen, Ausbildung, Bewerbungsprozess, Kurzbewerbung, FAQ |
 | `kontakt.html` | Kontaktwege, Anfrageformular, Downloads, Wissenswertes & FAQ |
 | `social-mockup.html` | **Social-Media-Mockup**: Instagram-Profil & Feed, 8 Post-Templates, Stories/Reels, LinkedIn, Redaktionsplan, Styleguide |
+| `impressum.html` | Impressum-Gerüst nach § 5 DDG, offene Felder markiert |
+| `datenschutz.html` | Datenschutzerklärung zum Stand des Entwurfs, offene Felder markiert |
+| `vorschau.html` | Alle Seiten in einer Datei, mit eingebetteten Schriften – zum Weitergeben |
 | `rees.css` | Komplettes Design-System (Farben, Typo, Komponenten, Responsive) |
 | `rees.js` | Sticky-Nav, Mobilmenü, Scroll-Reveal, Zähler, Akkordeon, Formular-Versand |
+| `build-vorschau.mjs` | Erzeugt `vorschau.html` aus den Einzelseiten |
 
 ## Designentscheidungen
 
@@ -106,7 +119,11 @@ müssen von Rees bestätigt werden:
   echte O-Töne mit Namen und Einwilligung zu ersetzen.
 - **Zahlen im Fertigungsspektrum** (Toleranzen, Taktzeiten in den Social-Captions) sind
   plausible Beispielwerte, keine zugesicherten Eigenschaften.
-- **Rechtstexte.** Impressum, Datenschutz und AGB sind im Entwurf nur verlinkt (`#`).
+- **Impressum und Datenschutz** sind angelegt, aber unvollständig: Geschäftsführung,
+  Registergericht, HRB-Nummer, USt-IdNr., redaktionell Verantwortliche(r), Hoster,
+  Speicherfristen und Bildnachweise sind mit `[zu ergänzen]` markiert. Beide Texte
+  gehören vor dem Livegang rechtlich geprüft – der Entwurf ersetzt keine Rechtsberatung.
+- **AGB** sind im Footer noch als Platzhalter verlinkt.
 
 ## Technische To-dos für den Livegang
 
@@ -139,6 +156,22 @@ Follower- und Beitragszahlen entsprechen dem Stand des Profils zum Zeitpunkt der
 Konzepterstellung. Alle Kacheln sind Layout-Templates – Fotos, Namen, Zitate und
 Kennzahlen werden vor Veröffentlichung durch echte Inhalte ersetzt. Für Mitarbeitendenfotos
 ist eine schriftliche Einwilligung nötig, für Kundenteile eine Freigabe.
+
+## Vorschau neu bauen
+
+`build-vorschau.mjs` liest die Einzelseiten, schneidet jeweils den `<main>`-Bereich heraus,
+schreibt alle Links auf ein Hash-Schema um (`#karriere`, `#karriere~ausbildung`) und setzt
+alles mit gemeinsamem Kopf und Fuß zu `vorschau.html` zusammen.
+
+```bash
+cd rees
+node build-vorschau.mjs          # nutzt fonts-inline.css, falls vorhanden
+```
+
+Die Datei `fonts-inline.css` enthält die Latin-Subsets von Archivo und Inter als
+Base64-`@font-face`-Regeln (rund 410 KB). Dadurch ist `vorschau.html` vollständig offlinefähig.
+Neu erzeugen lässt sie sich mit `node build-vorschau.mjs --fetch-fonts`; fehlt die Datei,
+fällt die Vorschau auf Systemschriften zurück.
 
 ## Barrierefreiheit & Technik
 
