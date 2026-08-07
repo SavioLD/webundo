@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Social-Media-Mockup | Rees Zerspanungstechnik</title>
+<meta name="description" content="Konzept und Mockup für die Social-Media-Auftritte von Rees Zerspanungstechnik: Instagram-Feed, Post- und Story-Templates, LinkedIn, Redaktionsplan und Styleguide." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="rees.css" />
+<script>if(!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("anim");</script>
+</head>
+<body>
+
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <symbol id="reeslogo" viewBox="0 0 344 88">
+    <path d="M8 20 18 14 28 20v28l-10 6-10-6z" fill="var(--lg-grey,#93a2b3)"/>
+    <g fill="none" stroke="var(--lg-grey,#93a2b3)" stroke-width="2.4" stroke-linecap="round">
+      <path d="M28 25h26M28 31h26M28 37h26M28 43h26M54 24v20"/>
+      <path d="M244 28h34v12h-34zM278 25h40v18h-40z"/>
+      <path d="M285 25l-6 18M293 25l-6 18M301 25l-6 18M309 25l-6 18M317 25l-6 18"/>
+      <path d="M318 26l16 8-16 8"/>
+    </g>
+    <text x="60" y="55" fill="var(--lg-blue,#1b3c8e)" font-family="Archivo,Inter,Helvetica,sans-serif" font-size="58" font-weight="800" font-style="italic" letter-spacing="-2.5">Rees</text>
+    <text x="63" y="77" fill="var(--lg-blue,#1b3c8e)" font-family="Inter,Helvetica,sans-serif" font-size="12.4" font-weight="600" letter-spacing="4.25">ZERSPANUNGSTECHNIK</text>
+  </symbol>
+</svg>
+
+<div class="demobar">
+  <div class="wrap">
+    <span><b>Social-Media-Mockup</b> · Gestaltungsentwurf, alle Kacheln sind Layout-Templates</span>
+    <nav><a href="index.html">Zur Startseite</a><a href="karriere.html">Karriereseite</a></nav>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="logo" href="index.html" aria-label="Rees Zerspanungstechnik – Startseite"><svg viewBox="0 0 344 88"><use href="#reeslogo"/></svg></a>
+    <nav class="nav__links" aria-label="Hauptnavigation">
+      <a href="leistungen.html">Leistungen</a>
+      <a href="produkte.html">Produkte</a>
+      <a href="unternehmen.html">Unternehmen</a>
+      <a href="karriere.html">Karriere</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="nav__act">
+      <a class="btn btn--pri btn--sm" href="#templates">Zu den Templates</a>
+      <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="nav__mob" id="navMobile">
+    <a href="index.html">Startseite</a>
+    <a href="karriere.html">Karriere</a>
+    <a href="#feed">Instagram-Feed</a>
+    <a href="#templates">Post-Templates</a>
+    <a href="#stories">Stories</a>
+    <a href="#plan">Redaktionsplan</a>
+    <a href="#styleguide">Styleguide</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ========== KOPF ========== -->
+<section class="hero hero--sub grid-bg">
+  <span class="glow glow--cyan" style="top:-220px;right:-140px;opacity:.35"></span>
+  <div class="wrap">
+    <div class="hero__in">
+      <div>
+        <nav class="crumb" aria-label="Brotkrumen"><a href="index.html">Start</a><i>/</i><span>Social-Media-Mockup</span></nav>
+        <span class="eyebrow eyebrow--light">Instagram · LinkedIn · Facebook</span>
+        <h1 class="h-xl" style="margin:18px 0 20px">Ein Feed, den man<br /><em>am Daumen erkennt</em></h1>
+        <p class="lead lead--light">Der bestehende Instagram-Kanal hat gute Inhalte – aber noch keine feste Bildsprache. Dieses Mockup zeigt, wie ein wiedererkennbares System aussehen kann: dieselbe Farbwelt wie die neue Website, ein fester Kachel-Rhythmus und Templates, die sich in Minuten befüllen lassen.</p>
+        <div class="btnrow mt-l">
+          <a class="btn btn--pri btn--lg" href="#feed">Feed-Mockup ansehen</a>
+          <a class="btn btn--outline-light btn--lg" href="#plan">Redaktionsplan</a>
+        </div>
+      </div>
+    </div>
+    <div class="statband" data-rv>
+      <div><b><span data-count="25">25</span></b><span>Beiträge aktuell auf Instagram</span></div>
+      <div><b><span data-count="495">495</span></b><span>Follower Stand heute</span></div>
+      <div><b><span data-count="8">8</span></b><span>Post-Formate im System</span></div>
+      <div><b><span data-count="3">3</span>×</b><span>Posts pro Woche als Zielfrequenz</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IST-ANALYSE ========== -->
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="split">
+      <div data-rv>
+        <span class="eyebrow">Ausgangslage</span>
+        <h2 class="h-lg mt-s">Was heute schon funktioniert</h2>
+        <p class="lead mt-m">Der Kanal <b>@rees.zerspanungstechnik</b> liefert bereits das Wichtigste: echte Bilder aus dem Betrieb, Recruiting mit Humor (die Alien-Kampagne) und regionale Nähe über Sponsorings. Das ist eine gute Basis – es fehlt der gestalterische Rahmen, der aus Einzelposts eine Marke macht.</p>
+      </div>
+      <div class="dodont" data-rv="80">
+        <div class="do">
+          <h3>Beibehalten</h3>
+          <ul>
+            <li>Alien-Kampagne als Recruiting-Signatur</li>
+            <li>Echte Fotos aus Halle, Messraum und Team</li>
+            <li>Regionales Engagement (Vereine, Traktorentreffen)</li>
+            <li>Messe- und Event-Berichte</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Verbessern</h3>
+          <ul>
+            <li>Uneinheitliche Textkacheln ohne festes Raster</li>
+            <li>Logo mal groß, mal klein, mal gar nicht</li>
+            <li>Kein erkennbarer Feed-Rhythmus über drei Spalten</li>
+            <li>Wenig Content zu Technik &amp; Können (Fachpublikum)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTAGRAM-FEED ========== -->
+<section class="sec sec--soft" id="feed">
+  <div class="wrap">
+    <div class="sec__head" data-rv>
+      <span class="eyebrow">Instagram</span>
+      <h2 class="h-lg">Profil &amp; Feed im neuen Look</h2>
+      <p class="lead">Links das Profil so, wie es Bewerberinnen, Bewerber und Einkäufer sehen. Rechts die Logik dahinter: Der Feed folgt einem festen Dreier-Rhythmus, sodass die Kachel-Ansicht auch nach 30 Posts noch geordnet wirkt.</p>
+    </div>
+
+    <div class="split split--wide-r mt-l">
+      <!-- Phone-Mockup -->
+      <div data-rv>
+        <div class="phone">
+          <div class="phone__screen">
+            <div class="phone__notch"></div>
+            <div class="phone__bar"><span>9:41</span><span>Rees · Instagram</span></div>
+
+            <div class="ig__top">
+              <span class="ig__handle">rees.zerspanungstechnik
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.4 1.9 3-.3 1 2.9 2.6 1.6-1 2.9 1 2.9-2.6 1.6-1 2.9-3-.3L12 22l-2.4-1.9-3 .3-1-2.9L3 15.9l1-2.9-1-2.9 2.6-1.6 1-2.9 3 .3z"/></svg>
+              </span>
+              <span style="font-size:1.1rem;letter-spacing:.1em">···</span>
+            </div>
+
+            <div class="ig__prof">
+              <div class="ig__ava"><svg viewBox="0 0 344 88"><use href="#reeslogo"/></svg></div>
+              <div class="ig__nums">
+                <div><b>25</b><span>Beiträge</span></div>
+                <div><b>495</b><span>Follower</span></div>
+                <div><b>18</b><span>Gefolgt</span></div>
+              </div>
+            </div>
+
+            <div class="ig__bio">
+              <b>Rees Zerspanungstechnik GmbH</b>
+              <span class="cat">Industrieunternehmen</span>
+              Spezialist für die Zerspanung der Zukunft ⚙️<br />
+              Präzisionsdrehteile &amp; Baugruppen seit 1938<br />
+              📍 Wehingen, BW · Wir bilden aus 👨‍🏭👩‍🏭<br />
+              <a href="#">rees-zerspanungstechnik.de/karriere</a>
+            </div>
+
+            <div class="ig__btns">
+              <button class="pri">Folgen</button>
+              <button>Nachricht</button>
+              <button style="flex:0 0 44px">▾</button>
+            </div>
+
+            <!-- Highlight-Cover -->
+            <div style="display:flex;gap:14px;padding:4px 16px 16px;overflow-x:auto">
+              <div class="hl" style="width:62px">
+                <i style="width:62px;height:62px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:24px;height:24px"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg></i>
+                <span style="font-size:.66rem">Technik</span>
+              </div>
+              <div class="hl" style="width:62px">
+                <i style="width:62px;height:62px;background:var(--grad-cyan)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:24px;height:24px"><path d="M17 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/></svg></i>
+                <span style="font-size:.66rem">Team</span>
+              </div>
+              <div class="hl" style="width:62px">
+                <i style="width:62px;height:62px;background:radial-gradient(120% 120% at 70% 25%,#1a5ea8,#050d22)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:24px;height:24px"><path d="M12 3c4 0 7 3.1 7 7.5 0 4-2.6 6.3-3.4 9-.2.8-1 1.5-3.6 1.5s-3.4-.7-3.6-1.5C7.6 16.8 5 14.5 5 10.5 5 6.1 8 3 12 3"/></svg></i>
+                <span style="font-size:.66rem">Jobs</span>
+              </div>
+              <div class="hl" style="width:62px">
+                <i style="width:62px;height:62px;background:linear-gradient(150deg,#1b3c8e,#0b1c45)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:24px;height:24px"><path d="M4 20V6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2z"/><path d="M15 4v5h5"/></svg></i>
+                <span style="font-size:.66rem">Azubis</span>
+              </div>
+              <div class="hl" style="width:62px">
+                <i style="width:62px;height:62px;background:linear-gradient(150deg,#35bfe0,#0f87a6)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:24px;height:24px"><path d="M12 21c5-4 8-7.5 8-11a8 8 0 1 0-16 0c0 3.5 3 7 8 11"/></svg></i>
+                <span style="font-size:.66rem">Region</span>
+              </div>
+            </div>
+
+            <div class="ig__tabs">
+              <div class="is-on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></svg></div>
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></div>
+            </div>
+
+            <!-- Feed-Kacheln -->
+            <div class="ig__grid">
+              <div class="post post--space">
+                <span class="post__grid"></span>
+                <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+                <span class="post__kicker">Wir suchen</span>
+                <span class="post__t">Außerirdisch gute <em>Drehteile</em></span>
+              </div>
+              <div class="post post--dark"><span class="post__kicker">Teil der Woche</span><span class="post__t">Welle aus <em>Titan</em></span></div>
+              <div class="post post--cyan"><span class="post__num">03</span><span class="post__kicker">Zahl der Woche</span><span class="post__t">Ø 90 mm <em>Stange</em></span></div>
+
+              <div class="post post--light"><span class="post__kicker">Menschen bei Rees</span><span class="post__t">Marco, <em>Einrichter</em></span></div>
+              <div class="post post--blue"><span class="post__grid"></span><span class="post__kicker">REESümee</span><span class="post__t">Cabrio-<em>Kopfschutz</em></span></div>
+              <div class="post post--dark"><span class="post__kicker">Behind the Scenes</span><span class="post__t">Nachtschicht am <em>Langdreher</em></span></div>
+
+              <div class="post post--mix"><span class="post__kicker">Ausbildung</span><span class="post__t">Start <em>1. September</em></span></div>
+              <div class="post post--light"><span class="post__kicker">Region</span><span class="post__t">Partner der <em>Region</em></span></div>
+              <div class="post post--space"><span class="post__grid"></span><span class="post__kicker">Messe</span><span class="post__t">Wir waren <em>dabei</em></span></div>
+
+              <div class="post post--cyan"><span class="post__kicker">Technik erklärt</span><span class="post__t">Was ist <em>Langdrehen?</em></span></div>
+              <div class="post post--dark"><span class="post__kicker">Werkstoff</span><span class="post__t">Messing bis <em>Titan</em></span></div>
+              <div class="post post--blue"><span class="post__grid"></span><span class="post__kicker">Qualität</span><span class="post__t">± 0,005 <em>mm</em></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feed-Logik -->
+      <div data-rv="80">
+        <h3 class="h-md">Die Feed-Logik: drei Spalten, drei Rollen</h3>
+        <p class="lead mt-s">Jede Zeile im Feed enthält genau eine Kachel aus jeder Kategorie. Dadurch entsteht in der Rasteransicht automatisch ein Muster – ohne dass jemand beim Posten rechnen muss.</p>
+        <ol class="steps mt-l">
+          <li><h3>Spalte A · Menschen</h3><p>Team, Azubis, Neuzugänge, Recruiting. Immer mit echtem Foto, meist hell. Das ist die Spalte, die Bewerberinnen und Bewerber hält.</p></li>
+          <li><h3>Spalte B · Technik</h3><p>Bauteile, Maschinen, Werkstoffe, Toleranzen. Dunkle Kacheln mit Detailfotos – das Fachpublikum liest hier mit.</p></li>
+          <li><h3>Spalte C · Unternehmen</h3><p>Messen, Region, Meilensteine, REESümee-Geschichten. Türkise oder gemischte Kacheln als visuelle Pausen.</p></li>
+        </ol>
+
+        <h3 class="h-md mt-xl">Bio-Vorschlag</h3>
+        <div class="card mt-s">
+          <p style="font-family:var(--mono);font-size:.9rem;line-height:1.8">Spezialist für die Zerspanung der Zukunft ⚙️<br />
+          Präzisionsdrehteile &amp; Baugruppen seit 1938<br />
+          📍 Wehingen, BW · Wir bilden aus 👨‍🏭👩‍🏭<br />
+          👇 Offene Stellen</p>
+          <p class="form__note mt-s">Der Link in der Bio sollte direkt auf die Karriereseite zeigen – dort liegt die höchste Conversion, nicht auf der Startseite.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== POST-TEMPLATES ========== -->
+<section class="sec" id="templates">
+  <div class="wrap">
+    <div class="sec__head" data-rv>
+      <span class="eyebrow">Post-Templates</span>
+      <h2 class="h-lg">Acht Formate, die immer funktionieren</h2>
+      <p class="lead">Jedes Format hat einen festen Aufbau: Logo oben links, Kicker, Headline unten, optional eine große Zahl. So bleibt der Kanal wiedererkennbar, auch wenn verschiedene Personen posten. Unter jedem Template steht ein Caption-Vorschlag inklusive Hashtag-Set.</p>
+    </div>
+
+    <div class="grid grid--3 mt-l">
+
+      <!-- 1 Recruiting -->
+      <article class="tpl" data-rv>
+        <div class="tpl__canvas">
+          <div class="post post--space">
+            <span class="post__grid"></span>
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Wir suchen Verstärkung</span>
+            <span class="post__t">Außerirdisch gute<br /><em>Drehteile suchen dich!</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>01 · Recruiting (Kampagne)</b>
+          <p>„Unsere Teile fliegen, fahren und rechnen mit. Und dafür brauchen wir dich: Wir suchen einen CNC-Einrichter (m/w/d) für unsere Langdreher in Wehingen. Unbefristet, 30 Tage Urlaub, Kollegen, die dir zeigen wo der Hebel ist. Link in der Bio 👽⚙️“</p>
+          <p class="tags">#zerspanung #cncdrehen #jobsbw #wehingen #heuberg #zerspanungsmechaniker #handwerkmitzukunft</p>
+        </div>
+      </article>
+
+      <!-- 2 Teil der Woche -->
+      <article class="tpl" data-rv="60">
+        <div class="tpl__canvas">
+          <div class="post post--dark">
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Teil der Woche</span>
+            <span class="post__t">Welle aus <em>Titan</em><br />in 42 Sekunden</span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>02 · Teil der Woche</b>
+          <p>„Titan ist zäh, teuer und verzeiht nichts. Diese Welle entsteht bei uns in einer Aufspannung auf dem Langdreher – inklusive Quer­bohrung und Gewinde. Taktzeit: 42 Sekunden. Swipe für das Detail. ➡️“</p>
+          <p class="tags">#drehteile #titan #langdrehen #präzision #madeingermany #cncmachining</p>
+        </div>
+      </article>
+
+      <!-- 3 Zahl der Woche -->
+      <article class="tpl" data-rv="120">
+        <div class="tpl__canvas">
+          <div class="post post--cyan">
+            <span class="post__num">90</span>
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.7)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Zahl der Woche</span>
+            <span class="post__t">Ø 90 mm <em>Stangenmaterial</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>03 · Zahl der Woche</b>
+          <p>„90 Millimeter. So dick darf die Stange bei uns maximal sein, die vorne in die Drehmaschine läuft. Im Futter geht sogar bis Ø 250 mm. Was wäre dein Teil? 👇“</p>
+          <p class="tags">#zerspanung #cncdrehen #fertigung #maschinenbau #zahlderwoche</p>
+        </div>
+      </article>
+
+      <!-- 4 Menschen -->
+      <article class="tpl" data-rv="180">
+        <div class="tpl__canvas">
+          <div class="post post--light">
+            <svg class="post__logo" viewBox="0 0 344 88"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Menschen bei Rees</span>
+            <span class="post__t">„Ich mag Teile, die<br /><em>keiner hinkriegt.“</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>04 · Menschen bei Rees</b>
+          <p>„[Vorname] ist seit [x] Jahren bei uns und richtet unsere Langdreher ein. Sein Lieblingsmoment: wenn das erste Teil aus der Maschine kommt und das Messprotokoll passt. Wir haben ihn gefragt, was seinen Job ausmacht.“</p>
+          <p class="tags">#menschenbeirees #teamwork #zerspanungsmechaniker #arbeitgeber #familienunternehmen</p>
+        </div>
+      </article>
+
+      <!-- 5 REESümee -->
+      <article class="tpl" data-rv="240">
+        <div class="tpl__canvas">
+          <div class="post post--blue">
+            <span class="post__grid"></span>
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">REESümee · Projektbericht</span>
+            <span class="post__t">Widerspenstiger<br /><em>Cabrio-Kopfschutz</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>05 · REESümee-Teaser</b>
+          <p>„Ein Bauteil, das partout nicht wollte – bis wir die Aufspannung umgedreht haben. Die ganze Geschichte steht in unserem neuen REESümee. Link in der Bio.“</p>
+          <p class="tags">#reesümee #problemlöser #automotive #zerspanung #engineering</p>
+        </div>
+      </article>
+
+      <!-- 6 Ausbildung -->
+      <article class="tpl" data-rv="300">
+        <div class="tpl__canvas">
+          <div class="post post--mix">
+            <span class="post__grid"></span>
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Ausbildung 2027</span>
+            <span class="post__t">3 Berufe.<br /><em>Ein Startdatum.</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>06 · Ausbildung</b>
+          <p>„Zerspanungsmechaniker Drehen, Zerspanungsmechaniker Fräsen oder Fachkraft Metalltechnik – bei uns startet die Ausbildung jedes Jahr am 1. September. Bewerbungen nehmen wir ganzjährig an. Kein Bock auf Bewerbungsmappe? Schreib uns eine DM.“</p>
+          <p class="tags">#ausbildung2027 #azubi #ausbildungsplatz #tuttlingen #metallberufe #wehingen</p>
+        </div>
+      </article>
+
+      <!-- 7 Technik erklärt -->
+      <article class="tpl" data-rv="360">
+        <div class="tpl__canvas">
+          <div class="post post--cyan">
+            <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.7)"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Technik erklärt</span>
+            <span class="post__t">Was ist eigentlich<br /><em>Langdrehen?</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>07 · Technik erklärt (Karussell)</b>
+          <p>„Beim Langdrehen wandert das Material durch eine Führungsbuchse und wird direkt an der Zerspanungsstelle gestützt. Ergebnis: lange, dünne Teile mit hoher Rundlaufgüte. Swipe für die drei wichtigsten Vorteile. ➡️“</p>
+          <p class="tags">#langdrehen #cncmachining #zerspanungstechnik #erklärt #maschinenbau</p>
+        </div>
+      </article>
+
+      <!-- 8 Region / Event -->
+      <article class="tpl" data-rv="420">
+        <div class="tpl__canvas">
+          <div class="post post--light">
+            <svg class="post__logo" viewBox="0 0 344 88"><use href="#reeslogo"/></svg>
+            <span class="post__kicker">Region &amp; Engagement</span>
+            <span class="post__t">Wir sind Partner<br /><em>vom Heuberg.</em></span>
+          </div>
+        </div>
+        <div class="tpl__cap">
+          <b>08 · Region &amp; Events</b>
+          <p>„Ob Traktorentreffen, Vereinsfest oder Bildungsmesse: Wir sind gern dort, wo unsere Leute zu Hause sind. Kommt vorbei – wir bringen ein paar Drehteile zum Anfassen mit.“</p>
+          <p class="tags">#heuberg #wehingen #regionalengagement #tuttlingen #ausbildungsmesse</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== STORIES ========== -->
+<section class="sec sec--deep grid-bg" id="stories">
+  <span class="glow glow--blue" style="bottom:-320px;left:-220px;opacity:.3"></span>
+  <div class="wrap">
+    <div class="sec__head" data-rv>
+      <span class="eyebrow eyebrow--light">Stories &amp; Reels</span>
+      <h2 class="h-lg">Vier Story-Formate für den Alltag</h2>
+      <p class="lead lead--light">Stories entstehen nebenbei – deshalb brauchen sie besonders klare Vorlagen. Format 9:16, Text immer in der oberen Hälfte (unten liegt der Antwort-Balken), Logo oben links.</p>
+    </div>
+
+    <div class="grid grid--4 mt-l">
+      <div class="story" data-rv>
+        <div class="post post--space">
+          <span class="post__grid"></span>
+          <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+          <span class="post__kicker">Job-Alert</span>
+          <span class="post__t">Wir suchen<br /><em>CNC-Einrichter</em></span>
+        </div>
+        <div class="story__bars"><i></i><i></i><i></i><i></i></div>
+        <div class="story__foot"><span>Mehr dazu ↑</span></div>
+      </div>
+
+      <div class="story" data-rv="60">
+        <div class="post post--dark">
+          <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+          <span class="post__kicker">Behind the Scenes</span>
+          <span class="post__t">6:00 Uhr.<br /><em>Schichtbeginn.</em></span>
+        </div>
+        <div class="story__bars"><i></i><i></i><i></i></div>
+        <div class="story__foot"><span>Umfrage: Frühaufsteher?</span></div>
+      </div>
+
+      <div class="story" data-rv="120">
+        <div class="post post--cyan">
+          <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.7)"><use href="#reeslogo"/></svg>
+          <span class="post__kicker">Quiz</span>
+          <span class="post__t">Rate mal:<br /><em>Wo steckt dieses Teil?</em></span>
+        </div>
+        <div class="story__bars"><i></i><i></i></div>
+        <div class="story__foot"><span>Sticker: Quiz</span></div>
+      </div>
+
+      <div class="story" data-rv="180">
+        <div class="post post--mix">
+          <span class="post__grid"></span>
+          <svg class="post__logo" viewBox="0 0 344 88" style="--lg-blue:#fff;--lg-grey:rgba(255,255,255,.6)"><use href="#reeslogo"/></svg>
+          <span class="post__kicker">Countdown</span>
+          <span class="post__t">Noch 14 Tage<br /><em>bis Ausbildungsstart</em></span>
+        </div>
+        <div class="story__bars"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="story__foot"><span>Sticker: Countdown</span></div>
+      </div>
+    </div>
+
+    <div class="grid grid--3 mt-xl">
+      <div class="card card--deep" data-rv><h3 class="h-sm">Reel-Idee 1</h3><p>„Vom Stangenmaterial zum fertigen Teil“ – 20 Sekunden Zeitraffer an einer Maschine, harter Schnitt auf das gemessene Teil.</p></div>
+      <div class="card card--deep" data-rv="60"><h3 class="h-sm">Reel-Idee 2</h3><p>„Drei Dinge, die niemand über Zerspanung weiß“ – Talking Head vor der Maschine, Untertitel, unter 30 Sekunden.</p></div>
+      <div class="card card--deep" data-rv="120"><h3 class="h-sm">Reel-Idee 3</h3><p>„Azubi erklärt sein Prüfungsstück“ – authentisch, mit dem Handy gedreht, ohne Skript. Der Klassiker im Recruiting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LINKEDIN ========== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="split">
+      <div data-rv>
+        <span class="eyebrow">LinkedIn</span>
+        <h2 class="h-lg mt-s">Gleiche Marke, anderer Ton</h2>
+        <p class="lead mt-m">Auf LinkedIn liest der Einkauf mit – und die Fachkraft mit zehn Jahren Erfahrung. Weniger Emojis, mehr Substanz: Prozessdetails, Investitionen, Zertifizierungen und Menschen mit Namen. Dieselben Bildtemplates, nur im Format 1200 × 627 px.</p>
+        <dl class="facts mt-l">
+          <div><b>Frequenz</b><span>1 × pro Woche, dafür durchdacht</span></div>
+          <div><b>Themen</b><span>Technik, Investitionen, Zertifikate, Menschen, offene Stellen</span></div>
+          <div><b>Format</b><span>Text 900–1.300 Zeichen, Bild oder Dokument-Karussell</span></div>
+          <div><b>Verstärker</b><span>Beiträge über die persönlichen Profile der Führungskräfte teilen</span></div>
+        </dl>
+      </div>
+
+      <div data-rv="80">
+        <div class="li">
+          <div class="li__head">
+            <div class="li__ava"><svg viewBox="0 0 344 88"><use href="#reeslogo"/></svg></div>
+            <div>
+              <b>Rees Zerspanungstechnik GmbH</b>
+              <span>1.240 Follower</span>
+              <span>2 Std. · 🌐</span>
+            </div>
+          </div>
+          <div class="li__text">Titan, Ø 12 mm, Länge 180 mm – und eine Rundlauftoleranz, bei der die meisten Anfragen enden.
+
+Genau solche Teile sind bei uns Alltag. Auf unseren Langdrehautomaten wird das Material direkt an der Zerspanungsstelle gestützt, dadurch bleiben auch schlanke Bauteile formstabil. Komplettbearbeitung inklusive Rückseite, Erstmusterprüfbericht nach VDA.
+
+Wir sind seit 1938 in Wehingen am Heuberg zu Hause und fertigen für Antriebstechnik, Automotive, Hydraulik, Maschinenbau und Luftfahrt.
+
+Sie haben ein Teil, bei dem schon zwei Lieferanten abgewinkt haben? Schicken Sie uns die Zeichnung.
+
+<span class="hash">#Zerspanung</span> <span class="hash">#Langdrehen</span> <span class="hash">#Präzisionsteile</span> <span class="hash">#MadeInGermany</span> <span class="hash">#Maschinenbau</span></div>
+          <div class="ph ph--16x9" style="border-radius:0"><span class="ph__label">Bild: Titanwelle im Messraum</span></div>
+          <div class="li__bar"><span>👍 84 · 💡 12</span><span>9 Kommentare · 4× geteilt</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REDAKTIONSPLAN ========== -->
+<section class="sec sec--soft" id="plan">
+  <div class="wrap">
+    <div class="sec__head" data-rv>
+      <span class="eyebrow">Redaktionsplan</span>
+      <h2 class="h-lg">Vier Wochen im Takt</h2>
+      <p class="lead">Drei feste Slots pro Woche, jeder mit einem klaren Zweck. Der Plan wiederholt sich monatlich – die Themen wechseln, das Gerüst bleibt. So entsteht Routine statt Content-Stress.</p>
+    </div>
+
+    <div class="tblwrap mt-l" data-rv="60">
+      <table class="plan">
+        <thead>
+          <tr><th>Woche</th><th>Dienstag · Technik</th><th>Donnerstag · Menschen</th><th>Samstag · Unternehmen</th><th>Stories</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KW 1</td>
+            <td>Teil der Woche: Detailfoto + Werkstoff, Taktzeit, Toleranz</td>
+            <td>Menschen bei Rees: Porträt einer Kollegin / eines Kollegen</td>
+            <td>REESümee-Teaser mit Link auf den Projektbericht</td>
+            <td>2 × Behind the Scenes, 1 × Quiz</td>
+          </tr>
+          <tr>
+            <td>KW 2</td>
+            <td>Technik erklärt (Karussell): ein Verfahren in 5 Slides</td>
+            <td>Recruiting: offene Stelle mit Alien-Motiv</td>
+            <td>Region: Sponsoring, Verein, Messe oder Schulprojekt</td>
+            <td>Job-Alert + Umfrage „Welches Thema als Nächstes?“</td>
+          </tr>
+          <tr>
+            <td>KW 3</td>
+            <td>Zahl der Woche: eine Kennzahl aus der Fertigung</td>
+            <td>Azubi-Alltag: Prüfungsstück, erstes Teil, Berufsschule</td>
+            <td>Maschine im Fokus: Neuzugang oder Klassiker im Park</td>
+            <td>2 × Reel-Anteaser, 1 × Countdown</td>
+          </tr>
+          <tr>
+            <td>KW 4</td>
+            <td>Werkstoff-Serie: Messing, Edelstahl, Titan, Kunststoff</td>
+            <td>Ausbildung: Berufsbild vorstellen, Bewerbungsaufruf</td>
+            <td>Qualität &amp; Zertifikate oder Nachhaltigkeit / Energie</td>
+            <td>Q&amp;A-Sticker: „Fragt uns alles zur Zerspanung“</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid grid--3 mt-l">
+      <div class="card" data-rv><h3 class="h-sm">Aufwand realistisch halten</h3><p>Ein Fototermin pro Monat in der Halle liefert Material für vier Wochen. Wichtig ist die Sammlung, nicht der einzelne Post.</p></div>
+      <div class="card" data-rv="60"><h3 class="h-sm">Eine Person, die freigibt</h3><p>Content darf aus dem ganzen Betrieb kommen – veröffentlicht wird über eine feste Stelle, sonst zerfasert der Kanal wieder.</p></div>
+      <div class="card" data-rv="120"><h3 class="h-sm">Fotofreigaben klären</h3><p>Für Mitarbeitendenfotos schriftliche Einwilligung einholen, bei Kundenteilen vor jedem Post die Freigabe prüfen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STYLEGUIDE ========== -->
+<section class="sec" id="styleguide">
+  <div class="wrap">
+    <div class="sec__head" data-rv>
+      <span class="eyebrow">Social-Styleguide</span>
+      <h2 class="h-lg">Farben, Schrift, Regeln</h2>
+      <p class="lead">Dieselben Werte wie auf der Website – abgeleitet aus dem Rees-Logo. Wer sich daran hält, produziert automatisch markenkonform.</p>
+    </div>
+
+    <div class="swatches mt-l" data-rv="50">
+      <div class="sw"><i style="background:#1b3c8e"></i><div><b>Rees Blau</b>#1B3C8E</div></div>
+      <div class="sw"><i style="background:#132a66"></i><div><b>Blau Dunkel</b>#132A66</div></div>
+      <div class="sw"><i style="background:#061128"></i><div><b>Tiefblau</b>#061128</div></div>
+      <div class="sw"><i style="background:#15a5c8"></i><div><b>Rees Türkis</b>#15A5C8</div></div>
+      <div class="sw"><i style="background:#35bfe0"></i><div><b>Türkis Hell</b>#35BFE0</div></div>
+      <div class="sw"><i style="background:#e6f6fb"></i><div><b>Türkis 50</b>#E6F6FB</div></div>
+    </div>
+
+    <div class="grid grid--2 mt-xl">
+      <div class="card" data-rv>
+        <h3 class="h-sm">Typografie</h3>
+        <p class="mt-s">Headlines: <b style="font-family:var(--disp);font-weight:800">Archivo Bold / ExtraBold</b>, versal, eng gesetzt (Tracking −2 %). Fließtext: Inter Regular. Kicker und Zahlen: Monospace, Versalien, weit gesperrt.</p>
+        <p style="font-family:var(--disp);font-weight:800;font-size:2rem;letter-spacing:-.03em;text-transform:uppercase;margin-top:18px">Präzision, die mitdenkt</p>
+        <p style="font-family:var(--mono);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-600);margin-top:8px">Zahl der Woche · Teil der Woche</p>
+      </div>
+      <div class="dodont" style="grid-template-columns:1fr" data-rv="60">
+        <div class="do">
+          <h3>Bildregeln</h3>
+          <ul>
+            <li>Nah ran: Späne, Oberflächen, Hände am Werkstück</li>
+            <li>Menschen zeigen – mit Namen und Einwilligung</li>
+            <li>Türkis als einziger Akzent, nie zwei Signalfarben</li>
+            <li>Logo immer oben links, immer gleich groß</li>
+            <li>Text nur in der oberen oder unteren Hälfte, nie mittig über dem Motiv</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h3>Vermeiden</h3>
+          <ul>
+            <li>Stockfotos ohne Bezug zum Betrieb</li>
+            <li>Mehr als sieben Wörter in der Headline</li>
+            <li>Kundenteile ohne schriftliche Freigabe</li>
+            <li>Textkacheln ohne Logo</li>
+            <li>Wechselnde Schriftarten aus dem Baukasten der App</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid--3 mt-xl">
+      <div class="card" data-rv>
+        <h3 class="h-sm">Hashtag-Set Technik</h3>
+        <p class="mt-s" style="color:var(--cyan-600);font-weight:600;font-size:.9rem">#zerspanung #cncdrehen #langdrehen #präzisionsteile #maschinenbau #madeingermany #cncmachining #fertigung</p>
+      </div>
+      <div class="card" data-rv="60">
+        <h3 class="h-sm">Hashtag-Set Recruiting</h3>
+        <p class="mt-s" style="color:var(--cyan-600);font-weight:600;font-size:.9rem">#jobsbw #zerspanungsmechaniker #ausbildung2027 #azubi #wehingen #tuttlingen #heuberg #handwerkmitzukunft</p>
+      </div>
+      <div class="card" data-rv="120">
+        <h3 class="h-sm">Hashtag-Set Unternehmen</h3>
+        <p class="mt-s" style="color:var(--cyan-600);font-weight:600;font-size:.9rem">#familienunternehmen #seit1938 #reesümee #industrie #lean #nachhaltigkeit #regionalengagement</p>
+      </div>
+    </div>
+
+    <div class="split mt-xl">
+      <div data-rv>
+        <h3 class="h-md">Ziele &amp; Messgrößen</h3>
+        <p class="lead mt-s">Social Media ist bei Rees vor allem ein Recruiting-Kanal. Deshalb wird nicht Reichweite gemessen, sondern was hinten rauskommt.</p>
+      </div>
+      <dl class="facts" data-rv="80">
+        <div><b>Primärziel</b><span>Bewerbungen über den Bio-Link zur Karriereseite</span></div>
+        <div><b>Sekundärziel</b><span>Bekanntheit bei Einkäufern in der Region und in den Zielbranchen</span></div>
+        <div><b>Messgrößen</b><span>Klicks auf den Bio-Link, Story-Antworten, DM-Bewerbungen, Follower-Wachstum</span></div>
+        <div><b>Richtwert</b><span>495 → 1.000 Follower in zwölf Monaten bei drei Posts pro Woche</span></div>
+      </dl>
+    </div>
+
+    <p class="form__note mt-xl">Hinweis: Alle Kacheln in diesem Mockup sind reine Layout-Templates. Fotos, Namen, Zitate und Kennzahlen werden vor der Veröffentlichung durch echte Inhalte ersetzt. Follower- und Beitragszahlen entsprechen dem Stand des Instagram-Profils zum Zeitpunkt der Konzepterstellung.</p>
+  </div>
+</section>
+
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="cta" data-rv>
+      <div class="cta__in">
+        <div>
+          <h2 class="h-lg">Website und Social aus einem Guss</h2>
+          <p class="lead lead--light mt-s">Die Templates nutzen dieselben Farben, Schriften und Bildregeln wie der Website-Entwurf. Ein System, zwei Kanäle.</p>
+        </div>
+        <div class="btnrow">
+          <a class="btn btn--light btn--lg" href="index.html">Zum Website-Entwurf</a>
+          <a class="btn btn--outline-light btn--lg" href="karriere.html">Zur Karriereseite</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <div class="foot__logo logo logo--light"><svg viewBox="0 0 344 88" style="height:46px;width:auto"><use href="#reeslogo"/></svg></div>
+        <address>
+          Rees Zerspanungstechnik GmbH<br />
+          Wengenstr. 16 · 78564 Wehingen<br />
+          Tel. <a href="tel:+4974265280110">+49 7426 528011</a><br />
+          <a href="mailto:info@rees-zerspanungstechnik.de">info@rees-zerspanungstechnik.de</a>
+        </address>
+        <div class="socials">
+          <a href="https://www.instagram.com/rees.zerspanungstechnik/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5M3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.63C16.4 3.56 15.42 3.5 14.3 3.5c-2.35 0-3.95 1.43-3.95 4.07V9.9H7.6V13h2.75v8z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8M10 15V9l5.2 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Mockup</h4>
+        <ul>
+          <li><a href="#feed">Instagram-Feed</a></li>
+          <li><a href="#templates">Post-Templates</a></li>
+          <li><a href="#stories">Stories &amp; Reels</a></li>
+          <li><a href="#plan">Redaktionsplan</a></li>
+          <li><a href="#styleguide">Styleguide</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Website-Entwurf</h4>
+        <ul>
+          <li><a href="index.html">Startseite</a></li>
+          <li><a href="leistungen.html">Leistungen</a></li>
+          <li><a href="produkte.html">Produkte</a></li>
+          <li><a href="unternehmen.html">Unternehmen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Karriere &amp; Kontakt</h4>
+        <ul>
+          <li><a href="karriere.html">Offene Stellen</a></li>
+          <li><a href="karriere.html#ausbildung">Ausbildung</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bot">
+      <span>© <span data-year>2026</span> Rees Zerspanungstechnik GmbH · Wehingen</span>
+      <nav><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script src="rees.js"></script>
+</body>
+</html>
