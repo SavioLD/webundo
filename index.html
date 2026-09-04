@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>WEBUNDO – Betriebsbedarf aus einer Hand: Handel, Sonderbedarfe & Service</title>
-<meta name="description" content="WEBUNDO ist Ihr Handelspartner für den täglichen Betriebsbedarf – für Unternehmen und öffentliche Einrichtungen. Sortiment aus einer Hand, Sonderbedarfe on top, Service und Beratung bei Bedarf." />
+<title>WEBUNDO – Betriebsbedarf & Einmalbedarfe aus einer Hand</title>
+<meta name="description" content="Ein Partner für Einmalbedarfe – und Ihren laufenden Betriebsbedarf. Seit 1999 im Handel verwurzelt, seit 2026 als WEBUNDO. Für Unternehmen und öffentliche Einrichtungen." />
 <link rel="icon" href="logo.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,12 +22,11 @@
   <div class="shell topbar__inner">
     <a href="index.html" class="brand" aria-label="WEBUNDO – Startseite"><img class="brand__logo" src="WEBUNDO_Logo.PNG" alt="WEBUNDO" /></a>
     <nav class="topbar__nav topbar__nav--corp" aria-label="Hauptnavigation">
-      <a href="versorgung.html">Sortiment</a>
-      <a href="beschaffung.html">Sonderbedarfe</a>
-      <a href="optimierung.html">Service</a>
+      <a href="betriebsbedarf.html">Betriebsbedarf</a>
+      <a href="einmalbedarfe.html">Einmalbedarfe</a>
       <div class="navdd">
         <button type="button" class="navdd__btn" aria-haspopup="true" aria-expanded="false">Über uns <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="navdd__menu"><a href="unternehmen.html">Unternehmen</a><a href="referenzen.html">Referenzen</a><a href="faq.html">FAQ</a><a href="kontakt.html">Kontakt</a></div>
+        <div class="navdd__menu"><a href="unternehmen.html">Unternehmen</a><a href="beratung.html">Beratung</a><a href="referenzen.html">Referenzen</a><a href="faq.html">FAQ</a><a href="kontakt.html">Kontakt</a></div>
       </div>
     </nav>
     <div class="topbar__actions">
@@ -37,11 +36,11 @@
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="topbar__mobile" id="topbarMobile">
-    <a href="versorgung.html">Sortiment</a>
-    <a href="beschaffung.html">Sonderbedarfe</a>
-    <a href="optimierung.html">Service</a>
+    <a href="betriebsbedarf.html">Betriebsbedarf</a>
+    <a href="einmalbedarfe.html">Einmalbedarfe</a>
     <span class="topbar__mobile-h">Über uns</span>
     <a href="unternehmen.html" class="topbar__mobile-sub">Unternehmen</a>
+    <a href="beratung.html" class="topbar__mobile-sub">Beratung</a>
     <a href="referenzen.html" class="topbar__mobile-sub">Referenzen</a>
     <a href="faq.html" class="topbar__mobile-sub">FAQ</a>
     <a href="kontakt.html" class="topbar__mobile-sub">Kontakt</a>
@@ -52,236 +51,113 @@
 
 <main id="top">
 
-<!-- HERO -->
-<section class="hhero">
-  <div class="shell">
-    <div class="hhero__inner">
-      <div class="hhero__text">
-        <h1>Betriebsbedarf <span class="g">aus einer Hand.</span></h1>
-        <p class="hhero__claim">Täglicher Bedarf zuerst – Sonderbedarfe und Service inklusive.</p>
-        <p class="hhero__sub">Für Unternehmen und öffentliche Einrichtungen – von Standardbedarf bis Sonderbeschaffung.</p>
-        <p class="hhero__sub">Wir kümmern uns um Sonderbedarfe und unterstützen bei Service &amp; Prozessen.</p>
-        <div class="hhero__cta">
-          <a href="kontakt.html" class="btn btn--primary btn--lg">Jetzt Bedarf anfragen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="versorgung.html" class="btn btn--ghost btn--lg">Zum Sortiment</a>
-        </div>
-        <p class="badge24"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Angebot innerhalb von 24 Stunden</p>
+<!-- HERO + ZWEI WEGE -->
+<section class="hhero"><div class="shell">
+  <div style="text-align:center;max-width:880px;margin:0 auto">
+    <h1 style="text-align:center;justify-content:center">Betriebsbedarf und <span class="g">Einmalbedarfe.</span></h1>
+    <p class="hhero__sub" style="margin:0 auto;max-width:680px">Wir beschaffen Ihren täglichen Bedarf und Ihre Einmalbedarfe zuverlässig – seit 1999.</p>
+    <p class="badge24" style="justify-content:center;margin-top:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Angebot innerhalb von 24 Stunden</p>
+  </div>
+  <div class="pillars__grid" style="grid-template-columns:1fr 1fr;margin-top:40px;align-items:stretch">
+    <div class="pillar" style="border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--sh-sm)">
+      <div class="pillar__sub" style="padding-left:0;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--green-600);font-weight:700;text-align:center;margin:0 0 4px">Ihr täglicher Bedarf</div>
+      <h2 style="font-size:1.5rem;text-align:center;text-transform:none;margin:0 0 20px">Betriebsbedarf</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px 8px;margin-bottom:20px"><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🦺</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Arbeitsschutz</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🧱</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Baustoffe</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">💻</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Büro &amp; IT</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🚚</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Fuhrpark</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🏢</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Gebäude</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🔧</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Instandhaltung</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">📦</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Logistik</div></div><div style="text-align:center"><div style="width:46px;height:46px;border-radius:50%;background:var(--green-50);display:grid;place-items:center;margin:0 auto 6px;font-size:20px">🛠️</div><div style="font-size:.72rem;color:var(--slate);font-weight:600;line-height:1.2">Werkzeug</div></div></div>
+      <p style="text-align:center;margin:0 0 22px"><b style="font-size:1.35rem;color:var(--green-700);font-family:var(--disp)">Bis zu 15 %</b><br><span style="font-size:.9rem;color:var(--slate)">Kosteneinsparung durch Preisvergleich und Konsolidierung</span></p>
+      <a href="betriebsbedarf.html" class="btn btn--primary" style="margin-top:auto">Zum Betriebsbedarf <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="pillar" style="border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;box-shadow:var(--sh-sm)">
+      <div class="pillar__sub" style="padding-left:0;text-transform:uppercase;letter-spacing:.06em;font-size:.75rem;color:var(--green-600);font-weight:700;text-align:center;margin:0 0 4px">Für den Einzelfall</div>
+      <h2 style="font-size:1.5rem;text-align:center;text-transform:none;margin:0 0 20px">Einmalbedarfe</h2>
+      <div class="fskills" style="justify-content:center;margin-bottom:20px">
+        <span>Ersatzteil gesucht</span><span>Sonderanfertigung</span><span>Neuer Lieferant nötig</span><span>Einmalige Bestellung</span>
       </div>
-      <div class="hhero__media"><div class="img" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1400&q=70')"></div>
-        <div class="hbadge">
-          <div class="hbadge__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <div><b>1</b><span>Ansprechpartner für alles</span></div>
-        </div>
+      <div style="background:var(--navy);color:#fff;border-radius:16px;padding:18px 20px;text-align:center;margin-bottom:18px">
+        <div style="font-size:.78rem;opacity:.8;text-transform:uppercase;letter-spacing:.05em">Ihr Einsparpotenzial</div>
+        <div style="font-family:var(--disp);font-weight:800;font-size:2rem;line-height:1.1;margin:2px 0">121.750 €</div>
+        <div style="font-size:.82rem;opacity:.85">pro Jahr bei 1.000 Einmalbestellungen</div>
       </div>
+      <a href="kontakt.html" class="btn btn--primary">Einmalbedarf jetzt anfragen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="rechner.html" style="display:block;text-align:center;margin-top:12px;font-size:.86rem;color:var(--green-700);font-weight:600">Einsparrechner · in 60 Sekunden →</a>
     </div>
   </div>
-</section>
-
-<!-- RISIKOFREI -->
-<section class="risk3"><div class="shell risk3__grid">
-  <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><div><h3>Kostenloses Erstgespräch</h3><p>Kein Verkaufsdruck – erst klären, dann entscheiden.</p></div></div>
-  <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 9h18M10 14l4 4M14 14l-4 4"/></svg></div><div><h3>Keine Mindestvertragslaufzeit</h3><p>Sie starten dort, wo es für Sie Sinn ergibt – ohne langfristige Bindung.</p></div></div>
-  <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><div><h3>Volle Transparenz von Anfang an</h3><p>Ein Ansprechpartner, klare Abläufe, keine versteckten Kosten.</p></div></div>
+  <p style="text-align:center;margin:16px auto 0;max-width:720px;font-size:.8rem;color:var(--slate)">Berechnungsgrundlage: 121,75 € Prozesskosten je Bestellvorgang laut <a href="https://shop.bme.de/system/public_downloads/files/000/006/800/original/Leseprobe_Top-Kennzahlen_Durchschnittswerte_2025.pdf" target="_blank" rel="noopener" style="color:var(--green-600);font-weight:600">BME Benchmark 2025</a>.</p>
 </div></section>
 
-
-<!-- RECHNER-TEASER (Fokus) -->
-<section class="ctaband"><div class="shell ctaband__inner">
-  <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M15 11h.01M8 15h2M15 15h.01"/></svg></div>
-  <div>
-    <span class="phero__eyebrow" style="margin-bottom:10px">Einsparrechner · in 60 Sekunden</span>
-    <h2>Was Sie bei Ihren Sonderbedarfen sparen</h2>
-    <p>Wie viele Sonder- und Einmalbedarfe wickeln Sie pro Jahr ab? Anzahl eingeben, sofort Ihr jährliches Einsparpotenzial erhalten – und Ihre Anfrage gleich mit absenden. Unverbindlich.</p>
-    <p style="font-size:.8rem;color:#9FC4EC;margin:10px 0 0">Berechnungsgrundlage: 121,75 € Prozesskosten je Bestellvorgang laut <a href="https://shop.bme.de/system/public_downloads/files/000/006/800/original/Leseprobe_Top-Kennzahlen_Durchschnittswerte_2025.pdf" target="_blank" rel="noopener" style="color:#cfe6ff;text-decoration:underline">BME Benchmark 2025</a>.</p>
+<!-- 1-KREDITOR -->
+<section class="risk3"><div class="shell">
+  <div class="section-head" style="text-align:center;max-width:720px;margin:0 auto 30px">
+    <span class="eyebrow eyebrow--center">1-Kreditor-Modell</span>
+    <h2 class="sec__title" style="text-align:center;margin-top:10px">Klein im Volumen, groß im Aufwand.</h2>
+    <p class="section-sub" style="color:var(--slate)">Genau dafür gibt es das 1-Kreditor-Modell – mehr Zeit fürs Kerngeschäft, weniger Aufwand bei der Beschaffung.</p>
   </div>
-  <a href="rechner.html" class="btn btn--primary btn--lg">Jetzt berechnen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="risk3__grid">
+    <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6h13v11H1z"/><path d="M14 9h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></svg></div><div><h3>Ein Lieferant</h3><p>Statt vieler Einzelquellen ein zentraler Partner.</p></div></div>
+    <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><div><h3>Eine Rechnung</h3><p>Ein Beleg statt vieler Einzelrechnungen.</p></div></div>
+    <div class="riskcard"><div class="riskcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div><h3>Ein Ansprechpartner</h3><p>Ein fester Kontakt für alle Rückfragen.</p></div></div>
+  </div>
+  <p style="text-align:center;color:var(--slate);margin-top:24px"><strong style="color:var(--ink)">So einfach funktioniert es:</strong> WEBUNDO einmalig als Lieferant anlegen – danach startet Ihr Bestellprozess wie gewohnt.</p>
 </div></section>
 
-<!-- 3 SÄULEN -->
-<section class="pillars" id="leistungen"><div class="shell">
-  <span class="eyebrow eyebrow--center">Unsere Leistungen</span>
-  <h2 class="sec__title" style="text-align:center;margin:10px auto 14px">Täglicher Bedarf zuerst – Sonderbedarfe inklusive</h2>
-  <p class="section-sub" style="text-align:center;max-width:none;margin:0 auto 46px;color:var(--slate)">Drei Bereiche, ein Partner – aber nicht alle gleich dringend. Starten Sie dort, wo's für Sie zählt.</p>
-  <div class="pillars__grid">
-    <div class="pillar">
-      <div class="pillar__head"><div class="iccircle iccircle--sky"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.3 12.5a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L22 7H6"/></svg></div><h2 style="font-size:1.25rem">Sortiment</h2></div>
-      <p class="pillar__sub">&nbsp;</p>
-      <ul class="tlist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Technischer Bedarf & C-Teile</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Betriebsmittel & Verbrauchsmaterial</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Werkzeuge & Ausrüstung</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Büro- & IT-Ausstattung</span></li>
-      </ul>
-      <a href="versorgung.html" class="btn btn--primary">Zum Sortiment <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="pillar">
-      <div class="pillar__head"><div class="iccircle iccircle--blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h2 style="font-size:1.25rem">Sonderbedarfe</h2></div>
-      <p class="pillar__sub">Für den Einzelfall</p>
-      <ul class="tlist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Sonderbedarfe</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Individuelle Produkte & Lösungen</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Dienstleistungen</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Lieferantensuche & Verhandlung</span></li>
-      </ul>
-      <a href="beschaffung.html" class="btn btn--primary">Sonderbedarf klären <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="pillar">
-      <div class="pillar__head"><div class="iccircle iccircle--navy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div><h2 style="font-size:1.25rem;white-space:nowrap">Service &amp; Beratung</h2></div>
-      <p class="pillar__sub">Für später – wenn Sie wollen</p>
-      <ul class="tlist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Prozessoptimierung & Digitalisierung</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Einkauf auf Zeit / Interim</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Beratung bei Vakanzen & Projekten</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>KI-gestützte Lösungen</span></li>
-      </ul>
-      <a href="optimierung.html" class="btn btn--primary">Mehr erfahren <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
+<!-- VORTEIL FÜRS GANZE UNTERNEHMEN -->
+<section class="wmv"><div class="shell">
+  <span class="eyebrow eyebrow--center">Ein Vorteil für Ihr ganzes Unternehmen</span>
+  <h2 class="sec__title" style="text-align:center;margin:10px auto 6px">Nicht nur der Einkauf spart sich Aufwand</h2>
+  <div class="wmv__grid">
+    <div class="wmvcard wmvcard--mission"><div class="wmvcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-2 6-6 2 2-6z"/></svg></div><h3>Für den Einkauf</h3><p style="font-weight:700;color:var(--ink);margin-bottom:10px">Volle Kontrolle, weniger Aufwand</p><ul class="tlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Kein wachsender Lieferantenstamm durch Einmalbedarfe</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Alle Bedarfe über einen festen Ansprechpartner</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Mehr Zeit für Strategie statt Einzelbestellungen</span></li></ul></div>
+    <div class="wmvcard wmvcard--vision"><div class="wmvcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg></div><h3>Für Fachabteilungen</h3><p style="font-weight:700;color:var(--ink);margin-bottom:10px">Schnell versorgt</p><ul class="tlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Auch das, was nicht im Standardsortiment steht</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Schnelle Lieferung, kein Warten auf neue Lieferantenanlage</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ein Ansprechpartner für alle Rückfragen</span></li></ul></div>
+    <div class="wmvcard wmvcard--why"><div class="wmvcard__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12v20l-3-2-3 2-3-2-3 2z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg></div><h3>Für die Buchhaltung</h3><p style="font-weight:700;color:var(--ink);margin-bottom:10px">Eine Rechnung statt vieler</p><ul class="tlist"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Ein einheitlicher Beleg statt vieler Einzelrechnungen</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Kein Abgleich mehrerer Lieferantenkonten</span></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Rechnung mit Zahlungsziel statt Vorkasse</span></li></ul></div>
   </div>
 </div></section>
 
-<!-- WERTE (unter Unsere Leistungen) -->
-<section class="valband valband--simple">
-  <div class="shell"><div class="section-head" style="margin-bottom:30px"><span class="eyebrow eyebrow--center">Ein Partner für alles</span><h2 class="sec__title" style="text-align:center;margin-top:10px">Worauf Sie sich verlassen können</h2></div></div>
-  <div class="shell valband__grid">
-      <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div><h3>Persönlicher Ansprechpartner</h3><p>Ein fester Partner für all Ihre Anliegen.</p></div></div>
-      <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><h3>Zuverlässigkeit</h3><p>Pünktlich, planbar und ohne Überraschungen.</p></div></div>
-      <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11 17 2 2a1.4 1.4 0 0 0 2-2"/><path d="m13 15 2.5 2.5a1.4 1.4 0 0 0 2-2L13 11l-2 1.5a2 2 0 0 1-2.5 0L7 11l-4 4"/><path d="m21 11-4-4-3 1"/><path d="M3 7l4 4"/></svg></div><div><h3>Alles aus einer Hand</h3><p>Sortiment, Sonderbedarfe und Service vereint.</p></div></div>
-      <div class="valprop"><div class="valprop__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 22V10l5-8a2 2 0 0 1 3 2l-1 6h5a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 21 22z"/><path d="M7 10H4v12h3"/></svg></div><div><h3>Bewährte Qualität</h3><p>Geprüfte Marken und Industriestandards.</p></div></div>
-    </div></section>
-
-<!-- EIN PARTNER FÜR ALLES -->
+<!-- WARUM WEBUNDO -->
 <section class="about"><div class="shell"><div class="about__grid">
   <div class="about__intro">
-    <span class="eyebrow"><span class="dot"></span>Ein System, das mit Ihrem Unternehmen wächst</span>
-    <h2 style="margin-top:14px">Vom Standardartikel bis zur kompletten Einkaufsstruktur</h2>
-    <p>Unser Kern liegt im <strong>Handel</strong>: das laufende <strong>Sortiment</strong>, mit dem wir Betriebe täglich versorgen. Sonderbedarfe kommen on top, dazu <strong>Service &amp; Beratung</strong>, wenn Sie sie brauchen.</p>
-    <p>So entsteht ein Partner, der mit Ihrem Unternehmen wächst – vom einzelnen Standardartikel bis zur kompletten Einkaufsstruktur.</p>
-    <a href="unternehmen.html" class="btn btn--ghost" style="margin-top:18px">Mehr über WEBUNDO <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <span class="eyebrow"><span class="dot"></span>Warum WEBUNDO</span>
+    <h2 style="margin-top:14px">Erfahrung, auf die Sie sich verlassen können.</h2>
+    <p>Wir handeln selbst – seit 1999 im Fachhandel. Bei Einmalbedarfen profitieren Sie deshalb von echter Praxis in Einkauf und Lieferantenmanagement, direkt aus erster Hand.</p>
+    <a href="unternehmen.html" class="btn btn--ghost" style="margin-top:18px">Mehr zum Unternehmen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
-  <ul class="checklist">
-    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.3 2.9-5 6.5-5s6.5 1.7 6.5 5"/><path d="M16 5.5a3 3 0 0 1 0 5.8M17.5 20c0-3-1.2-4.3-3-5"/></svg></span><p><strong>Erfahrenes Expertenteam</strong>Einkauf, Datenanalyse und Strategie aus einer Hand.</p></li>
-    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 7"/></svg></span><p><strong>Praxisnahe Lösungen</strong>Umsetzbar, messbar und auf Ihren Alltag zugeschnitten.</p></li>
-    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4a2.5 2.5 0 0 0-2.5 2.5A2.5 2.5 0 0 0 5 11a2.5 2.5 0 0 0 1 4.5A2.5 2.5 0 0 0 9 20a2 2 0 0 0 3-1.7V5.7A2 2 0 0 0 9 4z"/><path d="M15 4a2.5 2.5 0 0 1 2.5 2.5A2.5 2.5 0 0 1 19 11a2.5 2.5 0 0 1-1 4.5A2.5 2.5 0 0 1 15 20a2 2 0 0 1-3-1.7V5.7A2 2 0 0 1 15 4z"/></svg></span><p><strong>Modernste Technologien</strong>Digitale und KI-gestützte Prozesse.</p></li>
-    <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span><p><strong>Persönliche Betreuung</strong>Ein fester Ansprechpartner für alles.</p></li>
-  </ul>
+  <div class="stats" style="grid-template-columns:repeat(3,1fr);padding:0;gap:22px;align-self:center">
+    <div class="stat"><b>25+</b><span>Jahre Einkaufs- &amp; Handelserfahrung</span></div>
+    <div class="stat"><b>1999</b><span>Gründung des Fachhandels, aus dem WEBUNDO hervorging</span></div>
+    <div class="stat"><b>24&nbsp;h</b><span>Rückmeldung auf jede Anfrage</span></div>
+  </div>
 </div></div></section>
 
-<!-- STARKE PARTNER -->
-<section class="partners"><div class="shell">
-  <span class="eyebrow eyebrow--center">Starke Partner</span>
-  <h2 class="sec__title" style="text-align:center;margin-top:10px">Zugang zu führenden Marken</h2>
-  <p class="section-sub" style="text-align:center;max-width:640px;margin:10px auto 0;color:var(--slate)">Ein Auszug aus unserem Marken-Netzwerk – auf Wunsch binden wir jederzeit weitere Hersteller und Fachhandelspartner für Sie an.</p>
-  <div class="brandgroups">
-    <div class="brandgroup">
-      <div class="brandgroup__title">Werkzeug &amp; Technik</div>
-      <div class="brandrow">
-        <div class="logos__item"><img src="keil%20logo.png" alt="KEIL" loading="lazy" /></div>
-        <div class="logos__item"><img src="hanswerner%20logo.png" alt="HaWe" loading="lazy" /></div>
-        <div class="logos__item"><img src="dewalt.jpg" alt="DeWALT" loading="lazy" /></div>
-        <div class="logos__item"><img src="Voelkel.jpg" alt="VÖLKEL" loading="lazy" /></div>
-        <div class="logos__item"><img src="klingspor.jpg" alt="KLINGSPOR" loading="lazy" /></div>
-        <div class="logos__item"><img src="gedore.webp" alt="GEDORE" loading="lazy" /></div>
-        <div class="logos__item"><img src="projahn%20logo.png" alt="Projahn" loading="lazy" /></div>
-        <div class="logos__item"><img src="hazet.jpg" alt="Hazet" loading="lazy" /></div>
-        <div class="logos__item"><img src="Hase%20safety.png" alt="Hase" loading="lazy" /></div>
-        <div class="logos__item"><img src="engelbert-strauss-logo.jpg" alt="STRAUSS" loading="lazy" /></div>
-        <div class="brand-more">+ weitere Marken auf Anfrage</div>
-      </div>
-    </div>
-    <div class="brandgroup">
-      <div class="brandgroup__title">Büro &amp; IT</div>
-      <div class="brandrow">
-        <div class="logos__item"><img src="microsoft.png" alt="Microsoft" loading="lazy" /></div>
-        <div class="logos__item"><img src="jabra.png" alt="Jabra" loading="lazy" /></div>
-        <div class="logos__item"><img src="dell.png" alt="Dell" loading="lazy" /></div>
-        <div class="logos__item"><img src="cisco.png" alt="Cisco" loading="lazy" /></div>
-        <div class="logos__item"><img src="apple.png" alt="Apple" loading="lazy" /></div>
-        <div class="brand-more">+ weitere Marken auf Anfrage</div>
-      </div>
-    </div>
-  </div>
-</div></section>
-
-<!-- GRÜNDER -->
-<section style="padding:70px 0;background:#fff"><div class="shell">
-  <div class="fteaser">
-    <div class="fteaser__media founder__media noimg"><div class="founder__fallback">TW</div></div>
-    <div>
-      <span class="eyebrow"><span class="dot"></span>Wer dahinter steht</span>
-      <h2 style="margin-top:14px">Marktpräsenz seit 1999 – als WEBUNDO seit 2026.</h2>
-      <p style="font-size:1.18rem;font-style:italic;color:var(--navy);margin:0 0 8px">„25 Jahre Einkauf und Supply Chain.“</p>
-      <p><strong>Thorsten Weber</strong> – Gründer &amp; Geschäftsführer von WEBUNDO, ehemaliger Leiter Einkauf, heute Ihr externer Einkaufspartner. Pragmatisch, direkt und auf Augenhöhe.</p>
-      <div style="display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px;margin:16px 0 22px">
-        <div style="flex:1;min-width:150px"><div style="font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--green)">1999</div><div style="font-size:.82rem;color:var(--slate)">Gründung des technischen Fachhandels Faitsch, aus dem WEBUNDO hervorgegangen ist</div></div>
-        <div style="flex:1;min-width:150px"><div style="font-family:var(--disp);font-weight:800;font-size:1.5rem;color:var(--green)">2026</div><div style="font-size:.82rem;color:var(--slate)">Neustart als WEBUNDO, mit erweitertem Angebot</div></div>
-      </div>
-      <a href="unternehmen.html#thorsten" class="btn btn--primary">Thorsten Weber kennenlernen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </div>
-</div></section>
-
-<!-- USE CASE / REFERENZ -->
+<!-- REFERENZ -->
 <section class="usecase"><div class="shell">
-  <span class="eyebrow eyebrow--center">Use Case · Bauunternehmen</span>
-  <h2 class="sec__title" style="text-align:center;margin-top:10px">Was unsere Kunden mit WEBUNDO erreichen</h2>
-  <div class="usecase__client">
-    <img src="steudtner-bantle.png" alt="Steudtner & Bantle Bau GmbH" onerror="this.style.display='none'" />
-    <span>Steudtner &amp; Bantle Bau GmbH</span>
-  </div>
-  <div class="usecase__grid">
-    <div class="ucard">
-      <span class="ucard__ic" aria-hidden="true">💰</span>
-      <h3 class="ucard__t">Kosten optimiert</h3>
-      <b class="ucard__kpi">–10 % Kosten</b>
-      <p>Bessere Preise durch Benchmarking</p>
+  <span class="eyebrow eyebrow--center">Referenzen</span>
+  <h2 class="sec__title" style="text-align:center;margin:10px auto 28px">Was unsere Kunden mit WEBUNDO erreichen</h2>
+  <div style="max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-sm);padding:30px 28px;background:#fff">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap">
+      <img src="steudtner-bantle.png" alt="Steudtner &amp; Bantle Bau GmbH" style="height:42px;width:auto" loading="lazy" />
+      <div><div style="font-weight:700;color:var(--navy)">Steudtner &amp; Bantle Bau GmbH</div><div style="font-size:.78rem;color:var(--slate);text-transform:uppercase;letter-spacing:.05em">Use Case · Bauunternehmen</div></div>
     </div>
-    <div class="ucard">
-      <span class="ucard__ic" aria-hidden="true">⏱️</span>
-      <h3 class="ucard__t">Einkauf entlastet</h3>
-      <b class="ucard__kpi">–20 % Aufwand</b>
-      <p>Weniger operativer Aufwand</p>
-    </div>
-    <div class="ucard">
-      <span class="ucard__ic" aria-hidden="true">🔗</span>
-      <h3 class="ucard__t">Lieferanten reduziert</h3>
-      <p>Mehr Übersicht, weniger Komplexität</p>
-    </div>
-    <div class="ucard">
-      <span class="ucard__ic" aria-hidden="true">⚡</span>
-      <h3 class="ucard__t">Sonderbedarf gelöst</h3>
-      <p>Schnell &amp; zuverlässig beschafft</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+      <div><div style="font-family:var(--disp);font-weight:800;font-size:1.6rem;color:var(--green-700)">–10 %</div><div style="font-size:.82rem;color:var(--slate)">Kosteneinsparung durch Preisvergleich</div></div>
+      <div><div style="font-family:var(--disp);font-weight:800;font-size:1.6rem;color:var(--green-700)">–20 %</div><div style="font-size:.82rem;color:var(--slate)">operativer Aufwand</div></div>
+      <div><div style="font-family:var(--disp);font-weight:800;font-size:1.6rem;color:var(--green-700)">✓</div><div style="font-size:.82rem;color:var(--slate)">Lieferanten reduziert</div></div>
+      <div><div style="font-family:var(--disp);font-weight:800;font-size:1.6rem;color:var(--green-700)">✓</div><div style="font-size:.82rem;color:var(--slate)">Einmalbedarf gelöst</div></div>
     </div>
   </div>
-  <div style="text-align:center;margin-top:36px"><a href="referenzen.html" class="btn btn--primary btn--lg">Alle Referenzen ansehen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  <div style="text-align:center;margin-top:24px"><a href="referenzen.html" class="btn btn--ghost">Alle Referenzen ansehen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div></section>
 
-<section class="steps3"><div class="shell">
-      <span class="eyebrow eyebrow--center">In drei Schritten</span>
-      <h2 class="sec__title" style="text-align:center;margin-top:10px">So einfach funktioniert es</h2>
-      <div class="steps3__row"><div class="step3"><span class="step3__n">1</span><div class="step3__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></div><h3>Anfrage starten</h3><p>Senden Sie uns Ihren Bedarf – einfach per Formular oder E-Mail.</p></div><div class="step3__arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="step3"><span class="step3__n">2</span><div class="step3__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2 3h3l2.3 12.5a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L22 7H6"/></svg></div><h3>Wir kümmern uns</h3><p>Wir finden die passende Lösung und übernehmen die Abwicklung.</p></div><div class="step3__arrow"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="step3"><span class="step3__n">3</span><div class="step3__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><h3>Sie erhalten die Lösung</h3><p>Pünktlich, zuverlässig und in der gewünschten Qualität.</p></div></div>
-    </div></section>
-
-<!-- BRANCHEN -->
-<section class="branchen"><div class="shell">
-  <span class="eyebrow eyebrow--center">Branchenfokus</span>
-  <h2 class="sec__title" style="text-align:center;margin-top:10px">Erfahrung in vielen Branchen</h2>
-  <div class="branchen__grid">
-    <div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v6a4 4 0 0 0 8 0V3"/><path d="M4 3H3M12 3h1M8 13v3a5 5 0 0 0 10 0v-1"/><circle cx="18" cy="13" r="2"/></svg></div><span>Medizintechnik</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h10M9 21h9"/><path d="M9 18a6 6 0 0 0 7-9"/><path d="m10 5 3 3-2 2-3-3zM7 8l2 2"/></svg></div><span>Pharma</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 0 1 2-1.3h10A2 2 0 0 1 19 8l2 5v5h-3v-2H6v2H3z"/><circle cx="7" cy="16" r="1.3"/><circle cx="17" cy="16" r="1.3"/></svg></div><span>Automotive</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="2.4"/><path d="M9 4v1.5M9 12.5V14M4 9h1.5M12.5 9H14M5.5 5.5l1 1M11.5 11.5l1 1M5.5 12.5l1-1M11.5 6.5l1-1"/><circle cx="16.5" cy="16.5" r="2"/><path d="M16.5 13v1M16.5 19v1M13 16.5h1M19 16.5h1"/></svg></div><span>Maschinenbau</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3"/></svg></div><span>Elektronik</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9 10v8M15 10v8M19 10v8M3 21h18"/></svg></div><span>Behörden</span></div><div class="branche"><div class="branche__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m14 7 4 4-8.5 8.5a1.8 1.8 0 0 1-2.5-2.5z"/><path d="M11 4l5 5 2.5-2.5a2 2 0 0 0-2.8-2.8z"/></svg></div><span>Handwerk</span></div>
-  </div>
-</div></section>
-
-<!-- EINWÄNDE -->
+<!-- FAQ / EINWÄNDE -->
 <section class="faqsec faqsec--soft"><div class="shell"><div class="faqcat">
-  <h2 style="justify-content:center;text-align:center">Typische Einwände – ehrlich beantwortet</h2>
-<details class="faqacc"><summary>„Wir haben doch schon einen Einkauf.“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Genau der bleibt zuständig – wir übernehmen nur die Fälle, die ihn am meisten Zeit kosten, z.&nbsp;B. Einmalbedarfe &amp; Sonderbeschaffungen. So bleibt Ihrem Team mehr Kapazität für Strategie und Lieferantenentwicklung.</p></div></details><details class="faqacc"><summary>„Wir wollen keine Kontrolle abgeben.“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Sie behalten die volle Entscheidungshoheit – Budget, Anforderungen und Lieferanten definieren Sie. Wir übernehmen die Umsetzung, nicht die Steuerung, und berichten transparent.</p></div></details><details class="faqacc"><summary>„Wie schnell reagiert ihr wirklich?“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Innerhalb von 24 Stunden erhalten Sie eine Rückmeldung inklusive erster Einschätzung – mit festem persönlichem Ansprechpartner statt Ticketsystem.</p></div></details>
+  <h2 style="justify-content:center;text-align:center">Ehrlich beantwortet – typische Einwände</h2>
+  <details class="faqacc"><summary>„Wir haben doch schon einen Einkauf.“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Genau der bleibt zuständig – wir übernehmen nur die Fälle, die ihn am meisten Zeit kosten, z. B. Einmalbedarfe. So bleibt Ihrem Team mehr Kapazität für Strategie und Lieferantenentwicklung.</p></div></details>
+  <details class="faqacc"><summary>„Wir wollen keine Kontrolle abgeben.“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Sie behalten die volle Entscheidungshoheit – Budget, Anforderungen und Lieferanten definieren Sie. Wir übernehmen die Umsetzung, nicht die Steuerung, und berichten transparent.</p></div></details>
+  <details class="faqacc"><summary>„Wie schnell reagiert ihr wirklich?“<span class="faqacc__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span></summary><div class="faqacc__a"><p>Innerhalb von 24 Stunden erhalten Sie eine Rückmeldung inklusive erster Einschätzung – mit festem persönlichem Ansprechpartner statt Ticketsystem.</p></div></details>
   <div class="faq-more"><a href="faq.html" class="btn btn--ghost">Alle Fragen im FAQ <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
 </div></div></section>
 
 <section class="ctaband"><div class="shell ctaband__inner">
-      <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
-      <div><h2>Gemeinsam optimieren. Zukunft sichern.</h2><p>Lassen Sie uns Ihre Potenziale entdecken und Prozesse auf das nächste Level bringen.</p></div>
-      <a href="kontakt.html" class="btn btn--primary btn--lg">Anfrage starten <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div></section>
+  <div class="ctaband__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></div>
+  <div><h2>Betriebsbedarf und Einmalbedarfe – aus einer Hand.</h2><p>Ab dem ersten Auftrag wirksam, ohne IT-Systemwechsel und ohne Projektaufwand.</p></div>
+  <a href="kontakt.html" class="btn btn--primary btn--lg">Jetzt anfragen <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></section>
 
 </main>
 
@@ -289,7 +165,7 @@
   <div class="shell wfooter__inner">
     <div class="wfooter__brand">
       <div class="wfooter__logo"><img src="WEBUNDO_Logo.PNG" alt="WEBUNDO" /></div>
-      <p>Betriebsbedarf, Sonderbedarfe und Service – aus Balingen, für Unternehmen und öffentliche Einrichtungen.</p>
+      <p>Betriebsbedarf und Einmalbedarfe – für Unternehmen und öffentliche Einrichtungen.</p>
       <div class="socials">
         <a class="social social--li" href="https://www.linkedin.com/in/thorsten-w-46a831162/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.75V21h-4v-5.2c0-1.24-.02-2.84-1.9-2.84-1.9 0-2.2 1.36-2.2 2.76V21h-4z"/></svg></a>
         <a class="social social--ig" href="https://instagram.com/webundo" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
@@ -299,7 +175,7 @@
     </div>
     <div class="wfooter__col">
       <h4>Leistungen</h4>
-      <ul class="wfooter__list"><li><a href="versorgung.html">Sortiment</a></li><li><a href="beschaffung.html">Sonderbedarfe</a></li><li><a href="optimierung.html">Service</a></li></ul>
+      <ul class="wfooter__list"><li><a href="betriebsbedarf.html">Betriebsbedarf</a></li><li><a href="einmalbedarfe.html">Einmalbedarfe</a></li><li><a href="beratung.html">Beratung</a></li></ul>
     </div>
     <div class="wfooter__col">
       <h4>Über uns</h4>
