@@ -1132,3 +1132,23 @@ html.anim .marquee .logos__item{opacity:1!important;transform:none!important}
 .social--wa{background:#25D366;color:#fff}
 .social--li:hover,.social--ig:hover,.social--yt:hover,.social--wa:hover{color:#fff;transform:translateY(-2px);filter:brightness(1.06)}
 .social--ig:hover{background:radial-gradient(circle at 30% 110%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+
+/* ---- Grüne CTA-Button-Variante (Anfragen); Blau bleibt btn--primary ---- */
+.btn--green{--bgc:#3aaa35;--fg:#fff;box-shadow:0 8px 20px -8px rgba(58,170,53,.55)}
+.btn--green:hover{--bgc:#2f8c2b;box-shadow:0 12px 26px -8px rgba(58,170,53,.65)}
+
+/* Hero-Subline: einzeilig auf Desktop, aber auf kleinen Screens umbrechen */
+@media(max-width:720px){ .hhero__sub{white-space:normal!important} }
+
+/* Startseite: zwei Wege-Karten auf kleinen Screens untereinander */
+@media(max-width:720px){ .hhero .pillars__grid{grid-template-columns:1fr!important} }
+
+/* BME-Quellenzeile im Rahmen: Desktop einzeilig, mobil umbrechen */
+.bme-src{white-space:nowrap}
+@media(max-width:720px){
+  .bme-src{white-space:normal}
+  .about__grid{grid-template-columns:1fr!important}
+  .about__grid .stats{grid-template-columns:1fr!important}
+}
+@media(max-width:720px){ .catgrid{grid-template-columns:repeat(2,1fr)!important} }
+@media(max-width:720px){ .refstats{grid-template-columns:repeat(2,1fr)!important} }
